@@ -1,1 +1,14 @@
 K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\Prog2.exe.config
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\Prog2.exe
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\Prog2.pdb
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\OpenTK.dll
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\OpenTK.GLControl.dll
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\OpenTK.pdb
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\OpenTK.xml
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\bin\Debug\OpenTK.GLControl.xml
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.csprojResolveAssemblyReference.cache
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.Form1.resources
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.Properties.Resources.resources
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.csproj.GenerateResource.Cache
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.exe
+K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\Prog2\obj\Debug\Prog2.pdb
