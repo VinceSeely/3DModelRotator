@@ -90,17 +90,22 @@ public class VertexDataList
       List<ushort> vertIndices = new List<ushort>();
       List<ushort> colorIndices = new List<ushort>();
 
-      // You fill this in to see if you understand this file and the XMRL file.
-      // This should be exactly 7 lines of code, each one a call to a private method.
+        // You fill this in to see if you understand this file and the XMRL file.
+        // This should be exactly 7 lines of code, each one a call to a private method.
 
 
-	  
-	  
+      ReadVectListFromVMRL(verts);
+      LookForInVMRL("coordIndex [");
+      ReadIndicesListFromVRL(vertIndices);
+      LookForInVMRL("color Color { color [");
+      ReadVectListFromVMRL(colors);
+      LookForInVMRL("colorIndex [");
+      ReadIndicesListFromVRL(colorIndices);
 
       for (int i = 0; i < vertIndices.Count; i++)
       {
-         VertexData v = new VertexData(verts[vertIndices[i]], colors[colorIndices[i]]);
-         vertList.Add(v);
+         VertexData vertex = new VertexData(verts[vertIndices[i]], colors[colorIndices[i]]);
+         vertList.Add(vertex);
       }
 
       CalculateNormals();
