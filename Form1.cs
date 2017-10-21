@@ -33,15 +33,19 @@ namespace Prog2
       private void zSlider_MouseMove(object sender, MouseEventArgs e)
       {
          zLable.Text = $"z = {zSlider.Value}";
+
          drawShape();
       }
 
       private void drawShape()
       {
-         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
+         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
+
          GL.LoadIdentity();
 
-         GL.Rotate(90, xSlider.Value, ySlider.Value, zSlider.Value);             //Leave this.
+         GL.Rotate(xSlider.Value, 1, 0, 0);             //Leave this.
+         GL.Rotate(ySlider.Value, 0, 1, 0);
+         GL.Rotate(zSlider.Value, 0, 0, 1);
 
          axes.Show();
 
@@ -52,12 +56,14 @@ namespace Prog2
       private void xSlider_MouseMove(object sender, MouseEventArgs e)            //Displays X value
       {
          xLabel.Text = $"x = {xSlider.Value}";
+
          drawShape();
       }
 
       private void ySlider_Scroll(object sender, EventArgs e)
       {
          yLabel.Text = $"y = {ySlider.Value}";
+
          drawShape();
       }
 

@@ -34,3 +34,22 @@ C:\Users\William S. Maclay\Documents\Visual Studio 2017\Projects\3DModelRotator-
 C:\Users\William S. Maclay\Documents\Visual Studio 2017\Projects\3DModelRotator-master\3DModelRotator-master\obj\Debug\aa-ER\Prog2.resources.dll
 C:\Users\William S. Maclay\Documents\Visual Studio 2017\Projects\3DModelRotator-master\3DModelRotator-master\obj\Debug\Prog2.exe
 C:\Users\William S. Maclay\Documents\Visual Studio 2017\Projects\3DModelRotator-master\3DModelRotator-master\obj\Debug\Prog2.pdb
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\Prog2.exe.config
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\Prog2.exe
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\Prog2.pdb
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\aa-ER\Prog2.resources.dll
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.dll
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.GLControl.dll
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.pdb
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.xml
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.dll.config
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\bin\Debug\OpenTK.GLControl.xml
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.csprojResolveAssemblyReference.cache
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.Form1.resources
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.Properties.Resources.resources
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.Form1.aa-ER.resources
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.csproj.GenerateResource.Cache
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.csproj.CoreCompileInputs.cache
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\aa-ER\Prog2.resources.dll
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.exe
+C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.pdb
