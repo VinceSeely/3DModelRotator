@@ -16,14 +16,13 @@ namespace Prog2
 {
    public partial class Form1 : Form
    {
+      private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
       private Axes axes;
 
       public Form1()
       {
          InitializeComponent();
-         
-         
       }
 
       private void Form1_SizeChanged(object sender, EventArgs e)
@@ -34,24 +33,37 @@ namespace Prog2
       private void zSlider_MouseMove(object sender, MouseEventArgs e)
       {
          zLable.Text = $"z = {zSlider.Value}";
+
          drawShape();
       }
 
       private void drawShape()
       {
-         GL.Rotate(35.0, xSlider.Value, ySlider.Value, zSlider.Value);
+         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
 
+         GL.LoadIdentity();
+
+         GL.Rotate(xSlider.Value, 1, 0, 0);             //Leave this.
+         GL.Rotate(ySlider.Value, 0, 1, 0);
+         GL.Rotate(zSlider.Value, 0, 0, 1);
+
+         axes.Show();
+
+         GL.Flush();
+         glControl1.SwapBuffers();
       }
 
-      private void xSlider_MouseMove(object sender, MouseEventArgs e)
+      private void xSlider_MouseMove(object sender, MouseEventArgs e)            //Displays X value
       {
          xLabel.Text = $"x = {xSlider.Value}";
+
          drawShape();
       }
 
       private void ySlider_Scroll(object sender, EventArgs e)
       {
          yLabel.Text = $"y = {ySlider.Value}";
+
          drawShape();
       }
 
@@ -84,6 +96,7 @@ namespace Prog2
          GL.MatrixMode(MatrixMode.Projection);
          Matrix4 projMat = Matrix4.CreateOrthographic(20.0f, 20.0f, 0.5f, 100.0f);
          GL.LoadMatrix(ref projMat);
+         glControl1.SwapBuffers();
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)

@@ -35,6 +35,7 @@
          this.zSlider = new System.Windows.Forms.TrackBar();
          this.menuStrip1 = new System.Windows.Forms.MenuStrip();
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.abortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.groupBox1 = new System.Windows.Forms.GroupBox();
          this.ResetButton = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
          this.yLabel = new System.Windows.Forms.Label();
          this.xLabel = new System.Windows.Forms.Label();
          this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
-         this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          ((System.ComponentModel.ISupportInitialize)(this.xSlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.ySlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.zSlider)).BeginInit();
@@ -61,8 +61,8 @@
          // 
          resources.ApplyResources(this.xSlider, "xSlider");
          this.xSlider.LargeChange = 1;
-         this.xSlider.Maximum = 25;
-         this.xSlider.Minimum = -25;
+         this.xSlider.Maximum = 90;
+         this.xSlider.Minimum = -90;
          this.xSlider.Name = "xSlider";
          this.xSlider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.xSlider_MouseMove);
          // 
@@ -70,8 +70,8 @@
          // 
          resources.ApplyResources(this.ySlider, "ySlider");
          this.ySlider.LargeChange = 1;
-         this.ySlider.Maximum = 25;
-         this.ySlider.Minimum = -25;
+         this.ySlider.Maximum = 90;
+         this.ySlider.Minimum = -90;
          this.ySlider.Name = "ySlider";
          this.ySlider.Scroll += new System.EventHandler(this.ySlider_Scroll);
          // 
@@ -79,14 +79,15 @@
          // 
          resources.ApplyResources(this.zSlider, "zSlider");
          this.zSlider.LargeChange = 1;
-         this.zSlider.Maximum = 25;
-         this.zSlider.Minimum = -25;
+         this.zSlider.Maximum = 90;
+         this.zSlider.Minimum = -90;
          this.zSlider.Name = "zSlider";
          this.zSlider.MouseMove += new System.Windows.Forms.MouseEventHandler(this.zSlider_MouseMove);
          // 
          // menuStrip1
          // 
          resources.ApplyResources(this.menuStrip1, "menuStrip1");
+         this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
          this.menuStrip1.Name = "menuStrip1";
@@ -98,6 +99,12 @@
             this.openToolStripMenuItem,
             this.abortToolStripMenuItem});
          this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+         // 
+         // openToolStripMenuItem
+         // 
+         resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
+         this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+         this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
          // 
          // abortToolStripMenuItem
          // 
@@ -143,12 +150,6 @@
          // 
          this.OpenFileDialog.FileName = "Open";
          resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
-         // 
-         // openToolStripMenuItem
-         // 
-         resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-         this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-         this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
          // 
          // Form1
          // 
