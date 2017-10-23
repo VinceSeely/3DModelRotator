@@ -19,6 +19,7 @@ namespace Prog2
       private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
       private Axes axes;
+      private bool rotateMode;
 
       public Form1()
       {
@@ -40,12 +41,17 @@ namespace Prog2
       private void drawShape()
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
-
+         GL.MatrixMode(MatrixMode.Modelview);
          GL.LoadIdentity();
+         if (rotateMode == true)
+         {
+            GL.Rotate(xSlider.Value, 1, 0, 0);             //Leave this.
+            GL.Rotate(ySlider.Value, 0, 1, 0);
+            GL.Rotate(zSlider.Value, 0, 0, 1);
+         }
 
-         GL.Rotate(xSlider.Value, 1, 0, 0);             //Leave this.
-         GL.Rotate(ySlider.Value, 0, 1, 0);
-         GL.Rotate(zSlider.Value, 0, 0, 1);
+         Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
+         GL.LoadMatrix(ref lookat);
 
          axes.Show();
 
@@ -93,6 +99,7 @@ namespace Prog2
          OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
          axes = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
+         rotateMode = false;
          GL.MatrixMode(MatrixMode.Projection);
          Matrix4 projMat = Matrix4.CreateOrthographic(20.0f, 20.0f, 0.5f, 100.0f);
          GL.LoadMatrix(ref projMat);

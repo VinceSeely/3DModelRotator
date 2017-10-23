@@ -53,3 +53,20 @@ C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-
 C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\aa-ER\Prog2.resources.dll
 C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.exe
 C:\Users\William Seth Maclay\Documents\VS Projects\3DModelRotator-We-can-rotate-now-kindof\3DModelRotator-We-can-rotate-now-kindof\obj\Debug\Prog2.pdb
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\Prog2.exe.config
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.exe
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.pdb
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\Prog2.exe
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\Prog2.pdb
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\aa-ER\Prog2.resources.dll
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\OpenTK.dll
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\OpenTK.GLControl.dll
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\OpenTK.pdb
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\OpenTK.xml
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\bin\Debug\OpenTK.GLControl.xml
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.csprojResolveAssemblyReference.cache
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.Form1.resources
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.Properties.Resources.resources
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.Form1.aa-ER.resources
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\Prog2.csproj.GenerateResource.Cache
+C:\Users\vince\Desktop\GraphicsProgram2\3DModelRotator\obj\Debug\aa-ER\Prog2.resources.dll
