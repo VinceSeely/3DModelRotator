@@ -18,7 +18,8 @@ namespace Prog2
    {
       private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
-      private Axes axes;
+      private Axes axis;
+      private Figure figure;
       private bool rotateMode;
 
       public Form1()
@@ -43,18 +44,14 @@ namespace Prog2
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
          GL.MatrixMode(MatrixMode.Modelview);
          GL.LoadIdentity();
-         if (rotateMode == true)
-         {
-            GL.Rotate(xSlider.Value, 1, 0, 0);             //Leave this.
-            GL.Rotate(ySlider.Value, 0, 1, 0);
-            GL.Rotate(zSlider.Value, 0, 0, 1);
-         }
 
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
          GL.LoadMatrix(ref lookat);
          
          figure?.Show();
-         axes.Show();
+         axis.Show();
+
+         figure?.Show(); // does != null
 
          GL.Flush();
          glControl1.SwapBuffers();
@@ -85,7 +82,7 @@ namespace Prog2
       private void Form1_Shown(object sender, EventArgs e)
       {
          //Do things with the XYZ coordinate axes
-         axes.Show();
+         drawShape();
          glControl1.SwapBuffers();
       }
 
@@ -98,21 +95,23 @@ namespace Prog2
          yLabel.Text = $"y = {defaultSliderVal}";
          zLable.Text = $"z = {defaultSliderVal}";
          OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
-         axes = Axes.Instance;
+         axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
          rotateMode = false;
          GL.MatrixMode(MatrixMode.Projection);
          Matrix4 projMat = Matrix4.CreateOrthographic(20.0f, 20.0f, 0.5f, 100.0f);
          GL.LoadMatrix(ref projMat);
          glControl1.SwapBuffers();
+         openToolStripMenuItem.Text = "Open";
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         var openFile = OpenFileDialog.ShowDialog();
+         var openFile = OpenFileDialog;
+         openFile.ShowDialog();
          var verts = new VertexDataList();
          verts.LoadDataFromVRML(openFile.FileName);
-         figure = new Figure(vert
+         figure = new Figure(verts);
          drawShape();
       }
    }
