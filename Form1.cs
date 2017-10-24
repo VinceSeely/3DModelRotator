@@ -52,7 +52,8 @@ namespace Prog2
 
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
          GL.LoadMatrix(ref lookat);
-
+         
+         figure?.Show();
          axes.Show();
 
          GL.Flush();
