@@ -109,6 +109,9 @@ namespace Prog2
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
          var openFile = OpenFileDialog.ShowDialog();
+         var verts = new VertexDataList();
+         verts.LoadDataFromVRML(openFile.FileName);
+         figure = new Figure(vert
          drawShape();
       }
    }
