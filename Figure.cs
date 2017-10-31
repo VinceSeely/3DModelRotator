@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
@@ -10,9 +11,12 @@ namespace Prog2
       private string name = null;
       private int vboHandle;
       private int vaoHandle;
+      private Vector3 max;
+      private Vector3 min;
 
       public Figure(VertexDataList vertextData)
       {
+         _FindBoundaries(vertextData);
          verts = vertextData.VertexArray();
          // Make the Vertex Buffer Object (VBO) and Vertex Array Object (VAO)
          GL.GenBuffers(1, out vboHandle);
@@ -29,6 +33,36 @@ namespace Prog2
          GL.ColorPointer(3, ColorPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)12);
 
          GL.BindVertexArray(0);
+      }
+
+      private void _FindBoundaries(VertexDataList vertextData)
+      {
+         foreach (var vertex in vertextData.VertexArray())
+         {
+            if (vertex.Equals(vertextData.VertexArray()[0]))
+            {
+               min = vertex.Position;
+               max = vertex.Position;
+            }
+            _CompareX(vertex.Position.X);
+            _CompareY(vertex.Position.Y);
+            _CompareZ(vertex.Position.Z);
+         }
+      }
+
+      private void _CompareZ(float positionZ)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _CompareY(float positionY)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _CompareX(float positionX)
+      {
+         throw new NotImplementedException();
       }
 
 

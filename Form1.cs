@@ -19,7 +19,7 @@ namespace Prog2
       private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
       private Axes axis;
-      private Figure figure;
+      private List<Figure> figures;
       private bool rotateMode;
 
       public Form1()
@@ -43,15 +43,14 @@ namespace Prog2
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
          GL.MatrixMode(MatrixMode.Modelview);
-         GL.LoadIdentity();
 
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
          GL.LoadMatrix(ref lookat);
          
-         figure?.Show();
-         axis.Show();
+         foreach ( var figure in figures ?? Enumerable.Empty<Figure>()) // same as the Figure?.show() just done on the list
+            figure.Show();
 
-         figure?.Show(); // does != null
+         axis.Show();
 
          GL.Flush();
          glControl1.SwapBuffers();
@@ -103,6 +102,7 @@ namespace Prog2
          GL.LoadMatrix(ref projMat);
          glControl1.SwapBuffers();
          openToolStripMenuItem.Text = "Open";
+         figures = new List<Figure>();
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,7 +111,8 @@ namespace Prog2
          openFile.ShowDialog();
          var verts = new VertexDataList();
          verts.LoadDataFromVRML(openFile.FileName);
-         figure = new Figure(verts);
+         var newFigure = new Figure(verts);
+         figures.Add(newFigure);
          drawShape();
       }
    }
