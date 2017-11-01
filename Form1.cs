@@ -41,8 +41,7 @@ namespace Prog2
 
       private void drawShape()
       {
-         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);         
-         GL.MatrixMode(MatrixMode.Modelview);
+         GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
          GL.LoadMatrix(ref lookat);

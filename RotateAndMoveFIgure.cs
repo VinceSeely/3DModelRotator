@@ -4,9 +4,9 @@
    {
       public override void Move(Figure fig)
       {
-         // move
-         // rotate
-         // move
+         fig.Translate(0, 0, 0);
+         fig.Rotate(0, 0, 0);
+         fig.Translate(0, 0, 0);
          throw new System.NotImplementedException();
       }
    }
