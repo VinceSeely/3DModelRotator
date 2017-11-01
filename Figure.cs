@@ -13,6 +13,7 @@ namespace Prog2
       private int vaoHandle;
       private Vector3 max;
       private Vector3 min;
+      private Vector3 midPoint;
 
       public Figure(VertexDataList vertextData)
       {
@@ -48,21 +49,48 @@ namespace Prog2
             _CompareY(vertex.Position.Y);
             _CompareZ(vertex.Position.Z);
          }
+         _ComputeMidPoint();
+      }
+
+      private void _ComputeMidPoint()
+      {
+         midPoint = (min + max) / 2.0f;
       }
 
       private void _CompareZ(float positionZ)
       {
-         throw new NotImplementedException();
+         if ( positionZ < min.Z )
+         {
+            min.Z = positionZ;
+            return;
+         }
+         
+         if ( positionZ > max.Z )
+            max.Z = positionZ;
       }
 
       private void _CompareY(float positionY)
       {
-         throw new NotImplementedException();
+         if ( positionY < min.Y )
+         {
+            min.Y = positionY;
+            return;
+         }
+
+         if (positionY > max.Y)
+            max.Y = positionY;
       }
 
       private void _CompareX(float positionX)
       {
-         throw new NotImplementedException();
+         if (positionX < min.X)
+         {
+            min.X = positionX;
+            return;
+         }
+
+         if (positionX > max.X)
+            max.X = positionX;
       }
 
       public void Rotate(float rotateX, float rotateY, float rotateZ)
@@ -74,7 +102,7 @@ namespace Prog2
 
       private void _RotateY(float rotateY)
       {
-         throw new NotImplementedException();
+         
       }
 
       private void _RotateX(float rotateX)
