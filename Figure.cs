@@ -65,6 +65,71 @@ namespace Prog2
          throw new NotImplementedException();
       }
 
+      public void Rotate(float rotateX, float rotateY, float rotateZ)
+      {
+         _RotateX(rotateX);
+         _RotateY(rotateY);
+         _RotateZ(rotateZ);
+      }
+
+      private void _RotateY(float rotateY)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _RotateX(float rotateX)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _RotateZ(float rotateZ)
+      {
+         throw new NotImplementedException();
+      }
+
+      public void Translate(float translateX, float translateY, float translateZ)
+      {
+         _TranslateY(translateY);
+         _TranslateX(translateX);
+         _TranslateZ(translateZ);
+      }
+
+      private void _TranslateY(float translateY)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _TranslateX(float translateX)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _TranslateZ(float translateZ)
+      {
+         throw new NotImplementedException();
+      }
+
+      public void Scale(float scaleX, float scaleY, float scaleZ)
+      {
+         _ScaleY(scaleY);
+         _ScaleX(scaleX);
+         _ScaleZ(scaleZ);
+      }
+
+      private void _ScaleZ(float scaleZ)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _ScaleX(float scaleX)
+      {
+         throw new NotImplementedException();
+      }
+
+      private void _ScaleY(float scaleY)
+      {
+         throw new NotImplementedException();
+      }
 
       public void Show()
       {
