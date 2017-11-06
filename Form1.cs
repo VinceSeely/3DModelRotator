@@ -19,12 +19,13 @@ namespace Prog2
       private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
       private Axes axis;
-      private List<Figure> figures;
       private bool rotateMode;
+      private FigureList figures;
 
       public Form1()
       {
          InitializeComponent();
+         // openFolder.RootFolder = Environment.SpecialFolder.MyDocuments;
       }
 
       private void Form1_SizeChanged(object sender, EventArgs e)
@@ -43,11 +44,12 @@ namespace Prog2
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
+         GL.MatrixMode(MatrixMode.Modelview);
+
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
          GL.LoadMatrix(ref lookat);
-         
-         foreach ( var figure in figures ?? Enumerable.Empty<Figure>()) // same as the Figure?.show() just done on the list
-            figure.Show();
+
+         figures?.Show(lookat);
 
          axis.Show();
 
@@ -92,26 +94,29 @@ namespace Prog2
          xLabel.Text = $"x = {defaultSliderVal}";
          yLabel.Text = $"y = {defaultSliderVal}";
          zLable.Text = $"z = {defaultSliderVal}";
-         OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
+         // OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
          axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
          rotateMode = false;
          GL.MatrixMode(MatrixMode.Projection);
-         Matrix4 projMat = Matrix4.CreateOrthographic(20.0f, 20.0f, 0.5f, 100.0f);
+         Matrix4 projMat = Matrix4.CreateOrthographic(40.0f, 40.0f, 0.5f, 100.0f);
          GL.LoadMatrix(ref projMat);
          glControl1.SwapBuffers();
          openToolStripMenuItem.Text = "Open";
-         figures = new List<Figure>();
+         figures = new FigureList();
+         moveTimer.Start();
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         var openFile = OpenFileDialog;
-         openFile.ShowDialog();
-         var verts = new VertexDataList();
-         verts.LoadDataFromVRML(openFile.FileName);
-         var newFigure = new Figure(verts);
-         figures.Add(newFigure);
+         var results = openFolder.ShowDialog();
+         figures.LoadFigures(openFolder.SelectedPath);
+         drawShape();
+      }
+
+      private void moveTimer_Tick(object sender, EventArgs e)
+      {
+         figures.Move();
          drawShape();
       }
    }

@@ -1,4 +1,6 @@
-﻿namespace Prog2
+﻿using System.Windows.Forms;
+
+namespace Prog2
 {
     partial class Form1
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+         this.components = new System.ComponentModel.Container();
          System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
          this.glControl1 = new OpenTK.GLControl();
          this.xSlider = new System.Windows.Forms.TrackBar();
@@ -42,7 +45,8 @@
          this.zLable = new System.Windows.Forms.Label();
          this.yLabel = new System.Windows.Forms.Label();
          this.xLabel = new System.Windows.Forms.Label();
-         this.OpenFileDialog = new System.Windows.Forms.OpenFileDialog();
+         this.openFolder = new System.Windows.Forms.FolderBrowserDialog();
+         this.moveTimer = new System.Windows.Forms.Timer(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.xSlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.ySlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.zSlider)).BeginInit();
@@ -52,15 +56,15 @@
          // 
          // glControl1
          // 
-         resources.ApplyResources(this.glControl1, "glControl1");
          this.glControl1.BackColor = System.Drawing.Color.Black;
+         resources.ApplyResources(this.glControl1, "glControl1");
          this.glControl1.Name = "glControl1";
          this.glControl1.VSync = false;
          // 
          // xSlider
          // 
-         resources.ApplyResources(this.xSlider, "xSlider");
          this.xSlider.LargeChange = 1;
+         resources.ApplyResources(this.xSlider, "xSlider");
          this.xSlider.Maximum = 90;
          this.xSlider.Minimum = -90;
          this.xSlider.Name = "xSlider";
@@ -68,8 +72,8 @@
          // 
          // ySlider
          // 
-         resources.ApplyResources(this.ySlider, "ySlider");
          this.ySlider.LargeChange = 1;
+         resources.ApplyResources(this.ySlider, "ySlider");
          this.ySlider.Maximum = 90;
          this.ySlider.Minimum = -90;
          this.ySlider.Name = "ySlider";
@@ -77,8 +81,8 @@
          // 
          // zSlider
          // 
-         resources.ApplyResources(this.zSlider, "zSlider");
          this.zSlider.LargeChange = 1;
+         resources.ApplyResources(this.zSlider, "zSlider");
          this.zSlider.Maximum = 90;
          this.zSlider.Minimum = -90;
          this.zSlider.Name = "zSlider";
@@ -86,34 +90,33 @@
          // 
          // menuStrip1
          // 
-         resources.ApplyResources(this.menuStrip1, "menuStrip1");
          this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
          this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
+         resources.ApplyResources(this.menuStrip1, "menuStrip1");
          this.menuStrip1.Name = "menuStrip1";
          // 
          // fileToolStripMenuItem
          // 
-         resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
          this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.openToolStripMenuItem,
             this.abortToolStripMenuItem});
          this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+         resources.ApplyResources(this.fileToolStripMenuItem, "fileToolStripMenuItem");
          // 
          // openToolStripMenuItem
          // 
-         resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
          this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+         resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
          this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
          // 
          // abortToolStripMenuItem
          // 
-         resources.ApplyResources(this.abortToolStripMenuItem, "abortToolStripMenuItem");
          this.abortToolStripMenuItem.Name = "abortToolStripMenuItem";
+         resources.ApplyResources(this.abortToolStripMenuItem, "abortToolStripMenuItem");
          // 
          // groupBox1
          // 
-         resources.ApplyResources(this.groupBox1, "groupBox1");
          this.groupBox1.Controls.Add(this.ResetButton);
          this.groupBox1.Controls.Add(this.zLable);
          this.groupBox1.Controls.Add(this.yLabel);
@@ -121,6 +124,7 @@
          this.groupBox1.Controls.Add(this.ySlider);
          this.groupBox1.Controls.Add(this.zSlider);
          this.groupBox1.Controls.Add(this.xSlider);
+         resources.ApplyResources(this.groupBox1, "groupBox1");
          this.groupBox1.Name = "groupBox1";
          this.groupBox1.TabStop = false;
          // 
@@ -146,10 +150,9 @@
          resources.ApplyResources(this.xLabel, "xLabel");
          this.xLabel.Name = "xLabel";
          // 
-         // OpenFileDialog
+         // moveTimer
          // 
-         this.OpenFileDialog.FileName = "Open";
-         resources.ApplyResources(this.OpenFileDialog, "OpenFileDialog");
+         this.moveTimer.Tick += new System.EventHandler(this.moveTimer_Tick);
          // 
          // Form1
          // 
@@ -187,9 +190,10 @@
         private System.Windows.Forms.Label zLable;
         private System.Windows.Forms.Label yLabel;
         private System.Windows.Forms.Label xLabel;
-      private System.Windows.Forms.OpenFileDialog OpenFileDialog;
+      private FolderBrowserDialog openFolder;
       private System.Windows.Forms.Button ResetButton;
       private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
+      private Timer moveTimer;
    }
 }
 
