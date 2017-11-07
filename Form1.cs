@@ -16,15 +16,16 @@ namespace Prog2
 {
    public partial class Form1 : Form
    {
-      private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
+      //private Matrix4 lookAt = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f);
       private const int defaultSliderVal = 5;
       private Axes axis;
-      private List<Figure> figures;
       private bool rotateMode;
+      private FigureList figures;
 
       public Form1()
       {
          InitializeComponent();
+         // openFolder.RootFolder = Environment.SpecialFolder.MyDocuments;
       }
 
       private void Form1_SizeChanged(object sender, EventArgs e)
@@ -43,15 +44,16 @@ namespace Prog2
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
 
+         //GL.MatrixMode(MatrixMode.Modelview);
+
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
-         GL.LoadMatrix(ref lookat);
          
-         foreach ( var figure in figures ?? Enumerable.Empty<Figure>()) // same as the Figure?.show() just done on the list
-            figure.Show();
 
-         axis.Show();
+         figures?.Show(lookat);
 
-         GL.Flush();
+         axis.Show(lookat);
+         //GL.LoadMatrix(ref lookat);
+         //GL.Flush();
          glControl1.SwapBuffers();
       }
 
@@ -81,7 +83,6 @@ namespace Prog2
       {
          //Do things with the XYZ coordinate axes
          drawShape();
-         glControl1.SwapBuffers();
       }
 
       private void Form1_Load(object sender, EventArgs e)
@@ -92,26 +93,36 @@ namespace Prog2
          xLabel.Text = $"x = {defaultSliderVal}";
          yLabel.Text = $"y = {defaultSliderVal}";
          zLable.Text = $"z = {defaultSliderVal}";
-         OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
+         // OpenFileDialog.Filter = "VMRL files (*.wrl)|*.wrl|All Files (*.*)|*.*";
          axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
-         rotateMode = false;
+         float mult = (float)glControl1.Height / (float)glControl1.Width;
+         const float WINDOW_SIZE = 2.0f;
+         const float WIN_NEAR = 2.0f;
+         const float WIN_FAR = 80.0f;
+         Matrix4 projMat = Matrix4.CreatePerspectiveOffCenter(
+        -WINDOW_SIZE, WINDOW_SIZE, -WINDOW_SIZE * mult,
+        WINDOW_SIZE * mult, WIN_NEAR, WIN_FAR);
          GL.MatrixMode(MatrixMode.Projection);
-         Matrix4 projMat = Matrix4.CreateOrthographic(20.0f, 20.0f, 0.5f, 100.0f);
          GL.LoadMatrix(ref projMat);
+         GL.MatrixMode(MatrixMode.Modelview);
+         ;
          glControl1.SwapBuffers();
          openToolStripMenuItem.Text = "Open";
-         figures = new List<Figure>();
+         figures = new FigureList();
+         moveTimer.Start();
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
-         var openFile = OpenFileDialog;
-         openFile.ShowDialog();
-         var verts = new VertexDataList();
-         verts.LoadDataFromVRML(openFile.FileName);
-         var newFigure = new Figure(verts);
-         figures.Add(newFigure);
+         var results = openFolder.ShowDialog();
+         figures.LoadFigures(openFolder.SelectedPath);
+         drawShape();
+      }
+
+      private void moveTimer_Tick(object sender, EventArgs e)
+      {
+         figures.Move();
          drawShape();
       }
    }

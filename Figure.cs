@@ -8,16 +8,25 @@ namespace Prog2
    public class Figure
    {
       private VertexData[] verts;
-      private string name = null;
+      private string name = "bob";
       private int vboHandle;
       private int vaoHandle;
       private Vector3 max;
       private Vector3 min;
       private Vector3 midPoint;
 
+      private Vector3 translateAmount;
+
+      private Matrix4 display = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+
+      private Vector3 yAxis = new Vector3(0.0f, 1.0f, 0.0f);
+      private Vector3 xAxis = new Vector3(1.0f, 0.0f, 0.0f);
+      private Vector3 zAxis = new Vector3(0.0f, 0.0f, 1.0f);
+
       public Figure(VertexDataList vertextData)
       {
          _FindBoundaries(vertextData);
+         display = Matrix4.CreateTranslation(-midPoint);
          verts = vertextData.VertexArray();
          // Make the Vertex Buffer Object (VBO) and Vertex Array Object (VAO)
          GL.GenBuffers(1, out vboHandle);
@@ -94,7 +103,7 @@ namespace Prog2
       }
 
       public void Rotate(float rotateX, float rotateY, float rotateZ)
-      {
+      {// translate before and after rotates - then + translate amount
          _RotateX(rotateX);
          _RotateY(rotateY);
          _RotateZ(rotateZ);
@@ -102,66 +111,65 @@ namespace Prog2
 
       private void _RotateY(float rotateY)
       {
-         
+         Matrix4 temp;
+         GL.MatrixMode(MatrixMode.Modelview);
+
+         Matrix4.CreateRotationY(rotateY, out temp);
+         Matrix4.Mult(display, temp);
       }
 
       private void _RotateX(float rotateX)
       {
-         throw new NotImplementedException();
+         Matrix4 temp;
+         GL.MatrixMode(MatrixMode.Modelview);
+
+         Matrix4.CreateRotationX(rotateX, out temp);
+         Matrix4.Mult(display, temp);
       }
 
       private void _RotateZ(float rotateZ)
       {
-         throw new NotImplementedException();
+         Matrix4 temp;
+         GL.MatrixMode(MatrixMode.Modelview);
+
+         Matrix4.CreateRotationZ(rotateZ, out temp);
+         Matrix4.Mult(display, temp);
       }
 
       public void Translate(float translateX, float translateY, float translateZ)
       {
-         _TranslateY(translateY);
-         _TranslateX(translateX);
-         _TranslateZ(translateZ);
-      }
-
-      private void _TranslateY(float translateY)
-      {
-         throw new NotImplementedException();
-      }
-
-      private void _TranslateX(float translateX)
-      {
-         throw new NotImplementedException();
-      }
-
-      private void _TranslateZ(float translateZ)
-      {
-         throw new NotImplementedException();
+         Matrix4 temp;
+         GL.MatrixMode(MatrixMode.Modelview);
+         translateAmount = translateAmount + new Vector3(translateX, translateY, translateZ);
+         Matrix4.CreateTranslation(translateX, translateY, translateZ, out temp);
+         Matrix4.Mult(display, temp);
       }
 
       public void Scale(float scaleX, float scaleY, float scaleZ)
       {
-         _ScaleY(scaleY);
-         _ScaleX(scaleX);
-         _ScaleZ(scaleZ);
+         Matrix4 temp;
+         GL.MatrixMode(MatrixMode.Modelview);
+
+         Matrix4.CreateScale(scaleX, scaleY, scaleZ, out temp);
+         Matrix4.Mult(display, temp);
       }
 
-      private void _ScaleZ(float scaleZ)
+      public void Show(Matrix4 lookAt)
       {
-         throw new NotImplementedException();
-      }
+         //Matrix4 temp;
 
-      private void _ScaleX(float scaleX)
-      {
-         throw new NotImplementedException();
-      }
-
-      private void _ScaleY(float scaleY)
-      {
-         throw new NotImplementedException();
-      }
-
-      public void Show()
-      {
          GL.BindVertexArray(vaoHandle);
+         var modelview = display * Matrix4.CreateTranslation(translateAmount) * lookAt;
+         //Matrix4.CreateTranslation(ref translateAmount, out temp);
+         //Matrix4.Mult(lookAt, temp);
+
+         //var showMatrix = display * Matrix4.Translation((translateAmount * Matrix4.View(lookAt)));
+         //Matrix4d.Translation((Vector3d)translateAmount);
+
+         //Matrix4.Mult(display, lookAt);
+         GL.LoadMatrix(ref modelview);
+
+
          GL.DrawArrays(PrimitiveType.Triangles, 0, verts.Length);
          GL.BindVertexArray(0);
       }

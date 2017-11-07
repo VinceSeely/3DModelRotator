@@ -53,9 +53,10 @@ public class Axes
    }
 
 
-   public void Show()
+   public void Show(Matrix4 lookat)
    {
       GL.BindVertexArray(vaoHandle);
+      GL.LoadMatrix(ref lookat);
       GL.DrawArrays(PrimitiveType.Lines, 0, verts.Length);
       GL.BindVertexArray(0);
    }
