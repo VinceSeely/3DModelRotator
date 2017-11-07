@@ -26,6 +26,7 @@ namespace Prog2
       public Figure(VertexDataList vertextData)
       {
          _FindBoundaries(vertextData);
+         display = Matrix4.CreateTranslation(-midPoint);
          verts = vertextData.VertexArray();
          // Make the Vertex Buffer Object (VBO) and Vertex Array Object (VAO)
          GL.GenBuffers(1, out vboHandle);
@@ -102,7 +103,7 @@ namespace Prog2
       }
 
       public void Rotate(float rotateX, float rotateY, float rotateZ)
-      {
+      {// translate before and after rotates - then + translate amount
          _RotateX(rotateX);
          _RotateY(rotateY);
          _RotateZ(rotateZ);
@@ -139,7 +140,7 @@ namespace Prog2
       {
          Matrix4 temp;
          GL.MatrixMode(MatrixMode.Modelview);
-
+         translateAmount = translateAmount + new Vector3(translateX, translateY, translateZ);
          Matrix4.CreateTranslation(translateX, translateY, translateZ, out temp);
          Matrix4.Mult(display, temp);
       }
@@ -155,16 +156,18 @@ namespace Prog2
 
       public void Show(Matrix4 lookAt)
       {
-         Matrix4 temp;
+         //Matrix4 temp;
 
          GL.BindVertexArray(vaoHandle);
+         var modelview = display * Matrix4.CreateTranslation(translateAmount) * lookAt;
+         //Matrix4.CreateTranslation(ref translateAmount, out temp);
+         //Matrix4.Mult(lookAt, temp);
 
-         Matrix4.CreateTranslation(ref translateAmount, out temp);
-         Matrix4.Mult(lookAt, temp);
+         //var showMatrix = display * Matrix4.Translation((translateAmount * Matrix4.View(lookAt)));
+         //Matrix4d.Translation((Vector3d)translateAmount);
 
-         Matrix4.Translation(translateAmount);
-         Matrix4d.Translation((Vector3d)translateAmount);
-         Matrix4.Mult(display, lookAt);
+         //Matrix4.Mult(display, lookAt);
+         GL.LoadMatrix(ref modelview);
 
 
          GL.DrawArrays(PrimitiveType.Triangles, 0, verts.Length);
