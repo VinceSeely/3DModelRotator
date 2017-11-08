@@ -136,8 +136,6 @@ namespace Prog2
 
       public void Show(Matrix4 lookAt)
       {
-         //Matrix4 temp;
-
          GL.BindVertexArray(vaoHandle);
          var modelview = display * Matrix4.CreateTranslation(translateAmount) * lookAt;
          
