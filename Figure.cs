@@ -105,51 +105,16 @@ namespace Prog2
       // translate before and after rotates - then + translate amount
       public void Rotate(float rotateX, float rotateY, float rotateZ)
       {
-         //Matrix4.CreateTranslation(ref translateAmount, out Matrix4 temp);
-         //Matrix4.Mult(display, temp);
-
          display = display * Matrix4.CreateTranslation(-translateAmount);
 
          display = display * Matrix4.CreateRotationX(rotateX);
          display = display * Matrix4.CreateRotationY(rotateY);
          display = display * Matrix4.CreateRotationZ(rotateZ);
 
-         //_RotateX(rotateX);
-         //_RotateY(rotateY);
-         //_RotateZ(rotateZ);
-
-         //Matrix4.CreateTranslation(ref negative, out temp);
-         //Matrix4.Mult(display, temp);
-
          display = display * Matrix4.CreateTranslation(translateAmount);
       }
 
-      private void _RotateY(float rotateY)
-      {
-         Matrix4 temp;
-         GL.MatrixMode(MatrixMode.Modelview);
 
-         Matrix4.CreateRotationY(rotateY, out temp);
-         Matrix4.Mult(display, temp);
-      }
-
-      private void _RotateX(float rotateX)
-      {
-         Matrix4 temp;
-         GL.MatrixMode(MatrixMode.Modelview);
-
-         Matrix4.CreateRotationX(rotateX, out temp);
-         Matrix4.Mult(display, temp);
-      }
-
-      private void _RotateZ(float rotateZ)
-      {
-         Matrix4 temp;
-         GL.MatrixMode(MatrixMode.Modelview);
-
-         Matrix4.CreateRotationZ(rotateZ, out temp);
-         Matrix4.Mult(display, temp);
-      }
 
       public void Translate(float translateX, float translateY, float translateZ)
       {
@@ -162,11 +127,11 @@ namespace Prog2
 
       public void Scale(float scaleX, float scaleY, float scaleZ)
       {
-         Matrix4 temp;
-         GL.MatrixMode(MatrixMode.Modelview);
+         display = display * Matrix4.CreateTranslation(-translateAmount);
 
-         Matrix4.CreateScale(scaleX, scaleY, scaleZ, out temp);
-         Matrix4.Mult(display, temp);
+         display = display * Matrix4.CreateScale(scaleX, scaleY, scaleZ);
+
+         display = display * Matrix4.CreateTranslation(translateAmount);
       }
 
       public void Show(Matrix4 lookAt)
