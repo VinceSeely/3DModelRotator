@@ -102,11 +102,26 @@ namespace Prog2
             max.X = positionX;
       }
 
+      // translate before and after rotates - then + translate amount
       public void Rotate(float rotateX, float rotateY, float rotateZ)
-      {// translate before and after rotates - then + translate amount
-         _RotateX(rotateX);
-         _RotateY(rotateY);
-         _RotateZ(rotateZ);
+      {
+         //Matrix4.CreateTranslation(ref translateAmount, out Matrix4 temp);
+         //Matrix4.Mult(display, temp);
+
+         display = display * Matrix4.CreateTranslation(-translateAmount);
+
+         display = display * Matrix4.CreateRotationX(rotateX);
+         display = display * Matrix4.CreateRotationY(rotateY);
+         display = display * Matrix4.CreateRotationZ(rotateZ);
+
+         //_RotateX(rotateX);
+         //_RotateY(rotateY);
+         //_RotateZ(rotateZ);
+
+         //Matrix4.CreateTranslation(ref negative, out temp);
+         //Matrix4.Mult(display, temp);
+
+         display = display * Matrix4.CreateTranslation(translateAmount);
       }
 
       private void _RotateY(float rotateY)
@@ -160,13 +175,7 @@ namespace Prog2
 
          GL.BindVertexArray(vaoHandle);
          var modelview = display * Matrix4.CreateTranslation(translateAmount) * lookAt;
-         //Matrix4.CreateTranslation(ref translateAmount, out temp);
-         //Matrix4.Mult(lookAt, temp);
-
-         //var showMatrix = display * Matrix4.Translation((translateAmount * Matrix4.View(lookAt)));
-         //Matrix4d.Translation((Vector3d)translateAmount);
-
-         //Matrix4.Mult(display, lookAt);
+         
          GL.LoadMatrix(ref modelview);
 
 
