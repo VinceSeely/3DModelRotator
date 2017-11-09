@@ -145,5 +145,12 @@ namespace Prog2
          GL.DrawArrays(PrimitiveType.Triangles, 0, verts.Length);
          GL.BindVertexArray(0);
       }
+      
+      public void Reset()
+      {
+         display = Matrix4.CreateTranslation(-midPoint);
+
+         translateAmount = new Vector3();
+      }
    }
 }

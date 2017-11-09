@@ -69,6 +69,7 @@ namespace Prog2
          xSlider.Value = defaultSliderVal;
          ySlider.Value = defaultSliderVal;
          zSlider.Value = defaultSliderVal;
+         figures.Reset();
          drawShape();
       }
 

@@ -69,5 +69,13 @@ namespace Prog2
             figure.movement.Move(figure.fig);
          }
       }
+
+      internal void Reset()
+      {
+         foreach(var figure in figlist)
+         {
+            figure.fig.Reset();
+         }
+      }
    }
 }
