@@ -18,7 +18,9 @@ namespace Prog2
          movePattern = new List<MovePattern>
          {
             new RotateAndMoveFIgure(),
-            new ScaleAndRotate()
+            new ScaleAndRotate(),
+            new MovePattern4(),
+            new MovePattern3()
          };
       }
       private struct FigureMovementPair

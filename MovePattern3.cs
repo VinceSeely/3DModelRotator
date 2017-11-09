@@ -6,36 +6,34 @@ using System.Threading.Tasks;
 
 namespace Prog2
 {
-   public class ScaleAndRotate : MovePattern
+   public class MovePattern3 : MovePattern 
    {
-
       private int totalMoves;
       private const int MAXMOVES = 1000;
-      private bool moveOpposite;
+      private bool goBack;
 
-      public ScaleAndRotate()
+      public MovePattern3()
       {
          totalMoves = 1;
-         moveOpposite = true;
+         goBack = false;
       }
+
       public override void Move(Figure fig)
       {
-         if (totalMoves > MAXMOVES)
+         if(totalMoves > MAXMOVES)
          {
-            moveOpposite = !moveOpposite;
             totalMoves = 1;
+            goBack = !goBack;
          }
-         if (moveOpposite)
+
+         if(!goBack)
          {
-            fig.Rotate(-0.01f, -0.01f, 0.0f);
-            fig.Scale(1.001f, 1.001f, 1.001f);
+            fig.Scale(1.001f, 1f, 1.001f);
          }
          else
          {
-            fig.Rotate(0.01f, 0.01f, 0.0f);
-            fig.Scale(0.999f, 0.999f, 0.999f);
+            fig.Scale(.999f, 1f, .999f);
          }
-
          totalMoves++;
       }
    }

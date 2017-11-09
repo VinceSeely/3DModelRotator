@@ -152,6 +152,7 @@ namespace Prog2
          // 
          // moveTimer
          // 
+         this.moveTimer.Interval = 10;
          this.moveTimer.Tick += new System.EventHandler(this.moveTimer_Tick);
          // 
          // Form1
