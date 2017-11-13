@@ -18,7 +18,9 @@ namespace Prog2
          movePattern = new List<MovePattern>
          {
             new RotateAndMoveFIgure(),
-            new ScaleAndRotate()
+            new ScaleAndRotate(),
+            new MovePattern4(),
+            new MovePattern3()
          };
       }
       private struct FigureMovementPair
@@ -67,6 +69,14 @@ namespace Prog2
          foreach (var figure in figlist ?? Enumerable.Empty<FigureMovementPair>())
          {
             figure.movement.Move(figure.fig);
+         }
+      }
+
+      internal void Reset()
+      {
+         foreach(var figure in figlist)
+         {
+            figure.fig.Reset();
          }
       }
    }
