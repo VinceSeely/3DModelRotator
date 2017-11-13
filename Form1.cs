@@ -21,6 +21,8 @@ namespace Prog2
       private bool rotateMode;
       private FigureList figures;
 
+      public bool timerIsOn { get; private set; }
+
       public Form1()
       {
          InitializeComponent();
@@ -103,6 +105,7 @@ namespace Prog2
          openToolStripMenuItem.Text = "Open";
          figures = new FigureList();
          moveTimer.Start();
+         timerIsOn = true;
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,5 +120,21 @@ namespace Prog2
          figures.Move();
          drawShape();
       }
-   }
+
+      private void StartStopButton_Click(object sender, EventArgs e)
+      {
+         if (timerIsOn)
+         {
+            moveTimer.Stop();
+            StartStopButton.Text = "Start";
+            timerIsOn = false;
+         }
+         else
+         {
+            moveTimer.Start();
+            StartStopButton.Text = "Stop";
+            timerIsOn = true;
+         }
+      }
+    }
 }
