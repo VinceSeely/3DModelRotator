@@ -106,12 +106,14 @@ namespace Prog2
       public void Rotate(float rotateX, float rotateY, float rotateZ)
       {
          display = display * Matrix4.CreateTranslation(-translateAmount);
+         display = display * Matrix4.CreateTranslation(-midPoint);
 
          display = display * Matrix4.CreateRotationX(rotateX);
          display = display * Matrix4.CreateRotationY(rotateY);
          display = display * Matrix4.CreateRotationZ(rotateZ);
 
          display = display * Matrix4.CreateTranslation(translateAmount);
+         display = display * Matrix4.CreateTranslation(midPoint);
       }
 
 
@@ -128,10 +130,12 @@ namespace Prog2
       public void Scale(float scaleX, float scaleY, float scaleZ)
       {
          display = display * Matrix4.CreateTranslation(-translateAmount);
+         display = display * Matrix4.CreateTranslation(-midPoint);
 
          display = display * Matrix4.CreateScale(scaleX, scaleY, scaleZ);
 
          display = display * Matrix4.CreateTranslation(translateAmount);
+         display = display * Matrix4.CreateTranslation(midPoint);
       }
 
       public void Show(Matrix4 lookAt)
