@@ -20,6 +20,7 @@ namespace Prog2
       private Axes axis;
       private bool rotateMode;
       private FigureList figures;
+      private const int intervalTiming = 10;
 
       public bool timerIsOn { get; private set; }
 
@@ -104,8 +105,10 @@ namespace Prog2
          glControl1.SwapBuffers();
          openToolStripMenuItem.Text = "Open";
          figures = new FigureList();
-         moveTimer.Start();
-         timerIsOn = true;
+         var moveTiming = timerTickSlider.Value* intervalTiming;
+         moveTimer.Interval = moveTiming;
+         timerLabel.Text = $"Timer tick time: {moveTiming}";
+         timerIsOn = false;
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -127,14 +130,28 @@ namespace Prog2
          {
             moveTimer.Stop();
             StartStopButton.Text = "Start";
+            timerTickSlider.Enabled = false;
             timerIsOn = false;
          }
          else
          {
             moveTimer.Start();
             StartStopButton.Text = "Stop";
+            timerTickSlider.Enabled = true;          
             timerIsOn = true;
          }
       }
-    }
+
+      private void timerTickSlider_TabIndexChanged(object sender, EventArgs e)
+      {
+
+      }
+
+      private void timerTickSlider_ValueChanged(object sender, EventArgs e)
+      {
+         var moveTiming = timerTickSlider.Value * intervalTiming;
+         moveTimer.Interval = moveTiming;
+         timerLabel.Text = $"Timer tick time: {moveTiming}";
+      }
+   }
 }
