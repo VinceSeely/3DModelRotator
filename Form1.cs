@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 namespace Prog2
 {
@@ -18,9 +10,10 @@ namespace Prog2
    {
       private const int defaultSliderVal = 5;
       private Axes axis;
-      private bool rotateMode;
       private FigureList figures;
       private const int intervalTiming = 10;
+      private ShaderLoader _shader;
+      private Matrix4 _LookAt;
 
       public bool timerIsOn { get; private set; }
 
@@ -31,7 +24,8 @@ namespace Prog2
 
       private void Form1_SizeChanged(object sender, EventArgs e)
       {
-         glControl1.SwapBuffers();
+         if (!glControl1.Enabled)
+            glControl1.SwapBuffers();
       }
 
       private void zSlider_MouseMove(object sender, MouseEventArgs e)
@@ -45,7 +39,9 @@ namespace Prog2
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
-         
+
+         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          figures?.Show(lookat);
 
@@ -53,7 +49,7 @@ namespace Prog2
          glControl1.SwapBuffers();
       }
 
-      private void xSlider_MouseMove(object sender, MouseEventArgs e)            //Displays X value
+      private void xSlider_MouseMove(object sender, MouseEventArgs e)
       {
          xLabel.Text = $"x = {xSlider.Value}";
 
@@ -83,12 +79,40 @@ namespace Prog2
 
       private void Form1_Load(object sender, EventArgs e)
       {
-         xSlider.Value = defaultSliderVal;
-         ySlider.Value = defaultSliderVal;
-         zSlider.Value = defaultSliderVal;
-         xLabel.Text = $"x = {defaultSliderVal}";
-         yLabel.Text = $"y = {defaultSliderVal}";
-         zLable.Text = $"z = {defaultSliderVal}";
+         _SetSliderss();
+         _SetUpViewingField();
+         _LoadShaders();
+
+         var lookAtLoc = GL.GetUniformLocation(_shader.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(lookAtLoc, true, ref _LookAt);
+
+         glControl1.SwapBuffers();
+
+         openToolStripMenuItem.Text = "Open";
+         figures = new FigureList();
+         _SetUpTimer();
+      }
+
+      private void _LoadShaders()
+      {
+         _shader = ShaderLoader.Instance;
+         _shader.Load(Path.Combine(Directory.GetCurrentDirectory(), "Prog4_VS.glsl"), Path.Combine(Directory.GetCurrentDirectory(), "Prog4_FS.glsl"));
+         if (!_shader.LastLoadError.Equals(""))
+         {
+            MessageBox.Show(_shader.LastLoadError);
+         }
+      }
+
+      private void _SetUpTimer()
+      {
+         var moveTiming = timerTickSlider.Value * intervalTiming;
+         moveTimer.Interval = moveTiming;
+         timerLabel.Text = $"Timer tick time: {moveTiming}";
+         timerIsOn = false;
+      }
+
+      private void _SetUpViewingField()
+      {
          axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
          float mult = (float)glControl1.Height / (float)glControl1.Width;
@@ -96,19 +120,21 @@ namespace Prog2
          const float WIN_NEAR = 2.0f;
          const float WIN_FAR = 80.0f;
          Matrix4 projMat = Matrix4.CreatePerspectiveOffCenter(
-         -WINDOW_SIZE, WINDOW_SIZE, -WINDOW_SIZE * mult,
-         WINDOW_SIZE * mult, WIN_NEAR, WIN_FAR);
-         GL.MatrixMode(MatrixMode.Projection);
-         GL.LoadMatrix(ref projMat);
-         GL.MatrixMode(MatrixMode.Modelview);
-         ;
-         glControl1.SwapBuffers();
-         openToolStripMenuItem.Text = "Open";
-         figures = new FigureList();
-         var moveTiming = timerTickSlider.Value* intervalTiming;
-         moveTimer.Interval = moveTiming;
-         timerLabel.Text = $"Timer tick time: {moveTiming}";
-         timerIsOn = false;
+            -WINDOW_SIZE, WINDOW_SIZE, -WINDOW_SIZE * mult,
+            WINDOW_SIZE * mult, WIN_NEAR, WIN_FAR);
+
+         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(viewMatrixLoc, true, ref projMat);
+      }
+
+      private void _SetSliderss()
+      {
+         xSlider.Value = defaultSliderVal;
+         ySlider.Value = defaultSliderVal;
+         zSlider.Value = defaultSliderVal;
+         xLabel.Text = $"x = {defaultSliderVal}";
+         yLabel.Text = $"y = {defaultSliderVal}";
+         zLable.Text = $"z = {defaultSliderVal}";
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,7 +163,7 @@ namespace Prog2
          {
             moveTimer.Start();
             StartStopButton.Text = "Stop";
-            timerTickSlider.Enabled = true;          
+            timerTickSlider.Enabled = true;
             timerIsOn = true;
          }
       }

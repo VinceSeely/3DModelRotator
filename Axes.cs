@@ -4,7 +4,7 @@
 using System;
 
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 
 public class Axes
@@ -42,12 +42,14 @@ public class Axes
 
       GL.GenVertexArrays(1, out vaoHandle);
       GL.BindVertexArray(vaoHandle);
+      GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 0, 0);
 
-      GL.EnableClientState(ArrayCap.VertexArray);
-      GL.EnableClientState(ArrayCap.ColorArray);
+      //GL.Enable(EnableCap.ColorTable);
+      //GL.Enable(EnableCap.VertexProgramPointSize);
 
-      GL.VertexPointer(3, VertexPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)0);
-      GL.ColorPointer(3, ColorPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)12);
+      var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "Vertex Color");
+      GL.EnableVertexAttribArray(vertColorLoc);
+      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, true, 36, 12);
 
       GL.BindVertexArray(0);
    }
@@ -56,7 +58,10 @@ public class Axes
    public void Show(Matrix4 lookat)
    {
       GL.BindVertexArray(vaoHandle);
-      GL.LoadMatrix(ref lookat);
+
+      var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+      GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+
       GL.DrawArrays(PrimitiveType.Lines, 0, verts.Length);
       GL.BindVertexArray(0);
    }
