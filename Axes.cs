@@ -43,13 +43,27 @@ public class Axes
       GL.GenVertexArrays(1, out vaoHandle);
       GL.BindVertexArray(vaoHandle);
       GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 0, 0);
-
       //GL.Enable(EnableCap.ColorTable);
       //GL.Enable(EnableCap.VertexProgramPointSize);
 
-      var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "Vertex Color");
+      //Seth was here and here is the reference https://open.gl/drawing
+      //--------------------------------------------------------------------
+      //var vertexShader = GL.CreateShader(ShaderType.VertexShader);
+      //GL.GetShaderSource(vertexShader, 1, out  null)
+     
+
+      var vertexPosition = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
+      GL.EnableVertexAttribArray(vertexPosition);
+      GL.VertexAttribPointer(vertexPosition, 3, VertexAttribPointerType.Float, true, 36, 0);
+
+      var vertexNormal = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
+      GL.EnableVertexAttribArray(vertexNormal);
+      GL.VertexAttribPointer(vertexNormal, 3, VertexAttribPointerType.Float, true, 36, 0);
+
+      var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexColor");
       GL.EnableVertexAttribArray(vertColorLoc);
-      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, true, 36, 12);
+      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
+
 
       GL.BindVertexArray(0);
    }
@@ -58,11 +72,15 @@ public class Axes
    public void Show(Matrix4 lookat)
    {
       GL.BindVertexArray(vaoHandle);
+      var identity = Matrix4.Identity;
+      var modleLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix");
+      GL.UniformMatrix4(modleLoc, false, ref identity);
 
       var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
       GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
       GL.DrawArrays(PrimitiveType.Lines, 0, verts.Length);
       GL.BindVertexArray(0);
+      
    }
 }

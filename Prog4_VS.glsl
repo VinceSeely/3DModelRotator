@@ -3,35 +3,19 @@
 	layout (location = 0) in vec3 VertexPosition;
 	layout (location = 1) in vec3 VertexNormal;
 	layout (location = 2) in vec3 VertexColor;
-	float Shininess;
-	float GlobalAmbient;
-	vec3 LightPosition;
-	vec3 LightColor;
-	mat4 ModelMatrix;
-	mat4 ViewMatrix;
+	
 	
 	out vec3 LightIntensity;
 	
-	struct LightInfo {
-	  vec4 Position; // Light position in eye coords.
-	  vec3 La; // Ambient light intensity
-	  vec3 Ld; // Diffuse light intensity
-	  vec3 Ls; // Specular light intensity
-	};
-	uniform LightInfo Light;
-	
-	struct MaterialInfo {
-	  vec3 Ka; // Ambient reflectivity
-	  vec3 Kd; // Diffuse reflectivity
-	  vec3 Ks; // Specular reflectivity
-	  float Shininess; // Specular shininess factor
-	};
-	uniform MaterialInfo Material;
-	
-	uniform mat4 ModelViewMatrix;
+   uniform float Shininess;
+	uniform float GlobalAmbient;
+	uniform vec3 LightPosition;
+	uniform vec3 LightColor;
+	uniform mat4 ModelMatrix;
+	uniform mat4 ViewMatrix;
+
 	uniform mat4 NormalMatrix;
 	uniform mat4 ProjectionMatrix;
-	uniform mat4 MVP;
 	
 	void getEyeSpace( out vec3 norm, out vec4 position )
 	{
@@ -49,8 +33,8 @@
 	  vec3 diffuse = LightColor * VertexColor * sDotN;
 	  vec3 spec = vec3(0.0);
 	  if( Shininess > 0 && sDotN > 0.0 )
-		  spec = LightColor * Material.Ks *
-				 pow( max( dot(r,v), 0.0 ), Material.Shininess );
+		  spec = LightColor * VertexColor *
+				 pow( max( dot(r,v), 0.0 ), Shininess );
 	  return ambient + diffuse + spec;
 	}
 	
