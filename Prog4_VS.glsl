@@ -46,5 +46,8 @@
 	  getEyeSpace(eyeNorm, eyePosition);
 	  // Evaluate the lighting equation.
 	  LightIntensity = phongModel( eyePosition, eyeNorm );
-	  gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(VertexPosition,1.0);
+	  //gl_Position = ProjectionMatrix * ViewMatrix * ModelMatrix * vec4(VertexPosition,1.0);
+     gl_Position = ProjectionMatrix * ViewMatrix *ModelMatrix * vec4(VertexPosition,1.0);
+     //gl_Position.xyz = VertexPosition;
+     //gl_Position.w = 1.0;
 	}	

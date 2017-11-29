@@ -13,7 +13,6 @@ namespace Prog2
       private FigureList figures;
       private const int intervalTiming = 10;
       private ShaderLoader _shader;
-      private Matrix4 _LookAt;
       private Vector3 lightSource;
 
       public bool timerIsOn { get; private set; }
@@ -43,21 +42,23 @@ namespace Prog2
 
          //light
          lightSource = new Vector3(1f, 1f, 1f);
-         var lightSoruceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
-         GL.Uniform3(lightSoruceLocaiton, lightSource);
+         var lightSourceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
+         GL.Uniform3(lightSourceLocaiton, lightSource);
+
+         //global shiny
+         var shininessLoc = GL.GetUniformLocation(_shader.ProgramHandle, "Shininess");
+         GL.Uniform1(shininessLoc, 1f);
 
          //color
          var lightColorLoc = GL.GetUniformLocation(_shader.ProgramHandle, "LightColor");
          GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 1f));
 
+         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
          GL.Uniform1(ambientLoc, 1.0f);
-
-         ////view
-         //var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-         //GL.EnableVertexAttribArray(viewMatrixLoc);
-         //GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          //figures?.Show(lookat);
 

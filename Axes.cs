@@ -2,7 +2,6 @@
 // It uses the Singleton pattern
 
 using System;
-
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
@@ -53,15 +52,15 @@ public class Axes
 
       var vertexPositionLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
       GL.EnableVertexAttribArray(vertexPositionLoc);
-      GL.VertexAttribPointer(vertexPositionLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
+      GL.VertexAttribPointer(vertexPositionLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)0);
 
       var vertexNormalLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
       GL.EnableVertexAttribArray(vertexNormalLoc);
-      GL.VertexAttribPointer(vertexNormalLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
+      GL.VertexAttribPointer(vertexNormalLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)24);
 
       var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexColor");
       GL.EnableVertexAttribArray(vertColorLoc);
-      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
+      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)12);
 
       GL.BindVertexArray(0);
    }
@@ -73,11 +72,12 @@ public class Axes
       var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
       GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
-      var identity = Matrix4.Identity;
-      var modleLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix");
-      GL.UniformMatrix4(modleLoc, false, ref identity);
+      var modelMatrix = Matrix4.Identity;
+      
+      var modelLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix"); //ModelMatrix
+      GL.UniformMatrix4(modelLoc, false, ref modelMatrix);
 
-      var normal = Matrix4.Transpose(Matrix4.Invert(identity));
+      var normal = lookat * modelMatrix ;
       var normalMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "NormalMatrix");
       GL.UniformMatrix4(normalMatrixLoc, false, ref normal);
 
