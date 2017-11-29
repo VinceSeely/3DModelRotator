@@ -41,11 +41,25 @@ namespace Prog2
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
+         //light
+         lightSource = new Vector3(1f, 1f, 1f);
+         var lightSoruceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
+         GL.Uniform3(lightSoruceLocaiton, lightSource);
+
+         //color
+         var lightColorLoc = GL.GetUniformLocation(_shader.ProgramHandle, "LightColor");
+         GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 1f));
+
+         //ambient
+         var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
+         GL.Uniform1(ambientLoc, 1.0f);
+
+         ////view
          //var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
          //GL.EnableVertexAttribArray(viewMatrixLoc);
          //GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
-         figures?.Show(lookat);
+         //figures?.Show(lookat);
 
          axis.Show(lookat);
          glControl1.SwapBuffers();
@@ -84,11 +98,6 @@ namespace Prog2
          _LoadShaders();
          _SetSliderss();
          _SetUpViewingField();
-         
-
-         var lookAtLoc = GL.GetUniformLocation(_shader.ProgramHandle, "ViewMatrix");
-         GL.EnableVertexAttribArray(lookAtLoc);
-         GL.UniformMatrix4(lookAtLoc, true, ref _LookAt);
 
          glControl1.SwapBuffers();
 
@@ -117,7 +126,7 @@ namespace Prog2
 
       private void _SetUpViewingField()
       {
-         lightSource = new Vector3(17, 3, 7);
+         
          axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
          float mult = (float)glControl1.Height / (float)glControl1.Width;
@@ -127,10 +136,9 @@ namespace Prog2
          Matrix4 projMat = Matrix4.CreatePerspectiveOffCenter(
             -WINDOW_SIZE, WINDOW_SIZE, -WINDOW_SIZE * mult,
             WINDOW_SIZE * mult, WIN_NEAR, WIN_FAR);
-         var lightSoruceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
-         GL.Uniform3(lightSoruceLocaiton, lightSource);
-         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-         GL.UniformMatrix4(viewMatrixLoc, false, ref projMat);
+
+         var projMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ProjectionMatrix");
+         GL.UniformMatrix4(projMatrixLoc, false, ref projMat);
       }
 
       private void _SetSliderss()

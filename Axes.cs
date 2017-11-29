@@ -33,6 +33,14 @@ public class Axes
       }
    }
 
+   //GL.Enable(EnableCap.ColorTable);
+   //GL.Enable(EnableCap.VertexProgramPointSize);
+
+   //Seth was here and here is the reference https://open.gl/drawing
+   //--------------------------------------------------------------------
+   //var vertexShader = GL.CreateShader(ShaderType.VertexShader);
+   //GL.GetShaderSource(vertexShader, 1, out  null)
+
    private Axes()
    {
       // Make the Vertex Buffer Object (VBO) and Vertex Array Object (VAO)
@@ -42,28 +50,18 @@ public class Axes
 
       GL.GenVertexArrays(1, out vaoHandle);
       GL.BindVertexArray(vaoHandle);
-      GL.VertexAttribPointer(0, 3, VertexAttribPointerType.Float, false, 0, 0);
-      //GL.Enable(EnableCap.ColorTable);
-      //GL.Enable(EnableCap.VertexProgramPointSize);
 
-      //Seth was here and here is the reference https://open.gl/drawing
-      //--------------------------------------------------------------------
-      //var vertexShader = GL.CreateShader(ShaderType.VertexShader);
-      //GL.GetShaderSource(vertexShader, 1, out  null)
-     
+      var vertexPositionLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
+      GL.EnableVertexAttribArray(vertexPositionLoc);
+      GL.VertexAttribPointer(vertexPositionLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
 
-      var vertexPosition = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
-      GL.EnableVertexAttribArray(vertexPosition);
-      GL.VertexAttribPointer(vertexPosition, 3, VertexAttribPointerType.Float, true, 36, 0);
-
-      var vertexNormal = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
-      GL.EnableVertexAttribArray(vertexNormal);
-      GL.VertexAttribPointer(vertexNormal, 3, VertexAttribPointerType.Float, true, 36, 0);
+      var vertexNormalLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
+      GL.EnableVertexAttribArray(vertexNormalLoc);
+      GL.VertexAttribPointer(vertexNormalLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
 
       var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexColor");
       GL.EnableVertexAttribArray(vertColorLoc);
       GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, true, 36, 0);
-
 
       GL.BindVertexArray(0);
    }
@@ -71,13 +69,19 @@ public class Axes
 
    public void Show(Matrix4 lookat)
    {
-      GL.BindVertexArray(vaoHandle);
+
+      var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+      GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+
       var identity = Matrix4.Identity;
       var modleLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix");
       GL.UniformMatrix4(modleLoc, false, ref identity);
 
-      var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-      GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+      var normal = Matrix4.Transpose(Matrix4.Invert(identity));
+      var normalMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "NormalMatrix");
+      GL.UniformMatrix4(normalMatrixLoc, false, ref normal);
+
+      GL.BindVertexArray(vaoHandle);
 
       GL.DrawArrays(PrimitiveType.Lines, 0, verts.Length);
       GL.BindVertexArray(0);
