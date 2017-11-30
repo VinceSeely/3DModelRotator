@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="glControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 133</value>
+    <value>12, 154</value>
   </data>
   <data name="glControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 278</value>
+    <value>538, 348</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="glControl1.TabIndex" type="System.Int32, mscorlib">
@@ -138,7 +138,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;glControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>11</value>
   </data>
   <data name="xSlider.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 49</value>
@@ -206,11 +206,29 @@
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>131, 17</value>
   </metadata>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="abortToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="abortToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>694, 24</value>
+    <value>734, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -228,22 +246,26 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>12</value>
   </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
+  <data name="timerLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
+  <data name="timerLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>540, 33</value>
   </data>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="timerLabel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>Yes</value>
   </data>
-  <data name="abortToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
+  <data name="timerLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
   </data>
-  <data name="abortToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abort</value>
+  <data name="timerLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="timerLabel.Text" xml:space="preserve">
+    <value>Timer tick time:</value>
   </data>
   <data name="&gt;&gt;timerLabel.Name" xml:space="preserve">
     <value>timerLabel</value>
@@ -256,90 +278,6 @@
   </data>
   <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Name" xml:space="preserve">
-    <value>StartStopButton</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Name" xml:space="preserve">
-    <value>ResetButton</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;zLable.Name" xml:space="preserve">
-    <value>zLable</value>
-  </data>
-  <data name="&gt;&gt;zLable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zLable.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;zLable.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Name" xml:space="preserve">
-    <value>yLabel</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;yLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Name" xml:space="preserve">
-    <value>xLabel</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;xLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 27</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 100</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>X, Y, and Z view value sliders</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="StartStopButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>428, 33</value>
@@ -461,6 +399,30 @@
   <data name="&gt;&gt;xLabel.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>29, 27</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>653, 100</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>X, Y, and Z view value sliders</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
   <metadata name="openFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -492,37 +454,255 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;timerTickSlider.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="timerLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="timerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 33</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="timerLabel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="timerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="timerLabel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="timerLabel.Text" xml:space="preserve">
-    <value>Timer tick time:</value>
+  <data name="globalAmbientLight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 445</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Name" xml:space="preserve">
-    <value>timerLabel</value>
+  <data name="globalAmbientLight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 45</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Type" xml:space="preserve">
+  <data name="globalAmbientLight.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLight.Name" xml:space="preserve">
+    <value>globalAmbientLight</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLight.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLight.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="globalAmbientLightLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="globalAmbientLightLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>579, 429</value>
+  </data>
+  <data name="globalAmbientLightLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="globalAmbientLightLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="globalAmbientLightLabel.Text" xml:space="preserve">
+    <value>Global Ambient Light: 0.5</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLightLabel.Name" xml:space="preserve">
+    <value>globalAmbientLightLabel</value>
+  </data>
+  <data name="&gt;&gt;globalAmbientLightLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;globalAmbientLightLabel.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;globalAmbientLightLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="LightSourceXpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LightSourceXpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 154</value>
+  </data>
+  <data name="LightSourceXpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 45</value>
+  </data>
+  <data name="LightSourceXpos.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;LightSourceXpos.Name" xml:space="preserve">
+    <value>LightSourceXpos</value>
+  </data>
+  <data name="&gt;&gt;LightSourceXpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightSourceXpos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightSourceXpos.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="LightSourceYpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LightSourceYpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 220</value>
+  </data>
+  <data name="LightSourceYpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 45</value>
+  </data>
+  <data name="LightSourceYpos.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LightSourceYpos.Name" xml:space="preserve">
+    <value>LightSourceYpos</value>
+  </data>
+  <data name="&gt;&gt;LightSourceYpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightSourceYpos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightSourceYpos.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="LightSourceZpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LightSourceZpos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>578, 288</value>
+  </data>
+  <data name="LightSourceZpos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 45</value>
+  </data>
+  <data name="LightSourceZpos.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;LightSourceZpos.Name" xml:space="preserve">
+    <value>LightSourceZpos</value>
+  </data>
+  <data name="&gt;&gt;LightSourceZpos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightSourceZpos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightSourceZpos.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="LightXposLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LightXposLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 134</value>
+  </data>
+  <data name="LightXposLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="LightXposLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="LightXposLabel.Text" xml:space="preserve">
+    <value>Light X pos: 5</value>
+  </data>
+  <data name="&gt;&gt;LightXposLabel.Name" xml:space="preserve">
+    <value>LightXposLabel</value>
+  </data>
+  <data name="&gt;&gt;LightXposLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightXposLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightXposLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LightYposLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LightYposLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LightYposLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 186</value>
+  </data>
+  <data name="LightYposLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="LightYposLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="LightYposLabel.Text" xml:space="preserve">
+    <value>Light Y pos: 5</value>
+  </data>
+  <data name="&gt;&gt;LightYposLabel.Name" xml:space="preserve">
+    <value>LightYposLabel</value>
+  </data>
+  <data name="&gt;&gt;LightYposLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightYposLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightYposLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LightZposLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LightZposLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LightZposLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 268</value>
+  </data>
+  <data name="LightZposLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 13</value>
+  </data>
+  <data name="LightZposLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="LightZposLabel.Text" xml:space="preserve">
+    <value>Light Z pos: 5</value>
+  </data>
+  <data name="&gt;&gt;LightZposLabel.Name" xml:space="preserve">
+    <value>LightZposLabel</value>
+  </data>
+  <data name="&gt;&gt;LightZposLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LightZposLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;LightZposLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="ColorBox.Items" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="ColorBox.Items1" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="ColorBox.Items2" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="ColorBox.Items3" xml:space="preserve">
+    <value>Magenta</value>
+  </data>
+  <data name="ColorBox.Items4" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="ColorBox.Items5" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="ColorBox.Items6" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="ColorBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>582, 340</value>
+  </data>
+  <data name="ColorBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="ColorBox.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;ColorBox.Name" xml:space="preserve">
+    <value>ColorBox</value>
+  </data>
+  <data name="&gt;&gt;ColorBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ColorBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ColorBox.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -532,7 +712,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>694, 423</value>
+    <value>734, 528</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>

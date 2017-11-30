@@ -34,6 +34,7 @@ namespace Prog2
       public void LoadFigures(string folderName)
       {
          var files = Directory.GetFiles(folderName);
+         var numberShiny= 0f;
          foreach (var file in files)
          {
             if (file.EndsWith(".wrl"))
@@ -42,9 +43,10 @@ namespace Prog2
                verts.LoadDataFromVRML(file);
                figlist.Add(new FigureMovementPair
                {
-                  fig = new Figure(verts),
+                  fig = new Figure(verts, numberShiny),
                   movement = getNextMove()
                });
+               numberShiny = numberShiny++ % 2;
             }
          }
       }

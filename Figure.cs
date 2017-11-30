@@ -14,7 +14,7 @@ namespace Prog2
       private Vector3 max;
       private Vector3 min;
       private Vector3 midPoint;
-
+      public float Shininess { get; set; }
       private Vector3 translateAmount;
 
       private Matrix4 display = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
@@ -23,8 +23,9 @@ namespace Prog2
       private Vector3 xAxis = new Vector3(1.0f, 0.0f, 0.0f);
       private Vector3 zAxis = new Vector3(0.0f, 0.0f, 1.0f);
 
-      public Figure(VertexDataList vertextData)
+      public Figure(VertexDataList vertextData, float shininess)
       {
+         Shininess = shininess;
          _FindBoundaries(vertextData);
          display = Matrix4.CreateTranslation(-midPoint);
          verts = vertextData.VertexArray();

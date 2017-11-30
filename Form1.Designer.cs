@@ -41,6 +41,7 @@ namespace Prog2
          this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.abortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.timerLabel = new System.Windows.Forms.Label();
          this.StartStopButton = new System.Windows.Forms.Button();
          this.ResetButton = new System.Windows.Forms.Button();
          this.zLable = new System.Windows.Forms.Label();
@@ -49,13 +50,25 @@ namespace Prog2
          this.openFolder = new System.Windows.Forms.FolderBrowserDialog();
          this.moveTimer = new System.Windows.Forms.Timer(this.components);
          this.timerTickSlider = new System.Windows.Forms.TrackBar();
-         this.timerLabel = new System.Windows.Forms.Label();
+         this.globalAmbientLight = new System.Windows.Forms.TrackBar();
+         this.globalAmbientLightLabel = new System.Windows.Forms.Label();
+         this.LightSourceXpos = new System.Windows.Forms.TrackBar();
+         this.LightSourceYpos = new System.Windows.Forms.TrackBar();
+         this.LightSourceZpos = new System.Windows.Forms.TrackBar();
+         this.LightXposLabel = new System.Windows.Forms.Label();
+         this.LightYposLabel = new System.Windows.Forms.Label();
+         this.LightZposLabel = new System.Windows.Forms.Label();
+         this.ColorBox = new System.Windows.Forms.ComboBox();
          ((System.ComponentModel.ISupportInitialize)(this.xSlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.ySlider)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.zSlider)).BeginInit();
          this.menuStrip1.SuspendLayout();
          this.groupBox1.SuspendLayout();
          ((System.ComponentModel.ISupportInitialize)(this.timerTickSlider)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.globalAmbientLight)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceXpos)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceYpos)).BeginInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceZpos)).BeginInit();
          this.SuspendLayout();
          // 
          // glControl1
@@ -118,6 +131,7 @@ namespace Prog2
          // 
          this.abortToolStripMenuItem.Name = "abortToolStripMenuItem";
          resources.ApplyResources(this.abortToolStripMenuItem, "abortToolStripMenuItem");
+         this.abortToolStripMenuItem.Click += new System.EventHandler(this.abortToolStripMenuItem_Click);
          // 
          // groupBox1
          // 
@@ -133,6 +147,11 @@ namespace Prog2
          resources.ApplyResources(this.groupBox1, "groupBox1");
          this.groupBox1.Name = "groupBox1";
          this.groupBox1.TabStop = false;
+         // 
+         // timerLabel
+         // 
+         resources.ApplyResources(this.timerLabel, "timerLabel");
+         this.timerLabel.Name = "timerLabel";
          // 
          // StartStopButton
          // 
@@ -182,23 +201,100 @@ namespace Prog2
          this.timerTickSlider.Value = 90;
          this.timerTickSlider.ValueChanged += new System.EventHandler(this.timerTickSlider_ValueChanged);
          // 
-         // timerLabel
+         // globalAmbientLight
          // 
-         resources.ApplyResources(this.timerLabel, "timerLabel");
-         this.timerLabel.Name = "timerLabel";
+         this.globalAmbientLight.LargeChange = 1;
+         resources.ApplyResources(this.globalAmbientLight, "globalAmbientLight");
+         this.globalAmbientLight.Name = "globalAmbientLight";
+         this.globalAmbientLight.Value = 5;
+         this.globalAmbientLight.ValueChanged += new System.EventHandler(this.globalAmbientLight_ValueChanged);
+         // 
+         // globalAmbientLightLabel
+         // 
+         resources.ApplyResources(this.globalAmbientLightLabel, "globalAmbientLightLabel");
+         this.globalAmbientLightLabel.Name = "globalAmbientLightLabel";
+         // 
+         // LightSourceXpos
+         // 
+         resources.ApplyResources(this.LightSourceXpos, "LightSourceXpos");
+         this.LightSourceXpos.LargeChange = 1;
+         this.LightSourceXpos.Maximum = 200;
+         this.LightSourceXpos.Name = "LightSourceXpos";
+         this.LightSourceXpos.Value = 5;
+         this.LightSourceXpos.ValueChanged += new System.EventHandler(this.LightSourceXpos_ValueChanged);
+         // 
+         // LightSourceYpos
+         // 
+         resources.ApplyResources(this.LightSourceYpos, "LightSourceYpos");
+         this.LightSourceYpos.LargeChange = 1;
+         this.LightSourceYpos.Maximum = 200;
+         this.LightSourceYpos.Name = "LightSourceYpos";
+         this.LightSourceYpos.Value = 5;
+         this.LightSourceYpos.ValueChanged += new System.EventHandler(this.LightSourceYpos_ValueChanged);
+         // 
+         // LightSourceZpos
+         // 
+         resources.ApplyResources(this.LightSourceZpos, "LightSourceZpos");
+         this.LightSourceZpos.LargeChange = 1;
+         this.LightSourceZpos.Maximum = 200;
+         this.LightSourceZpos.Name = "LightSourceZpos";
+         this.LightSourceZpos.Value = 5;
+         this.LightSourceZpos.ValueChanged += new System.EventHandler(this.LightSourceZpos_ValueChanged);
+         // 
+         // LightXposLabel
+         // 
+         resources.ApplyResources(this.LightXposLabel, "LightXposLabel");
+         this.LightXposLabel.Name = "LightXposLabel";
+         // 
+         // LightYposLabel
+         // 
+         resources.ApplyResources(this.LightYposLabel, "LightYposLabel");
+         this.LightYposLabel.Name = "LightYposLabel";
+         // 
+         // LightZposLabel
+         // 
+         resources.ApplyResources(this.LightZposLabel, "LightZposLabel");
+         this.LightZposLabel.Name = "LightZposLabel";
+         // 
+         // ColorBox
+         // 
+         this.ColorBox.FormattingEnabled = true;
+         this.ColorBox.Items.AddRange(new object[] {
+            resources.GetString("ColorBox.Items"),
+            resources.GetString("ColorBox.Items1"),
+            resources.GetString("ColorBox.Items2"),
+            resources.GetString("ColorBox.Items3"),
+            resources.GetString("ColorBox.Items4"),
+            resources.GetString("ColorBox.Items5"),
+            resources.GetString("ColorBox.Items6")});
+         resources.ApplyResources(this.ColorBox, "ColorBox");
+         this.ColorBox.Name = "ColorBox";
+         this.ColorBox.Sorted = true;
+         this.ColorBox.SelectedIndexChanged += new System.EventHandler(this.ColorBox_SelectedIndexChanged);
          // 
          // Form1
          // 
          resources.ApplyResources(this, "$this");
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.Controls.Add(this.ColorBox);
+         this.Controls.Add(this.LightZposLabel);
+         this.Controls.Add(this.LightYposLabel);
+         this.Controls.Add(this.LightXposLabel);
+         this.Controls.Add(this.LightSourceZpos);
+         this.Controls.Add(this.LightSourceYpos);
+         this.Controls.Add(this.LightSourceXpos);
+         this.Controls.Add(this.globalAmbientLightLabel);
+         this.Controls.Add(this.globalAmbientLight);
          this.Controls.Add(this.timerTickSlider);
          this.Controls.Add(this.groupBox1);
          this.Controls.Add(this.glControl1);
          this.Controls.Add(this.menuStrip1);
          this.Name = "Form1";
+         this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
          this.Load += new System.EventHandler(this.Form1_Load);
          this.Shown += new System.EventHandler(this.Form1_Shown);
          this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+         this.Resize += new System.EventHandler(this.Form1_Resize);
          ((System.ComponentModel.ISupportInitialize)(this.xSlider)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.ySlider)).EndInit();
          ((System.ComponentModel.ISupportInitialize)(this.zSlider)).EndInit();
@@ -207,6 +303,10 @@ namespace Prog2
          this.groupBox1.ResumeLayout(false);
          this.groupBox1.PerformLayout();
          ((System.ComponentModel.ISupportInitialize)(this.timerTickSlider)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.globalAmbientLight)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceXpos)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceYpos)).EndInit();
+         ((System.ComponentModel.ISupportInitialize)(this.LightSourceZpos)).EndInit();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -232,6 +332,15 @@ namespace Prog2
         private Button StartStopButton;
         private Label timerLabel;
         private TrackBar timerTickSlider;
-    }
+      private TrackBar globalAmbientLight;
+      private Label globalAmbientLightLabel;
+      private TrackBar LightSourceXpos;
+      private TrackBar LightSourceYpos;
+      private TrackBar LightSourceZpos;
+      private Label LightXposLabel;
+      private Label LightYposLabel;
+      private Label LightZposLabel;
+      private ComboBox ColorBox;
+   }
 }
 

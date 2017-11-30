@@ -41,7 +41,7 @@ namespace Prog2
          Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
          //light
-         lightSource = new Vector3(1f, 1f, 1f);
+         lightSource = new Vector3((float)LightSourceXpos.Value, (float) LightSourceYpos.Value, (float) LightSourceZpos.Value);
          var lightSourceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
          GL.Uniform3(lightSourceLocaiton, lightSource);
 
@@ -51,19 +51,48 @@ namespace Prog2
 
          //color
          var lightColorLoc = GL.GetUniformLocation(_shader.ProgramHandle, "LightColor");
-         GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 1f));
-
+         _SetColor(lightColorLoc);
          var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+
+
          GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
-         GL.Uniform1(ambientLoc, 0.0f);
+         GL.Uniform1(ambientLoc, ((float)globalAmbientLight.Value / 10.0f));
 
          figures?.Show(lookat);
 
          axis.Show(lookat);
          glControl1.SwapBuffers();
+      }
+
+      private void _SetColor(int lightColorLoc)
+      {
+         switch(ColorBox.Text)
+         {
+            case "White":
+               GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 1f));
+               break;
+            case "Black":
+               GL.Uniform3(lightColorLoc, new Vector3(0f,0f,0f));
+               break;
+            case "Red":
+               GL.Uniform3(lightColorLoc, new Vector3(1f,0f,0f));
+               break;
+            case "Green":
+               GL.Uniform3(lightColorLoc, new Vector3(0f,1f,0f));
+               break;
+            case "Blue":
+               GL.Uniform3(lightColorLoc, new Vector3(0f,0f,1f));
+               break;
+            case "Magenta":
+               GL.Uniform3(lightColorLoc, new Vector3(1f,0f,1f));
+               break;
+            case "Yellow":
+               GL.Uniform3(lightColorLoc, new Vector3(1f,1f,0f));
+               break;
+         }
       }
 
       private void xSlider_MouseMove(object sender, MouseEventArgs e)
@@ -97,12 +126,11 @@ namespace Prog2
       private void Form1_Load(object sender, EventArgs e)
       {
          _LoadShaders();
-         _SetSliderss();
          _SetUpViewingField();
+         _SetSliderss();
 
          glControl1.SwapBuffers();
 
-         openToolStripMenuItem.Text = "Open";
          figures = new FigureList();
          _SetUpTimer();
       }
@@ -150,6 +178,7 @@ namespace Prog2
          xLabel.Text = $"x = {defaultSliderVal}";
          yLabel.Text = $"y = {defaultSliderVal}";
          zLable.Text = $"z = {defaultSliderVal}";
+         ColorBox.SelectedIndex = 0;
       }
 
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -193,6 +222,50 @@ namespace Prog2
          var moveTiming = timerTickSlider.Value * intervalTiming;
          moveTimer.Interval = moveTiming;
          timerLabel.Text = $"Timer tick time: {moveTiming}";
+      }
+
+      private void globalAmbientLight_ValueChanged(object sender, EventArgs e)
+      {
+         globalAmbientLightLabel.Text = $"Global Ambient Light: {(float)globalAmbientLight.Value/10}";
+         drawShape();
+      }
+
+      private void LightSourceZpos_ValueChanged(object sender, EventArgs e)
+      {
+         LightZposLabel.Text = $"Light Z pos: {LightSourceZpos.Value}";
+         drawShape();
+      }
+
+      private void LightSourceYpos_ValueChanged(object sender, EventArgs e)
+      {
+         LightYposLabel.Text = $"Light Y pos: {LightSourceYpos.Value}";
+         drawShape();
+      }
+
+      private void LightSourceXpos_ValueChanged(object sender, EventArgs e)
+      {
+         LightXposLabel.Text = $"Light X pos: {LightSourceXpos.Value}";
+         drawShape();
+      }
+
+      private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)
+      {
+         drawShape();
+      }
+
+      private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+      {
+         _shader.Unload();
+      }
+
+      private void Form1_Resize(object sender, EventArgs e)
+      {
+         drawShape();
+      }
+
+      private void abortToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         Application.Exit();
       }
    }
 }
