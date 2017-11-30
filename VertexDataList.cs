@@ -120,7 +120,7 @@ public class VertexDataList
         {
             var dir = Vector3.Cross(vertList[i + 1].Position - vertList[i].Position, vertList[i + 2].Position - vertList[i].Position);
             var normal = Vector3.Normalize(dir);
-            vertList[i] = new VertexData(vertList[i + 2].Position, vertList[i + 2].Color, normal);
+            vertList[i] = new VertexData(vertList[i].Position, vertList[i].Color, normal);
         }
         // After we cover this, you should be able to write this in a small number of lines using Vector3 operations.
         // Hint:  Loop through, processing 3 verts at a time.
