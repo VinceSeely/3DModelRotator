@@ -219,6 +219,7 @@ namespace Prog2
          resources.ApplyResources(this.LightSourceXpos, "LightSourceXpos");
          this.LightSourceXpos.LargeChange = 1;
          this.LightSourceXpos.Maximum = 200;
+         this.LightSourceXpos.Minimum = -200;
          this.LightSourceXpos.Name = "LightSourceXpos";
          this.LightSourceXpos.Value = 5;
          this.LightSourceXpos.ValueChanged += new System.EventHandler(this.LightSourceXpos_ValueChanged);
@@ -228,6 +229,7 @@ namespace Prog2
          resources.ApplyResources(this.LightSourceYpos, "LightSourceYpos");
          this.LightSourceYpos.LargeChange = 1;
          this.LightSourceYpos.Maximum = 200;
+         this.LightSourceYpos.Minimum = -200;
          this.LightSourceYpos.Name = "LightSourceYpos";
          this.LightSourceYpos.Value = 5;
          this.LightSourceYpos.ValueChanged += new System.EventHandler(this.LightSourceYpos_ValueChanged);
@@ -237,6 +239,7 @@ namespace Prog2
          resources.ApplyResources(this.LightSourceZpos, "LightSourceZpos");
          this.LightSourceZpos.LargeChange = 1;
          this.LightSourceZpos.Maximum = 200;
+         this.LightSourceZpos.Minimum = -200;
          this.LightSourceZpos.Name = "LightSourceZpos";
          this.LightSourceZpos.Value = 5;
          this.LightSourceZpos.ValueChanged += new System.EventHandler(this.LightSourceZpos_ValueChanged);

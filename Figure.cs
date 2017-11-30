@@ -155,7 +155,7 @@ namespace Prog2
          var modelLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix"); //ModelMatrix
          GL.UniformMatrix4(modelLoc, false, ref modelview);
 
-         var normal = Matrix4.Transpose(Matrix4.Invert(modelview));
+         var normal = Matrix4.Transpose(Matrix4.Invert(modelview ));
          var normalMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "NormalMatrix");
          GL.UniformMatrix4(normalMatrixLoc, false, ref normal);
 
