@@ -113,16 +113,21 @@ public class VertexDataList
 
    private void CalculateNormals()
    {
-      // This will be completed in a future program
-      // I will explain then why we don't want to use the normals the Wings3d exports.
-      // This assumes that Wings3d exports faces in CC order.
+        // This will be completed in a future program
+        // I will explain then why we don't want to use the normals the Wings3d exports.
+        // This assumes that Wings3d exports faces in CC order.
+        for (int i = 0; i < vertList.Count; i++)
+        {
+            var dir = Vector3.Cross(vertList[i + 1].Position - vertList[i].Position, vertList[i + 2].Position - vertList[i].Position);
+            var normal = Vector3.Normalize(dir);
+            vertList[i] = new VertexData(vertList[i + 2].Position, vertList[i + 2].Color, normal);
+        }
+        // After we cover this, you should be able to write this in a small number of lines using Vector3 operations.
+        // Hint:  Loop through, processing 3 verts at a time.
+        // Note that in C#, you can't do: vertList[i + 2].Normal = normal;
+        // You need to do something like: vertList[i + 2] = new VertexData(vertList[i + 2].Position, vertList[i + 2].Color, normal);
 
-      // After we cover this, you should be able to write this in a small number of lines using Vector3 operations.
-      // Hint:  Loop through, processing 3 verts at a time.
-      // Note that in C#, you can't do: vertList[i + 2].Normal = normal;
-      // You need to do something like: vertList[i + 2] = new VertexData(vertList[i + 2].Position, vertList[i + 2].Color, normal);
-
-   }
+    }
 
    private bool LookForInVMRL(string s)
    {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 namespace Prog2
 {
@@ -14,7 +14,7 @@ namespace Prog2
       private Vector3 max;
       private Vector3 min;
       private Vector3 midPoint;
-
+      public float Shininess { get; set; }
       private Vector3 translateAmount;
 
       private Matrix4 display = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
@@ -23,8 +23,9 @@ namespace Prog2
       private Vector3 xAxis = new Vector3(1.0f, 0.0f, 0.0f);
       private Vector3 zAxis = new Vector3(0.0f, 0.0f, 1.0f);
 
-      public Figure(VertexDataList vertextData)
+      public Figure(VertexDataList vertextData, float shininess)
       {
+         Shininess = shininess;
          _FindBoundaries(vertextData);
          display = Matrix4.CreateTranslation(-midPoint);
          verts = vertextData.VertexArray();
@@ -36,11 +37,17 @@ namespace Prog2
          GL.GenVertexArrays(1, out vaoHandle);
          GL.BindVertexArray(vaoHandle);
 
-         GL.EnableClientState(ArrayCap.VertexArray);
-         GL.EnableClientState(ArrayCap.ColorArray);
+         var vertexPositionLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
+         GL.EnableVertexAttribArray(vertexPositionLoc);
+         GL.VertexAttribPointer(vertexPositionLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)0);
 
-         GL.VertexPointer(3, VertexPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)0);
-         GL.ColorPointer(3, ColorPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)12);
+         var vertexNormalLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
+         GL.EnableVertexAttribArray(vertexNormalLoc);
+         GL.VertexAttribPointer(vertexNormalLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)24);
+
+         var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexColor");
+         GL.EnableVertexAttribArray(vertColorLoc);
+         GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)12);
 
          GL.BindVertexArray(0);
       }
@@ -121,7 +128,6 @@ namespace Prog2
       public void Translate(float translateX, float translateY, float translateZ)
       {
          Matrix4 temp;
-         GL.MatrixMode(MatrixMode.Modelview);
          translateAmount = translateAmount + new Vector3(translateX, translateY, translateZ);
          Matrix4.CreateTranslation(translateX, translateY, translateZ, out temp);
          Matrix4.Mult(display, temp);
@@ -141,9 +147,17 @@ namespace Prog2
       public void Show(Matrix4 lookAt)
       {
          GL.BindVertexArray(vaoHandle);
-         var modelview = display * Matrix4.CreateTranslation(translateAmount) * lookAt;
-         
-         GL.LoadMatrix(ref modelview);
+
+         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(viewMatrixLoc, false, ref lookAt);
+
+         var modelview = display * Matrix4.CreateTranslation(translateAmount);
+         var modelLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix"); //ModelMatrix
+         GL.UniformMatrix4(modelLoc, false, ref modelview);
+
+         var normal = Matrix4.Transpose(Matrix4.Invert(modelview));
+         var normalMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "NormalMatrix");
+         GL.UniformMatrix4(normalMatrixLoc, false, ref normal);
 
 
          GL.DrawArrays(PrimitiveType.Triangles, 0, verts.Length);

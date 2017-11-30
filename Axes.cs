@@ -2,9 +2,8 @@
 // It uses the Singleton pattern
 
 using System;
-
 using OpenTK;
-using OpenTK.Graphics.OpenGL;
+using OpenTK.Graphics.OpenGL4;
 
 
 public class Axes
@@ -33,6 +32,14 @@ public class Axes
       }
    }
 
+   //GL.Enable(EnableCap.ColorTable);
+   //GL.Enable(EnableCap.VertexProgramPointSize);
+
+   //Seth was here and here is the reference https://open.gl/drawing
+   //--------------------------------------------------------------------
+   //var vertexShader = GL.CreateShader(ShaderType.VertexShader);
+   //GL.GetShaderSource(vertexShader, 1, out  null)
+
    private Axes()
    {
       // Make the Vertex Buffer Object (VBO) and Vertex Array Object (VAO)
@@ -43,11 +50,17 @@ public class Axes
       GL.GenVertexArrays(1, out vaoHandle);
       GL.BindVertexArray(vaoHandle);
 
-      GL.EnableClientState(ArrayCap.VertexArray);
-      GL.EnableClientState(ArrayCap.ColorArray);
+      var vertexPositionLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexPosition");
+      GL.EnableVertexAttribArray(vertexPositionLoc);
+      GL.VertexAttribPointer(vertexPositionLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)0);
 
-      GL.VertexPointer(3, VertexPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)0);
-      GL.ColorPointer(3, ColorPointerType.Float, BlittableValueType.StrideOf(verts), (IntPtr)12);
+      var vertexNormalLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexNormal");
+      GL.EnableVertexAttribArray(vertexNormalLoc);
+      GL.VertexAttribPointer(vertexNormalLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)24);
+
+      var vertColorLoc = GL.GetAttribLocation(ShaderLoader.Instance.ProgramHandle, "VertexColor");
+      GL.EnableVertexAttribArray(vertColorLoc);
+      GL.VertexAttribPointer(vertColorLoc, 3, VertexAttribPointerType.Float, false, BlittableValueType.StrideOf(verts), (IntPtr)12);
 
       GL.BindVertexArray(0);
    }
@@ -55,9 +68,23 @@ public class Axes
 
    public void Show(Matrix4 lookat)
    {
+
+      var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+      GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+
+      var modelMatrix = Matrix4.Identity;
+      
+      var modelLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix"); //ModelMatrix
+      GL.UniformMatrix4(modelLoc, false, ref modelMatrix);
+
+      var normal = lookat * modelMatrix ;
+      var normalMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "NormalMatrix");
+      GL.UniformMatrix4(normalMatrixLoc, false, ref normal);
+
       GL.BindVertexArray(vaoHandle);
-      GL.LoadMatrix(ref lookat);
+
       GL.DrawArrays(PrimitiveType.Lines, 0, verts.Length);
       GL.BindVertexArray(0);
+      
    }
 }
