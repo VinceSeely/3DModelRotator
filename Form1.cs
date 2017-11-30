@@ -58,9 +58,9 @@ namespace Prog2
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
-         GL.Uniform1(ambientLoc, 1.0f);
+         GL.Uniform1(ambientLoc, 0.0f);
 
-         //figures?.Show(lookat);
+         figures?.Show(lookat);
 
          axis.Show(lookat);
          glControl1.SwapBuffers();
