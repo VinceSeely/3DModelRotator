@@ -15,6 +15,15 @@ namespace Prog2
       private ShaderLoader _shader;
       private Vector3 lightSource;
 
+      // LookAt Coordinates Group
+      private float xCoord;
+      private float yCoord;
+      private float zCoord;
+     
+      // Mouse position coordinates
+      private float mouse_hor;
+      private float mouse_ver;
+
       public bool timerIsOn { get; private set; }
 
       public Form1()
@@ -27,21 +36,30 @@ namespace Prog2
          if (!glControl1.Enabled)
             glControl1.SwapBuffers();
       }
-
-      private void zSlider_MouseMove(object sender, MouseEventArgs e)
+      
+      private void loadShip()
       {
-         zLable.Text = $"z = {zSlider.Value}";
+         VertexDataList ship = new VertexDataList();
+         ship.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\Base_Zeta.wrl"));
+         var shipFigure = new Figure(ship, 300);
+         figures.Add(shipFigure, new ShipMovement());
+      }
 
-         drawShape();
+      private void loadRock()
+      {
+         VertexDataList rock = new VertexDataList();
+         rock.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\small_cave.wrl"));
+         var rockFigure = new Figure(rock, 300);
+         figures.Add(rockFigure, new ShipMovement());
       }
 
       private void drawShape()
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-         Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
+         Matrix4 lookat = Matrix4.LookAt(xCoord, yCoord, 0.0f, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
          //light
-         lightSource = new Vector3((float)LightSourceXpos.Value, (float) LightSourceYpos.Value, (float) LightSourceZpos.Value);
+         lightSource = new Vector3((float)5, (float) 5, (float)5);
          var lightSourceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
          GL.Uniform3(lightSourceLocaiton, lightSource);
 
@@ -59,7 +77,7 @@ namespace Prog2
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
-         GL.Uniform1(ambientLoc, ((float)globalAmbientLight.Value / 10.0f));
+         GL.Uniform1(ambientLoc, (0.5f));
 
          figures?.Show(lookat);
 
@@ -95,29 +113,6 @@ namespace Prog2
          }
       }
 
-      private void xSlider_MouseMove(object sender, MouseEventArgs e)
-      {
-         xLabel.Text = $"x = {xSlider.Value}";
-
-         drawShape();
-      }
-
-      private void ySlider_Scroll(object sender, EventArgs e)
-      {
-         yLabel.Text = $"y = {ySlider.Value}";
-
-         drawShape();
-      }
-
-      private void ResetButton_Click(object sender, EventArgs e)
-      {
-         xSlider.Value = defaultSliderVal;
-         ySlider.Value = defaultSliderVal;
-         zSlider.Value = defaultSliderVal;
-         figures.Reset();
-         drawShape();
-      }
-
       private void Form1_Shown(object sender, EventArgs e)
       {
          drawShape();
@@ -127,12 +122,13 @@ namespace Prog2
       {
          _LoadShaders();
          _SetUpViewingField();
-         _SetSliderss();
 
          glControl1.SwapBuffers();
 
          figures = new FigureList();
-         _SetUpTimer();
+
+         mouse_hor = glControl1.Size.Width / 2;
+         mouse_ver = glControl1.Size.Height / 2;
       }
 
       private void _LoadShaders()
@@ -143,14 +139,6 @@ namespace Prog2
          {
             MessageBox.Show(_shader.LastLoadError);
          }
-      }
-
-      private void _SetUpTimer()
-      {
-         var moveTiming = timerTickSlider.Value * intervalTiming;
-         moveTimer.Interval = moveTiming;
-         timerLabel.Text = $"Timer tick time: {moveTiming}";
-         timerIsOn = false;
       }
 
       private void _SetUpViewingField()
@@ -170,17 +158,6 @@ namespace Prog2
          GL.UniformMatrix4(projMatrixLoc, false, ref projMat);
       }
 
-      private void _SetSliderss()
-      {
-         xSlider.Value = defaultSliderVal;
-         ySlider.Value = defaultSliderVal;
-         zSlider.Value = defaultSliderVal;
-         xLabel.Text = $"x = {defaultSliderVal}";
-         yLabel.Text = $"y = {defaultSliderVal}";
-         zLable.Text = $"z = {defaultSliderVal}";
-         ColorBox.SelectedIndex = 0;
-      }
-
       private void openToolStripMenuItem_Click(object sender, EventArgs e)
       {
          var results = openFolder.ShowDialog();
@@ -191,60 +168,6 @@ namespace Prog2
       private void moveTimer_Tick(object sender, EventArgs e)
       {
          figures.Move();
-         drawShape();
-      }
-
-      private void StartStopButton_Click(object sender, EventArgs e)
-      {
-         if (timerIsOn)
-         {
-            moveTimer.Stop();
-            StartStopButton.Text = "Start";
-            timerTickSlider.Enabled = false;
-            timerIsOn = false;
-         }
-         else
-         {
-            moveTimer.Start();
-            StartStopButton.Text = "Stop";
-            timerTickSlider.Enabled = true;
-            timerIsOn = true;
-         }
-      }
-
-      private void timerTickSlider_TabIndexChanged(object sender, EventArgs e)
-      {
-
-      }
-
-      private void timerTickSlider_ValueChanged(object sender, EventArgs e)
-      {
-         var moveTiming = timerTickSlider.Value * intervalTiming;
-         moveTimer.Interval = moveTiming;
-         timerLabel.Text = $"Timer tick time: {moveTiming}";
-      }
-
-      private void globalAmbientLight_ValueChanged(object sender, EventArgs e)
-      {
-         globalAmbientLightLabel.Text = $"Global Ambient Light: {(float)globalAmbientLight.Value/10}";
-         drawShape();
-      }
-
-      private void LightSourceZpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightZposLabel.Text = $"Light Z pos: {LightSourceZpos.Value}";
-         drawShape();
-      }
-
-      private void LightSourceYpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightYposLabel.Text = $"Light Y pos: {LightSourceYpos.Value}";
-         drawShape();
-      }
-
-      private void LightSourceXpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightXposLabel.Text = $"Light X pos: {LightSourceXpos.Value}";
          drawShape();
       }
 
@@ -260,12 +183,106 @@ namespace Prog2
 
       private void Form1_Resize(object sender, EventArgs e)
       {
+         
+         mouse_hor = glControl1.Size.Width / 2;
+         mouse_ver = glControl1.Size.Height / 2;
          drawShape();
       }
 
       private void abortToolStripMenuItem_Click(object sender, EventArgs e)
       {
          Application.Exit();
+      }
+
+      private void how20ToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         string Caption = "Help";
+         string help = "This is Space Shooter. Shooting objects increases your score! \n A = Rotate left \n D = Rotate right \n W = Move forward \n L = Force close \n P = Pause \n";
+         var result = MessageBox.Show(help, Caption, MessageBoxButtons.OK);
+      }
+
+      /// <summary>
+      /// In progress
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void glControl1_MouseMove(object sender, MouseEventArgs e)
+      {
+         Cursor.Position = new System.Drawing.Point((int)mouse_hor, (int)mouse_ver);
+
+         int mx = e.X - MousePosition.X;
+         int my = e.Y - MousePosition.Y;
+
+         xCoord += mx;
+         yCoord += my;
+
+         while (xCoord >= 360 || xCoord < 0)
+         {
+            if (xCoord >= 360)
+               xCoord -= 360;
+            if (xCoord < 0)
+               xCoord += 360;
+         }
+         while (yCoord >= 360 || yCoord < 0)
+         {
+            if (yCoord >= 360)
+               yCoord -= 360;
+            if (yCoord < 0)
+               yCoord += 360;
+         }
+
+         drawShape();
+
+         glxLabel.Text = "GLX: " + e.X;
+         glyLabel.Text = "GLY: " + e.Y;
+
+         xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
+      }
+
+      /// <summary>
+      /// In Progress
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Form1_KeyDown(object sender, KeyEventArgs e)
+      {
+         if( e.KeyCode == Keys.P )
+         {
+            // Freeze glControl
+            // Unlock mouse from center of glControl1
+         }
+
+         if (e.KeyCode == Keys.L)
+            Application.Exit();
+
+         Vector3 direction = new Vector3(xCoord, yCoord, zCoord);
+         if (e.KeyCode == Keys.W)
+         {
+            drawShape();
+         }
+
+         if (e.KeyCode == Keys.A)
+         {
+            // Rotate camera left
+            drawShape();
+         }
+
+         if (e.KeyCode == Keys.D)
+         {
+            // Rotate camera right
+            drawShape();
+         }
+      }
+
+      private void Form1_MouseMove(object sender, MouseEventArgs e)
+      {
+         mouseXLabel.Text = "Form X: " + e.X;
+         mouseYLabel.Text = "Form Y: " + e.Y;
+      }
+
+      private void Form1_Move(object sender, EventArgs e)
+      {
+         formLoc.Text = "Form: " + Form1.ActiveForm.Location;
       }
    }
 }

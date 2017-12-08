@@ -8,14 +8,16 @@ namespace Prog2
    public class Figure
    {
       private VertexData[] verts;
-      private string name = "bob";
       private int vboHandle;
       private int vaoHandle;
       private Vector3 max;
+      public Vector3 Max { get { return max; } }
       private Vector3 min;
+      public Vector3 Min { get { return min; } }
       private Vector3 midPoint;
       public float Shininess { get; set; }
       private Vector3 translateAmount;
+      public Vector3 TranlateAmount { get { return translateAmount; } }
 
       private Matrix4 display = Matrix4.LookAt(25.0f, 25.0f, 25.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
 
@@ -164,6 +166,20 @@ namespace Prog2
          GL.BindVertexArray(0);
       }
       
+      public bool detectCollision(Vector3 otherCurrentMax, Vector3 otherCurrentMin )
+      {
+         var currentMax = max + translateAmount;
+         var currentMin = min + translateAmount;
+         for (int i = 0; i < 3; i++)
+         {
+            if (otherCurrentMax[i] > currentMax[i] || otherCurrentMin[i] < currentMax[i])
+            {
+               return false;
+            }
+         }
+         return true;
+      }
+
       public void Reset()
       {
          display = Matrix4.CreateTranslation(-midPoint);

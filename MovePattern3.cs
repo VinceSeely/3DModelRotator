@@ -3,38 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenTK;
 
 namespace Prog2
 {
-   public class MovePattern3 : MovePattern 
+   public class MoveStraight : MovePattern 
    {
-      private int totalMoves;
-      private const int MAXMOVES = 1000;
-      private bool goBack;
+      private Vector3 v;
+      private double m;
 
-      public MovePattern3()
+      public MoveStraight(Vector3 direction, double moveAmount)
       {
-         totalMoves = 1;
-         goBack = false;
+         v = direction;
+         m = moveAmount;
       }
 
       public override void Move(Figure fig)
       {
-         if(totalMoves > MAXMOVES)
-         {
-            totalMoves = 1;
-            goBack = !goBack;
-         }
+         double x = m * v.X;
+         double y = m * v.Y;
+         double z = m * v.Z;
 
-         if(!goBack)
-         {
-            fig.Scale(1.001f, 1f, 1.001f);
-         }
-         else
-         {
-            fig.Scale(.999f, 1f, .999f);
-         }
-         totalMoves++;
+         fig.Translate((float)x, (float)y, (float)z);
       }
    }
 }
