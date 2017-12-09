@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Axes.cs" />
-    <Compile Include="MovePatterns\MoveStraight.cs" />
+    <Compile Include="MovePatterns\PlayerShot.cs" />
     <Compile Include="FigureList.cs" />
     <Compile Include="DeprecatingMoves\MovePattern4.cs" />
     <Compile Include="MovePatterns\MoveAstroid.cs" />

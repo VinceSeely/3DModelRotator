@@ -7,12 +7,12 @@ using OpenTK;
 
 namespace AlienSpaceShooter.MovePatterns
 {
-   public class MoveStraight : MovePattern 
+   public class PlayerShot: MovePattern 
    {
       private Vector3 v;
       private double m;
 
-      public MoveStraight(Vector3 direction, double moveAmount)
+      public PlayerShot(Vector3 direction, double moveAmount)
       {
          v = direction;
          m = moveAmount;
