@@ -12,14 +12,7 @@ namespace Prog2
    {
       public List<MovePattern> movePattern;
       public int moveIndex;
-      public FigureList()
-      {
-         moveIndex = 0;
-         movePattern = new List<MovePattern>
-         {
-            
-         };
-      }
+
       private struct FigureMovementPair
       {
          public Figure fig;
