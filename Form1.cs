@@ -42,7 +42,7 @@ namespace Prog2
          VertexDataList ship = new VertexDataList();
          ship.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\Base_Zeta.wrl"));
          var shipFigure = new Figure(ship, 300);
-         figures.Add(shipFigure, new ShipMovement());
+         figures.Add(shipFigure, new AlienShipMovement());
       }
 
       private void loadRock()
@@ -50,7 +50,7 @@ namespace Prog2
          VertexDataList rock = new VertexDataList();
          rock.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\small_cave.wrl"));
          var rockFigure = new Figure(rock, 300);
-         figures.Add(rockFigure, new ShipMovement());
+         figures.Add(rockFigure, new AlienShipMovement());
       }
 
       private void drawShape()

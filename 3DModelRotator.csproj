@@ -49,10 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Axes.cs" />
-    <Compile Include="MovePattern3.cs" />
+    <Compile Include="MoveStraight.cs" />
     <Compile Include="FigureList.cs" />
-    <Compile Include="MovePattern4.cs" />
-    <Compile Include="RotateAndMoveFIgure.cs" />
+    <Compile Include="DeprecatingMoves\MovePattern4.cs" />
+    <Compile Include="DeprecatingMoves\RotateAndMoveFIgure.cs" />
     <Compile Include="Figure.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -63,10 +63,10 @@
     <Compile Include="MovePattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScaleAndRotate.cs" />
+    <Compile Include="DeprecatingMoves\ScaleAndRotate.cs" />
     <Compile Include="ShaderLoader.cs" />
     <Compile Include="Ship.cs" />
-    <Compile Include="ShipMovement.cs" />
+    <Compile Include="AlienShipMovement.cs" />
     <Compile Include="VertexDataList.cs" />
     <EmbeddedResource Include="Form1.aa-ER.resx">
       <DependentUpon>Form1.cs</DependentUpon>

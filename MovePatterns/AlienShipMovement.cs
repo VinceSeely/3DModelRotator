@@ -2,7 +2,7 @@
 
 namespace Prog2
 {
-   internal class ShipMovement : MovePattern
+   internal class AlienShipMovement : MovePattern
    {
       public override void Move(Figure fig)
       {
