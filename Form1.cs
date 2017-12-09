@@ -4,6 +4,7 @@ using System.IO;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 using AlienSpaceShooter.MovePatterns;
+using System.Drawing;
 
 namespace AlienSpaceShooter
 {
@@ -24,6 +25,7 @@ namespace AlienSpaceShooter
       // Mouse position coordinates
       private float mouse_hor;
       private float mouse_ver;
+      private Point center;
 
       public bool timerIsOn { get; private set; }
 
@@ -116,6 +118,9 @@ namespace AlienSpaceShooter
 
       private void Form1_Shown(object sender, EventArgs e)
       {
+         center = new Point(this.Location.X + glControl1.Left + glControl1.Width / 2, this.Location.Y + glControl1.Top + glControl1.Height / 2);
+         // var centerBox = glControl1.RectangleToScreen(new)
+         Cursor.Position = center;
          moveTimer.Interval = 10;
          moveTimer.Start();
          LoadObjectTimer.Interval = 900;
@@ -181,7 +186,7 @@ namespace AlienSpaceShooter
 
       private void Form1_Resize(object sender, EventArgs e)
       {
-         
+         center = new Point(this.Location.X + glControl1.Left + glControl1.Width / 2, this.Location.Y + glControl1.Top + glControl1.Height / 2);
          mouse_hor = glControl1.Size.Width / 2;
          mouse_ver = glControl1.Size.Height / 2;
          drawShape();
@@ -206,28 +211,56 @@ namespace AlienSpaceShooter
       /// <param name="e"></param>
       private void glControl1_MouseMove(object sender, MouseEventArgs e)
       {
-         Cursor.Position = new System.Drawing.Point((int)mouse_hor, (int)mouse_ver);
+         Cursor.Position = center;
 
-         int mx = e.X - MousePosition.X;
-         int my = e.Y - MousePosition.Y;
+         var eventRealx = e.X + glControl1.Location.X + this.Location.X + 8;
+         var eventRealy = e.Y + glControl1.Location.Y + this.Location.Y + 31;
 
-         xCoord += mx;
-         yCoord += my;
-
-         while (xCoord >= 360 || xCoord < 0)
+         if(eventRealx < center.X)
          {
-            if (xCoord >= 360)
-               xCoord -= 360;
-            if (xCoord < 0)
-               xCoord += 360;
+            xCoord -= .01f;
          }
-         while (yCoord >= 360 || yCoord < 0)
+         else if (eventRealx > center.X)
          {
-            if (yCoord >= 360)
-               yCoord -= 360;
-            if (yCoord < 0)
-               yCoord += 360;
+            xCoord += .01f;
          }
+         else
+         {
+            xCoord = xCoord;
+         }
+         if (eventRealy < center.Y)
+         {
+            yCoord -= .01f;
+         }
+         else if (eventRealy > center.Y)
+         {
+            yCoord += .01f;
+         }
+         else
+         {
+            yCoord = yCoord;
+         }
+
+         //int mx = e.X/100 - MousePosition.X;
+         //int my = e.Y/100 - MousePosition.Y;
+
+         //xCoord += mx;
+         //yCoord += my;
+
+         //while (xCoord >= 360 || xCoord < 0)
+         //{
+         //   if (xCoord >= 360)
+         //      xCoord -= 360;
+         //   if (xCoord < 0)
+         //      xCoord += 360;
+         //}
+         //while (yCoord >= 360 || yCoord < 0)
+         //{
+         //   if (yCoord >= 360)
+         //      yCoord -= 360;
+         //   if (yCoord < 0)
+         //      yCoord += 360;
+         //}
 
          drawShape();
 
