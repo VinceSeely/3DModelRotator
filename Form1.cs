@@ -3,8 +3,9 @@ using System.Windows.Forms;
 using System.IO;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
+using AlienSpaceShooter.MovePatterns;
 
-namespace Prog2
+namespace AlienSpaceShooter
 {
    public partial class Form1 : Form
    {
@@ -115,6 +116,10 @@ namespace Prog2
 
       private void Form1_Shown(object sender, EventArgs e)
       {
+         moveTimer.Interval = 10;
+         moveTimer.Start();
+         LoadObjectTimer.Interval = 900;
+         LoadObjectTimer.Start();
          drawShape();
       }
 
@@ -156,13 +161,6 @@ namespace Prog2
 
          var projMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ProjectionMatrix");
          GL.UniformMatrix4(projMatrixLoc, false, ref projMat);
-      }
-
-      private void openToolStripMenuItem_Click(object sender, EventArgs e)
-      {
-         var results = openFolder.ShowDialog();
-         figures.LoadFigures(openFolder.SelectedPath);
-         drawShape();
       }
 
       private void moveTimer_Tick(object sender, EventArgs e)
@@ -283,6 +281,12 @@ namespace Prog2
       private void Form1_Move(object sender, EventArgs e)
       {
          formLoc.Text = "Form: " + Form1.ActiveForm.Location;
+      }
+
+      private void LoadObjectTimer_Tick(object sender, EventArgs e)
+      {
+         loadShip();
+         loadRock();
       }
    }
 }

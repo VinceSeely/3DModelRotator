@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace Prog2
+namespace AlienSpaceShooter
 {
     partial class Form1
     {
@@ -37,19 +37,19 @@ namespace Prog2
          this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.abortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.openFolder = new System.Windows.Forms.FolderBrowserDialog();
+         this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+         this.how20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.moveTimer = new System.Windows.Forms.Timer(this.components);
          this.ColorBox = new System.Windows.Forms.ComboBox();
          this.colorLabel = new System.Windows.Forms.Label();
-         this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-         this.how20ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
          this.mouseXLabel = new System.Windows.Forms.Label();
          this.mouseYLabel = new System.Windows.Forms.Label();
          this.glxLabel = new System.Windows.Forms.Label();
          this.glyLabel = new System.Windows.Forms.Label();
          this.devBox = new System.Windows.Forms.GroupBox();
-         this.formLoc = new System.Windows.Forms.Label();
          this.xyViewLabel = new System.Windows.Forms.Label();
+         this.formLoc = new System.Windows.Forms.Label();
+         this.LoadObjectTimer = new System.Windows.Forms.Timer(this.components);
          this.menuStrip1.SuspendLayout();
          this.devBox.SuspendLayout();
          this.SuspendLayout();
@@ -83,7 +83,6 @@ namespace Prog2
          // 
          this.openToolStripMenuItem.Name = "openToolStripMenuItem";
          resources.ApplyResources(this.openToolStripMenuItem, "openToolStripMenuItem");
-         this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
          // 
          // abortToolStripMenuItem
          // 
@@ -91,9 +90,18 @@ namespace Prog2
          resources.ApplyResources(this.abortToolStripMenuItem, "abortToolStripMenuItem");
          this.abortToolStripMenuItem.Click += new System.EventHandler(this.abortToolStripMenuItem_Click);
          // 
-         // openFolder
+         // helpToolStripMenuItem
          // 
-         resources.ApplyResources(this.openFolder, "openFolder");
+         this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.how20ToolStripMenuItem});
+         this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+         resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+         // 
+         // how20ToolStripMenuItem
+         // 
+         this.how20ToolStripMenuItem.Name = "how20ToolStripMenuItem";
+         resources.ApplyResources(this.how20ToolStripMenuItem, "how20ToolStripMenuItem");
+         this.how20ToolStripMenuItem.Click += new System.EventHandler(this.how20ToolStripMenuItem_Click);
          // 
          // moveTimer
          // 
@@ -121,19 +129,6 @@ namespace Prog2
          resources.ApplyResources(this.colorLabel, "colorLabel");
          this.colorLabel.Name = "colorLabel";
          this.colorLabel.UseMnemonic = false;
-         // 
-         // helpToolStripMenuItem
-         // 
-         this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.how20ToolStripMenuItem});
-         this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-         resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-         // 
-         // how20ToolStripMenuItem
-         // 
-         this.how20ToolStripMenuItem.Name = "how20ToolStripMenuItem";
-         resources.ApplyResources(this.how20ToolStripMenuItem, "how20ToolStripMenuItem");
-         this.how20ToolStripMenuItem.Click += new System.EventHandler(this.how20ToolStripMenuItem_Click);
          // 
          // mouseXLabel
          // 
@@ -167,15 +162,19 @@ namespace Prog2
          this.devBox.Name = "devBox";
          this.devBox.TabStop = false;
          // 
+         // xyViewLabel
+         // 
+         resources.ApplyResources(this.xyViewLabel, "xyViewLabel");
+         this.xyViewLabel.Name = "xyViewLabel";
+         // 
          // formLoc
          // 
          resources.ApplyResources(this.formLoc, "formLoc");
          this.formLoc.Name = "formLoc";
          // 
-         // xyViewLabel
+         // LoadObjectTimer
          // 
-         resources.ApplyResources(this.xyViewLabel, "xyViewLabel");
-         this.xyViewLabel.Name = "xyViewLabel";
+         this.LoadObjectTimer.Tick += new System.EventHandler(this.LoadObjectTimer_Tick);
          // 
          // Form1
          // 
@@ -210,7 +209,6 @@ namespace Prog2
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abortToolStripMenuItem;
-      private FolderBrowserDialog openFolder;
       private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
       private Timer moveTimer;
       private ComboBox ColorBox;
@@ -224,6 +222,7 @@ namespace Prog2
       private GroupBox devBox;
       private Label formLoc;
       private Label xyViewLabel;
+      private Timer LoadObjectTimer;
    }
 }
 

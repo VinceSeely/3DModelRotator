@@ -145,38 +145,8 @@
     <value>3</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>131, 17</value>
+    <value>162, 17</value>
   </metadata>
-  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
-  </data>
-  <data name="openToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open</value>
-  </data>
-  <data name="abortToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 22</value>
-  </data>
-  <data name="abortToolStripMenuItem.Text" xml:space="preserve">
-    <value>Abort</value>
-  </data>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
-  <data name="how20ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="how20ToolStripMenuItem.Text" xml:space="preserve">
-    <value>How 2.0</value>
-  </data>
-  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 20</value>
-  </data>
-  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
-    <value>Help</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -201,14 +171,38 @@
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <metadata name="openFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="openFolder.SelectedPath" xml:space="preserve">
-    <value>K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\3DModelRotator\ObjectsToLoad</value>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="openToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="abortToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 22</value>
+  </data>
+  <data name="abortToolStripMenuItem.Text" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="how20ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
+  </data>
+  <data name="how20ToolStripMenuItem.Text" xml:space="preserve">
+    <value>How 2.0</value>
   </data>
   <metadata name="moveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 17</value>
+    <value>277, 17</value>
   </metadata>
   <data name="ColorBox.Items" xml:space="preserve">
     <value>Black</value>
@@ -387,6 +381,54 @@
   <data name="&gt;&gt;glyLabel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;xyViewLabel.Name" xml:space="preserve">
+    <value>xyViewLabel</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Name" xml:space="preserve">
+    <value>formLoc</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;formLoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="devBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>721, 71</value>
+  </data>
+  <data name="devBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 478</value>
+  </data>
+  <data name="devBox.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="devBox.Text" xml:space="preserve">
+    <value>Dev Info</value>
+  </data>
+  <data name="&gt;&gt;devBox.Name" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;devBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;devBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;devBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="xyViewLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -444,30 +486,9 @@
   <data name="&gt;&gt;formLoc.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="devBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>721, 71</value>
-  </data>
-  <data name="devBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 478</value>
-  </data>
-  <data name="devBox.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="devBox.Text" xml:space="preserve">
-    <value>Dev Info</value>
-  </data>
-  <data name="&gt;&gt;devBox.Name" xml:space="preserve">
-    <value>devBox</value>
-  </data>
-  <data name="&gt;&gt;devBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;devBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;devBox.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
+  <metadata name="LoadObjectTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -916,18 +937,6 @@
   <data name="&gt;&gt;abortToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openFolder.Name" xml:space="preserve">
-    <value>openFolder</value>
-  </data>
-  <data name="&gt;&gt;openFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;moveTimer.Name" xml:space="preserve">
-    <value>moveTimer</value>
-  </data>
-  <data name="&gt;&gt;moveTimer.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
     <value>helpToolStripMenuItem</value>
   </data>
@@ -939,6 +948,18 @@
   </data>
   <data name="&gt;&gt;how20ToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;moveTimer.Name" xml:space="preserve">
+    <value>moveTimer</value>
+  </data>
+  <data name="&gt;&gt;moveTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LoadObjectTimer.Name" xml:space="preserve">
+    <value>LoadObjectTimer</value>
+  </data>
+  <data name="&gt;&gt;LoadObjectTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

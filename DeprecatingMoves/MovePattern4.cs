@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Prog2
+namespace AlienSpaceShooter.MovePatterns
 {
    public class MovePattern4 : MovePattern
    {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Prog2.Properties
+namespace AlienSpaceShooter.Properties
 {
 
 

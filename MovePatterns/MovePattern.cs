@@ -1,4 +1,4 @@
-﻿namespace Prog2
+﻿namespace AlienSpaceShooter.MovePatterns
 {
    public abstract class MovePattern
    {

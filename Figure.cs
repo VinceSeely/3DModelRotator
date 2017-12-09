@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
 
-namespace Prog2
+namespace AlienSpaceShooter
 {
    public class Figure
    {

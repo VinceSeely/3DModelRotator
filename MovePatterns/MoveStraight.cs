@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenTK;
 
-namespace Prog2
+namespace AlienSpaceShooter.MovePatterns
 {
    public class MoveStraight : MovePattern 
    {

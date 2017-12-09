@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace Prog2
+namespace AlienSpaceShooter.MovePatterns
 {
    internal class AlienShipMovement : MovePattern
    {
+
+      private Random rand = new Random();
       public override void Move(Figure fig)
       {
-         throw new NotImplementedException();
+         fig.Translate((float)rand.NextDouble(), (float)rand.NextDouble(), (float)rand.NextDouble());
       }
    }
 }

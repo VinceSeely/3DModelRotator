@@ -1,19 +1,10 @@
 ﻿using System;
 
-namespace Prog2
+namespace AlienSpaceShooter.MovePatterns
 {
    public class RotateAndMoveFIgure : MovePattern
    {
-      private int totalMoves;
-      private const int MAXMOVES = 1000;
-      private bool moveOut;
       private Random rand = new Random();
-
-      public RotateAndMoveFIgure()
-      {
-         totalMoves = 1;
-         moveOut = true;
-      }
 
       public override void Move(Figure fig)
       {
