@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Prog2
+namespace AlienSpaceShooter
 {
     static class Program
     {
@@ -16,7 +16,14 @@ namespace Prog2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+               Application.Run(new Form1());
+            }
+            catch( NullReferenceException e )
+            {
+
+            }
         }
     }
 }
