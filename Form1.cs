@@ -139,7 +139,8 @@ namespace AlienSpaceShooter
          _SetUpViewingField();
 
          glControl1.SwapBuffers();
-
+         ColorBox.SelectedIndex = 2;
+         ColorBox.Enabled = false;
          figures = new FigureList();
          mouseIsLocked = true;
          mouse_hor = glControl1.Size.Width / 2;
@@ -367,60 +368,59 @@ namespace AlienSpaceShooter
 
       private void glControl1_KeyDown(object sender, KeyEventArgs e)
       {
-         if (e.KeyCode == Keys.L)
+         Task.Factory.StartNew(() =>
          {
-            Form1.ActiveForm.Close();
-         }
-
-         if (e.KeyCode == Keys.P)
-         {
-            // Freeze glControl
-            // Unlock mouse from center of glControl1
-            mouseIsLocked = !mouseIsLocked;
-            if (!mouseIsLocked)
+            if(!moveFigures)
+            if (e.KeyCode == Keys.L)
             {
-               LoadObjectTimer.Stop();
-               moveTimer.Stop();
-               Cursor.Show();
+               Form1.ActiveForm.Close();
             }
-            else
+
+            if (e.KeyCode == Keys.P)
             {
-               LoadObjectTimer.Start();
-               moveTimer.Start();
-               Cursor.Hide();
+               // Freeze glControl
+               // Unlock mouse from center of glControl1
+               mouseIsLocked = !mouseIsLocked;
+               if (!mouseIsLocked)
+               {
+                  ColorBox.Enabled = true;
+                  LoadObjectTimer.Stop();
+                  moveTimer.Stop();
+                  Cursor.Show();
+               }
+               else
+               {
+                  ColorBox.Enabled = false;
+                  LoadObjectTimer.Start();
+                  moveTimer.Start();
+                  Cursor.Hide();
+               }
             }
-         }
 
-         //--------------------------------------------------------------
-         //Here are all the controls.
-         //--------------------------------------------------------------
-         Vector3 direction = new Vector3(xCoord, yCoord, zCoord);
-         if (e.KeyCode == Keys.W)
-         {
-            //Ship.Instance.ChangeDirection(;
-            Ship.Instance.Move(5);
-            drawShape();
-         }
+            //--------------------------------------------------------------
+            //Here are all the controls.
+            //--------------------------------------------------------------
+            Vector3 direction = new Vector3(xCoord, yCoord, zCoord);
+            if (e.KeyCode == Keys.W)
+            {
+               Ship.Instance.Move(1);
+            }
 
-         if (e.KeyCode == Keys.A)
-         {
-            //TODO figure out left move
-            Ship.Instance.ChangeDirection(90, 90);
-            Ship.Instance.Move(5);
-            Ship.Instance.ChangeDirection(-90, -90);
-            // Rotate camera left
-            drawShape();
-         }
+            if (e.KeyCode == Keys.A)
+            {
+               //TODO figure out left move;
+            }
 
-         if (e.KeyCode == Keys.D)
-         {
-            //TODO figure out right move
-            Ship.Instance.ChangeDirection(-90, -90);
-            Ship.Instance.Move(5);
-            Ship.Instance.ChangeDirection(90, 90);
-            // Rotate camera right
-            drawShape();
-         }
+            if (e.KeyCode == Keys.S)
+            {
+               Ship.Instance.Move(-1);
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+               //TODO figure out right move
+            }
+         });
       }
    }
 }

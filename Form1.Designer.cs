@@ -111,6 +111,7 @@ namespace AlienSpaceShooter
          // 
          // ColorBox
          // 
+         this.ColorBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
          this.ColorBox.FormattingEnabled = true;
          this.ColorBox.Items.AddRange(new object[] {
             resources.GetString("ColorBox.Items"),
