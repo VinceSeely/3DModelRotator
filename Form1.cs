@@ -27,7 +27,9 @@ namespace AlienSpaceShooter
       private float mouse_hor;
       private float mouse_ver;
       private Point center;
-      private bool mouseLocked;
+      private bool mouseIsLocked;
+      private bool moveFigures;
+      private int numberOfmoves;
 
       public bool timerIsOn { get; private set; }
 
@@ -61,7 +63,7 @@ namespace AlienSpaceShooter
       private void drawShape()
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-         Matrix4 lookat = Matrix4.LookAt(xCoord, yCoord, 0.0f, 0f, 0f, 0f, 0f, 1.0f, 0f);
+        // Matrix4 lookat = Ship.Instance.LookAt();//Matrix4.LookAt(xCoord, yCoord, 0.0f, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
          //light
          lightSource = new Vector3((float)5, (float)5, (float)5);
@@ -78,15 +80,15 @@ namespace AlienSpaceShooter
          var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
 
 
-         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+         //GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
          GL.Uniform1(ambientLoc, (0.3f));
 
-         figures?.Show(lookat);
+         figures?.Show(Ship.Instance.LookAt());
 
-         axis.Show(lookat);
+         axis.Show(Ship.Instance.LookAt());
          glControl1.SwapBuffers();
       }
 
@@ -139,7 +141,7 @@ namespace AlienSpaceShooter
          glControl1.SwapBuffers();
 
          figures = new FigureList();
-         mouseLocked = false;
+         mouseIsLocked = true;
          mouse_hor = glControl1.Size.Width / 2;
          mouse_ver = glControl1.Size.Height / 2;
       }
@@ -173,9 +175,18 @@ namespace AlienSpaceShooter
 
       private void moveTimer_Tick(object sender, EventArgs e)
       {
+         if (moveFigures)
+         {
+            moveFigures = false;
+            figures.Move();
 
-         figures.Move();
-         drawShape();
+            drawShape();
+         }
+         else
+         {
+            moveFigures = true;
+         }
+         
       }
 
       private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -217,75 +228,52 @@ namespace AlienSpaceShooter
       {
          Task.Factory.StartNew(() =>
          {
-            if (!mouseLocked)
+            //Cursor.Position = center;
+            if (!moveFigures)
             {
-               Cursor.Position = center;
-
-               var eventRealx = e.X + glControl1.Location.X + this.Location.X + 8;
-               var eventRealy = e.Y + glControl1.Location.Y + this.Location.Y + 31;
-
-               if (eventRealx < center.X)
+               moveFigures = true;
+               if (mouseIsLocked)
                {
-                  xCoord -= .01f;
-               }
-               else if (eventRealx > center.X)
-               {
-                  xCoord += .01f;
-               }
-               else
-               {
-                  xCoord = xCoord;
-               }
-               if (eventRealy < center.Y)
-               {
-                  yCoord -= .01f;
-               }
-               else if (eventRealy > center.Y)
-               {
-                  yCoord += .01f;
-               }
-               else
-               {
-                  yCoord = yCoord;
-               }
+                  Cursor.Position = center;
+                  var eventRealx = e.X + glControl1.Location.X + this.Location.X + 8;
+                  var eventRealy = e.Y + glControl1.Location.Y + this.Location.Y + 31;
+                  var newX = 0.0f;
+                  var newY = 0.0f;
 
-               //int mx = e.X/100 - MousePosition.X;
-               //int my = e.Y/100 - MousePosition.Y;
+                  if (eventRealx < center.X)
+                  {
+                     newX = -0.01f;
+                  }
+                  else if (eventRealx > center.X)
+                  {
+                     newX = .01f;
+                  }
+                  if (eventRealy < center.Y)
+                  {
+                     newY = -.01f;
+                  }
+                  else if (eventRealy > center.Y)
+                  {
+                     newY = .01f;
+                  }
 
-               //xCoord += mx;
-               //yCoord += my;
+                  Ship.Instance.ChangeDirection(newX, newY);
 
-               //while (xCoord >= 360 || xCoord < 0)
-               //{
-               //   if (xCoord >= 360)
-               //      xCoord -= 360;
-               //   if (xCoord < 0)
-               //      xCoord += 360;
-               //}
-               //while (yCoord >= 360 || yCoord < 0)
-               //{
-               //   if (yCoord >= 360)
-               //      yCoord -= 360;
-               //   if (yCoord < 0)
-               //      yCoord += 360;
-               //}
+                  try
+                  {
+                     glxLabel.Text = "GLX: " + e.X;
+                     glyLabel.Text = "GLY: " + e.Y;
+                     xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
+                  }
+                  catch (InvalidOperationException v)
+                  {
 
-               //   drawShape();
+                  }
 
-
-               try
-               {
-                  glxLabel.Text = "GLX: " + e.X;
-                  glyLabel.Text = "GLY: " + e.Y;
-                  xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
-               }
-               catch (InvalidOperationException v)
-               {
 
                }
-
-
             }
+            //drawShape();
          });
       }
 
@@ -374,6 +362,7 @@ namespace AlienSpaceShooter
       {
          loadShip();
          loadRock();
+         drawShape();
       }
 
       private void glControl1_KeyDown(object sender, KeyEventArgs e)
@@ -387,8 +376,8 @@ namespace AlienSpaceShooter
          {
             // Freeze glControl
             // Unlock mouse from center of glControl1
-            mouseLocked = !mouseLocked;
-            if (mouseLocked)
+            mouseIsLocked = !mouseIsLocked;
+            if (!mouseIsLocked)
             {
                LoadObjectTimer.Stop();
                moveTimer.Stop();

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
+using OpenTK.Graphics.OpenGL4;
 
 namespace AlienSpaceShooter
 {
-   public class Ship
+   public class Ship 
    {
       private float dirTheta;     // Theta for current direction
       private float dirPhi;       // Phi for current direction
@@ -15,6 +17,7 @@ namespace AlienSpaceShooter
       private Vector3 position;   // Current position of ship
       private Vector3 max, min;   // Bounding Box of ship
       private static Ship _instance = null;   // Singleton instance – must be private!
+      private Matrix4 lookat;
 
       public static Ship Instance
       {
@@ -56,6 +59,13 @@ namespace AlienSpaceShooter
          direction[1] = (float)Math.Cos(dirPhi);
          direction[0] = (float)(Math.Sin(dirPhi) * Math.Sin(dirTheta));
          direction[2] = (float)(Math.Sin(dirPhi) * Math.Cos(dirTheta));
+         lookat = Matrix4.LookAt(position[0], position[1], position[2],
+             (float)(position[0] + Math.Sin(dirPhi) * Math.Sin(dirTheta)),
+             (float)(position[1] + Math.Cos(dirPhi)),
+             (float)(position[2] + Math.Sin(dirPhi) * Math.Cos(dirTheta)),
+             0, 1, 0);
+         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
       }
 
       public void Move(double amount)
@@ -68,11 +78,7 @@ namespace AlienSpaceShooter
       // Main form can call this to get the View Matrix
       public Matrix4 LookAt()
       {
-         return Matrix4.LookAt(position[0], position[1], position[2],
-            (float)(position[0] + Math.Sin(dirPhi) * Math.Sin(dirTheta)),
-            (float)(position[1] + Math.Cos(dirPhi)),
-            (float)(position[2] + Math.Sin(dirPhi) * Math.Cos(dirTheta)),
-            0, 1, 0);
+         return lookat;
       }
 
       // etc. Add whatever you need

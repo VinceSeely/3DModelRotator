@@ -150,8 +150,8 @@ namespace AlienSpaceShooter
       {
          GL.BindVertexArray(vaoHandle);
 
-         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-         GL.UniformMatrix4(viewMatrixLoc, false, ref lookAt);
+         //var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
+         //GL.UniformMatrix4(viewMatrixLoc, false, ref lookAt);
 
          var modelview = display * Matrix4.CreateTranslation(translateAmount);
          var modelLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ModelMatrix"); //ModelMatrix
