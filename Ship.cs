@@ -64,8 +64,6 @@ namespace AlienSpaceShooter
              (float)(position[1] + Math.Cos(dirPhi)),
              (float)(position[2] + Math.Sin(dirPhi) * Math.Cos(dirTheta)),
              0, 1, 0);
-         var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
       }
 
       public void Move(double amount)

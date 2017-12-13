@@ -78,7 +78,8 @@ namespace AlienSpaceShooter
          var lightColorLoc = GL.GetUniformLocation(_shader.ProgramHandle, "LightColor");
          _SetColor(lightColorLoc);
          var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-
+         var lookat = Ship.Instance.LookAt();
+         GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          //GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
