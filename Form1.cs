@@ -3,8 +3,11 @@ using System.Windows.Forms;
 using System.IO;
 using OpenTK;
 using OpenTK.Graphics.OpenGL4;
+using AlienSpaceShooter.MovePatterns;
+using System.Drawing;
+using System.Threading.Tasks;
 
-namespace Prog2
+namespace AlienSpaceShooter
 {
    public partial class Form1 : Form
    {
@@ -14,6 +17,19 @@ namespace Prog2
       private const int intervalTiming = 10;
       private ShaderLoader _shader;
       private Vector3 lightSource;
+
+      // LookAt Coordinates Group
+      private float xCoord;
+      private float yCoord;
+      private float zCoord;
+
+      // Mouse position coordinates
+      private float mouse_hor;
+      private float mouse_ver;
+      private Point center;
+      private bool mouseIsLocked;
+      private bool moveFigures;
+      private int numberOfmoves;
 
       public bool timerIsOn { get; private set; }
 
@@ -28,20 +44,29 @@ namespace Prog2
             glControl1.SwapBuffers();
       }
 
-      private void zSlider_MouseMove(object sender, MouseEventArgs e)
+      private void loadShip()
       {
-         zLable.Text = $"z = {zSlider.Value}";
+         VertexDataList ship = new VertexDataList();
+         ship.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\Base_Zeta.wrl"));
+         var shipFigure = new Figure(ship, 300);
+         figures.Add(shipFigure, new AlienShipMovement());
+      }
 
-         drawShape();
+      private void loadRock()
+      {
+         VertexDataList rock = new VertexDataList();
+         rock.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\small_cave.wrl"));
+         var rockFigure = new Figure(rock, 300);
+         figures.Add(rockFigure, new AlienShipMovement());
       }
 
       private void drawShape()
       {
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-         Matrix4 lookat = Matrix4.LookAt(xSlider.Value, ySlider.Value, zSlider.Value, 0f, 0f, 0f, 0f, 1.0f, 0f);
+        // Matrix4 lookat = Ship.Instance.LookAt();//Matrix4.LookAt(xCoord, yCoord, 0.0f, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
          //light
-         lightSource = new Vector3((float)LightSourceXpos.Value, (float) LightSourceYpos.Value, (float) LightSourceZpos.Value);
+         lightSource = Ship.Instance.Position;
          var lightSourceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
          GL.Uniform3(lightSourceLocaiton, lightSource);
 
@@ -53,73 +78,60 @@ namespace Prog2
          var lightColorLoc = GL.GetUniformLocation(_shader.ProgramHandle, "LightColor");
          _SetColor(lightColorLoc);
          var viewMatrixLoc = GL.GetUniformLocation(ShaderLoader.Instance.ProgramHandle, "ViewMatrix");
-
-
+         var lookat = Ship.Instance.LookAt();
+ 
          GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
+
+         //GL.UniformMatrix4(viewMatrixLoc, false, ref lookat);
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
-         GL.Uniform1(ambientLoc, ((float)globalAmbientLight.Value / 10.0f));
+         GL.Uniform1(ambientLoc, (0.3f));
 
-         figures?.Show(lookat);
+         figures?.Show(Ship.Instance.LookAt());
 
-         axis.Show(lookat);
+         axis.Show(Ship.Instance.LookAt());
          glControl1.SwapBuffers();
       }
 
       private void _SetColor(int lightColorLoc)
       {
-         switch(ColorBox.Text)
+         switch (ColorBox.Text)
          {
             case "White":
                GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 1f));
                break;
             case "Black":
-               GL.Uniform3(lightColorLoc, new Vector3(0f,0f,0f));
+               GL.Uniform3(lightColorLoc, new Vector3(0f, 0f, 0f));
                break;
             case "Red":
-               GL.Uniform3(lightColorLoc, new Vector3(1f,0f,0f));
+               GL.Uniform3(lightColorLoc, new Vector3(1f, 0f, 0f));
                break;
             case "Green":
-               GL.Uniform3(lightColorLoc, new Vector3(0f,1f,0f));
+               GL.Uniform3(lightColorLoc, new Vector3(0f, 1f, 0f));
                break;
             case "Blue":
-               GL.Uniform3(lightColorLoc, new Vector3(0f,0f,1f));
+               GL.Uniform3(lightColorLoc, new Vector3(0f, 0f, 1f));
                break;
             case "Magenta":
-               GL.Uniform3(lightColorLoc, new Vector3(1f,0f,1f));
+               GL.Uniform3(lightColorLoc, new Vector3(1f, 0f, 1f));
                break;
             case "Yellow":
-               GL.Uniform3(lightColorLoc, new Vector3(1f,1f,0f));
+               GL.Uniform3(lightColorLoc, new Vector3(1f, 1f, 0f));
                break;
          }
       }
 
-      private void xSlider_MouseMove(object sender, MouseEventArgs e)
-      {
-         xLabel.Text = $"x = {xSlider.Value}";
-
-         drawShape();
-      }
-
-      private void ySlider_Scroll(object sender, EventArgs e)
-      {
-         yLabel.Text = $"y = {ySlider.Value}";
-
-         drawShape();
-      }
-
-      private void ResetButton_Click(object sender, EventArgs e)
-      {
-         xSlider.Value = defaultSliderVal;
-         ySlider.Value = defaultSliderVal;
-         zSlider.Value = defaultSliderVal;
-         figures.Reset();
-         drawShape();
-      }
-
       private void Form1_Shown(object sender, EventArgs e)
       {
+         center = new Point(this.Location.X + glControl1.Left + glControl1.Width / 2, this.Location.Y + glControl1.Top + glControl1.Height / 2);
+         // var centerBox = glControl1.RectangleToScreen(new)
+         Cursor.Position = center;
+         Cursor.Hide(); //= new Size(0, 0);
+         moveTimer.Interval = 10;
+         moveTimer.Start();
+         LoadObjectTimer.Interval = 900;
+         LoadObjectTimer.Start();
          drawShape();
       }
 
@@ -127,12 +139,13 @@ namespace Prog2
       {
          _LoadShaders();
          _SetUpViewingField();
-         _SetSliderss();
 
          glControl1.SwapBuffers();
 
          figures = new FigureList();
-         _SetUpTimer();
+         mouseIsLocked = true;
+         mouse_hor = glControl1.Size.Width / 2;
+         mouse_ver = glControl1.Size.Height / 2;
       }
 
       private void _LoadShaders()
@@ -145,17 +158,9 @@ namespace Prog2
          }
       }
 
-      private void _SetUpTimer()
-      {
-         var moveTiming = timerTickSlider.Value * intervalTiming;
-         moveTimer.Interval = moveTiming;
-         timerLabel.Text = $"Timer tick time: {moveTiming}";
-         timerIsOn = false;
-      }
-
       private void _SetUpViewingField()
       {
-         
+
          axis = Axes.Instance;
          GL.Enable(EnableCap.DepthTest);
          float mult = (float)glControl1.Height / (float)glControl1.Width;
@@ -170,82 +175,21 @@ namespace Prog2
          GL.UniformMatrix4(projMatrixLoc, false, ref projMat);
       }
 
-      private void _SetSliderss()
-      {
-         xSlider.Value = defaultSliderVal;
-         ySlider.Value = defaultSliderVal;
-         zSlider.Value = defaultSliderVal;
-         xLabel.Text = $"x = {defaultSliderVal}";
-         yLabel.Text = $"y = {defaultSliderVal}";
-         zLable.Text = $"z = {defaultSliderVal}";
-         ColorBox.SelectedIndex = 0;
-      }
-
-      private void openToolStripMenuItem_Click(object sender, EventArgs e)
-      {
-         var results = openFolder.ShowDialog();
-         figures.LoadFigures(openFolder.SelectedPath);
-         drawShape();
-      }
-
       private void moveTimer_Tick(object sender, EventArgs e)
       {
-         figures.Move();
-         drawShape();
-      }
-
-      private void StartStopButton_Click(object sender, EventArgs e)
-      {
-         if (timerIsOn)
+         if (moveFigures)
          {
-            moveTimer.Stop();
-            StartStopButton.Text = "Start";
-            timerTickSlider.Enabled = false;
-            timerIsOn = false;
+            moveFigures = false;
+            figures.Move();
+
+            drawShape();
          }
          else
          {
-            moveTimer.Start();
-            StartStopButton.Text = "Stop";
-            timerTickSlider.Enabled = true;
-            timerIsOn = true;
+            moveFigures = true;
          }
-      }
 
-      private void timerTickSlider_TabIndexChanged(object sender, EventArgs e)
-      {
-
-      }
-
-      private void timerTickSlider_ValueChanged(object sender, EventArgs e)
-      {
-         var moveTiming = timerTickSlider.Value * intervalTiming;
-         moveTimer.Interval = moveTiming;
-         timerLabel.Text = $"Timer tick time: {moveTiming}";
-      }
-
-      private void globalAmbientLight_ValueChanged(object sender, EventArgs e)
-      {
-         globalAmbientLightLabel.Text = $"Global Ambient Light: {(float)globalAmbientLight.Value/10}";
-         drawShape();
-      }
-
-      private void LightSourceZpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightZposLabel.Text = $"Light Z pos: {LightSourceZpos.Value}";
-         drawShape();
-      }
-
-      private void LightSourceYpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightYposLabel.Text = $"Light Y pos: {LightSourceYpos.Value}";
-         drawShape();
-      }
-
-      private void LightSourceXpos_ValueChanged(object sender, EventArgs e)
-      {
-         LightXposLabel.Text = $"Light X pos: {LightSourceXpos.Value}";
-         drawShape();
+         figures.CheckCollisionsKillIfDetected(figures);
       }
 
       private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -260,12 +204,194 @@ namespace Prog2
 
       private void Form1_Resize(object sender, EventArgs e)
       {
+         center = new Point(this.Location.X + glControl1.Left + glControl1.Width / 2, this.Location.Y + glControl1.Top + glControl1.Height / 2);
+         mouse_hor = glControl1.Size.Width / 2;
+         mouse_ver = glControl1.Size.Height / 2;
          drawShape();
       }
 
       private void abortToolStripMenuItem_Click(object sender, EventArgs e)
       {
          Application.Exit();
+      }
+
+      private void how20ToolStripMenuItem_Click(object sender, EventArgs e)
+      {
+         string Caption = "Help";
+         string help = "This is Space Shooter. Shooting objects increases your score! \n A = Rotate left \n D = Rotate right \n W = Move forward \n L = Force close \n P = Pause \n";
+         var result = MessageBox.Show(help, Caption, MessageBoxButtons.OK);
+      }
+
+      /// <summary>
+      /// In progress
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void glControl1_MouseMove(object sender, MouseEventArgs e)
+      {
+         Task.Factory.StartNew(() =>
+         {
+            //Cursor.Position = center;
+            if (!moveFigures)
+            {
+               moveFigures = true;
+               if (mouseIsLocked)
+               {
+                  Cursor.Position = center;
+                  var eventRealx = e.X + glControl1.Location.X + this.Location.X + 8;
+                  var eventRealy = e.Y + glControl1.Location.Y + this.Location.Y + 31;
+                  var newX = 0.0f;
+                  var newY = 0.0f;
+
+                  if (eventRealx < center.X)
+                  {
+                     newX = -0.05f;
+                     Cursor.Position = center;
+                  }
+                  else if (eventRealx > center.X)
+                  {
+                     newX = .05f;
+                     Cursor.Position = center;
+                  }
+                  if (eventRealy < center.Y)
+                  {
+                     newY = -.05f;
+                     Cursor.Position = center;
+                  }
+                  else if (eventRealy > center.Y)
+                  {
+                     newY = .05f;
+                     Cursor.Position = center;
+                  }
+
+                  Ship.Instance.ChangeDirection(newX, newY);
+
+                  try
+                  {
+                     glxLabel.Text = "GLX: " + e.X;
+                     glyLabel.Text = "GLY: " + e.Y;
+                     xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
+                  }
+                  catch (InvalidOperationException v)
+                  {
+
+                  }
+
+
+               }
+            }
+            //drawShape();
+         });
+      }
+
+      /// <summary>
+      /// In Progress
+      /// </summary>
+      /// <param name="sender"></param>
+      /// <param name="e"></param>
+      private void Form1_KeyDown(object sender, KeyEventArgs e)
+      {
+         Task.Factory.StartNew(() =>
+         {
+            
+         });
+      }
+
+      private void Form1_MouseMove(object sender, MouseEventArgs e)
+      {
+         mouseXLabel.Text = "Form X: " + e.X;
+         mouseYLabel.Text = "Form Y: " + e.Y;
+      }
+
+      private void Form1_Move(object sender, EventArgs e)
+      {
+         try
+         {
+            formLoc.Text = "Form: " + Form1.ActiveForm.Location;
+         }
+         catch (NullReferenceException p)
+         {
+
+         }
+
+      }
+
+      private void LoadObjectTimer_Tick(object sender, EventArgs e)
+      {
+         loadShip();
+         //loadRock();
+         drawShape();
+      }
+
+      private void glControl1_KeyDown(object sender, KeyEventArgs e)
+      {
+         if (e.KeyCode == Keys.L)
+         {
+            Form1.ActiveForm.Close();
+         }
+
+         if (e.KeyCode == Keys.P)
+         {
+            // Freeze glControl
+            // Unlock mouse from center of glControl1
+            mouseIsLocked = !mouseIsLocked;
+            if (!mouseIsLocked)
+            {
+               LoadObjectTimer.Stop();
+               moveTimer.Stop();
+               Cursor.Show();
+            }
+            else
+            {
+               LoadObjectTimer.Start();
+               moveTimer.Start();
+               Cursor.Hide();
+            }
+         }
+
+         //--------------------------------------------------------------
+         //Here are all the controls.
+         //--------------------------------------------------------------
+         Vector3 direction = new Vector3(xCoord, yCoord, zCoord);
+         if (e.KeyCode == Keys.W)
+         {
+            //Ship.Instance.ChangeDirection(;
+            Ship.Instance.Move(5);
+            drawShape();
+         }
+
+         if (e.KeyCode == Keys.A)
+         {
+            //TODO figure out left move
+            Ship.Instance.ChangeDirection(90, 0);
+            Ship.Instance.Move(5);
+            Ship.Instance.ChangeDirection(-90, 0);
+            // Rotate camera left
+            drawShape();
+         }
+
+         if (e.KeyCode == Keys.D)
+         {
+            //TODO figure out right move
+            Ship.Instance.ChangeDirection(-90, 0);
+            Ship.Instance.Move(5);
+            Ship.Instance.ChangeDirection(90, 0);
+            // Rotate camera right
+            drawShape();
+         }
+      }
+
+      private void glControl1_MouseUp(object sender, MouseEventArgs e)
+      {
+         // Create projectile
+         VertexDataList bullet = new VertexDataList();
+         bullet.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\this.wrl"));
+
+         // Draw figure
+         var bulletFigure = new Figure(bullet, 1000);
+
+         // Set projectile movemement to move in the direction the ship is facing
+         figures.Add(bulletFigure, new PlayerShot(bulletFigure, Ship.Instance.Direction, 1.0, Ship.Instance.Position));
       }
    }
 }

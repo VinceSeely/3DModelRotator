@@ -1,7 +1,6 @@
-﻿//-----------------------------------------------------------------------
-// This class loads the shaders from the Prog4_FS and Prog4_VS files.
-// Contributers: Vince Seeley, William Maclay
-//-----------------------------------------------------------------------
+﻿// Only handles Vertex and Fragment Shaders.  
+// You Comment it!  Be sure to note the Singleton pattern
+
 
 using System;
 using System.Collections.Generic;
@@ -21,9 +20,6 @@ public class ShaderLoader
 
    private static ShaderLoader _instance = null;
 
-   /// <summary>
-   /// Creates an instance of ShaderLoader.
-   /// </summary>
    public static ShaderLoader Instance
    {
       get
@@ -34,33 +30,18 @@ public class ShaderLoader
       }
    }
 
-   /// <summary>
-   /// Default constructor to ensure that the class only has one 
-   /// instance of ShaderLoader.
-   /// </summary>
    private ShaderLoader()
    {
       // An instance cannot be created outside of this class - Singleton!
    }
+   
 
-   /// <summary>
-   /// returns the Program Handle.
-   /// </summary>
-   /// <returns> int programHandle </returns>
    public int ProgramHandle
    {
       get { return programHandle; }
    }
 
-   /// <summary>
-   /// Loads the shaders from the files Prog4_FS and Prog4_VS to get the
-   /// fragment shader and the vertex shader respectively and returns the
-   /// load check as a boolean value.
-   /// </summary>
-   /// <param name="vertexShaderFileName"></param>
-   /// <param name="fragmentShaderFileName"></param>
-   /// <returns> boolean </returns>
-   public bool Load(string vertexShaderFileName, string fragmentShaderFileName)
+   public bool Load (string vertexShaderFileName, string fragmentShaderFileName)
    {
       Unload();   // Unload just in case something was loaded
 
@@ -112,9 +93,6 @@ public class ShaderLoader
       }
    }
 
-   /// <summary>
-   /// Unloads the current active shader.
-   /// </summary>
    public void Unload()
    {
       if (programHandle != 0)
@@ -137,22 +115,11 @@ public class ShaderLoader
       loadError = "";
    }
 
-   /// <summary>
-   /// Returns the most recent load error as a string.
-   /// </summary>
-   /// <returns> string loadError </returns>
    public string LastLoadError
    {
       get { return loadError; }
    }
 
-   /// <summary>
-   /// Loads and Compiles the shader into the program from a file and
-   /// returns the load check in the form of a boolean value.
-   /// </summary>
-   /// <param name="fileName"></param>
-   /// <param name="handle"></param>
-   /// <returns> boolean </returns>
    private bool LoadAndCompileShader(string fileName, int handle)
    {
       int status;

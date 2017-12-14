@@ -117,12 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="glControl1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="glControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 154</value>
+    <value>12, 71</value>
   </data>
   <data name="glControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 348</value>
+    <value>703, 478</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="glControl1.TabIndex" type="System.Int32, mscorlib">
@@ -138,85 +142,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;glControl1.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="xSlider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 49</value>
-  </data>
-  <data name="xSlider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="xSlider.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;xSlider.Name" xml:space="preserve">
-    <value>xSlider</value>
-  </data>
-  <data name="&gt;&gt;xSlider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;xSlider.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;xSlider.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="ySlider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 49</value>
-  </data>
-  <data name="ySlider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="ySlider.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ySlider.Name" xml:space="preserve">
-    <value>ySlider</value>
-  </data>
-  <data name="&gt;&gt;ySlider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ySlider.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;ySlider.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="zSlider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 49</value>
-  </data>
-  <data name="zSlider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="zSlider.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;zSlider.Name" xml:space="preserve">
-    <value>zSlider</value>
-  </data>
-  <data name="&gt;&gt;zSlider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zSlider.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;zSlider.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>131, 17</value>
+    <value>162, 17</value>
   </metadata>
-  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 20</value>
-  </data>
-  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
-    <value>File</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
   <data name="menuStrip1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>784, 24</value>
+    <value>978, 24</value>
   </data>
   <data name="menuStrip1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -234,7 +169,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;menuStrip1.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>4</value>
+  </data>
+  <data name="fileToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 20</value>
+  </data>
+  <data name="fileToolStripMenuItem.Text" xml:space="preserve">
+    <value>File</value>
   </data>
   <data name="openToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 22</value>
@@ -248,493 +189,21 @@
   <data name="abortToolStripMenuItem.Text" xml:space="preserve">
     <value>Abort</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Name" xml:space="preserve">
-    <value>timerLabel</value>
+  <data name="helpToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>44, 20</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
   </data>
-  <data name="&gt;&gt;timerLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="how20ToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 22</value>
   </data>
-  <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Name" xml:space="preserve">
-    <value>StartStopButton</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Name" xml:space="preserve">
-    <value>ResetButton</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;zLable.Name" xml:space="preserve">
-    <value>zLable</value>
-  </data>
-  <data name="&gt;&gt;zLable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zLable.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;zLable.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Name" xml:space="preserve">
-    <value>yLabel</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;yLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Name" xml:space="preserve">
-    <value>xLabel</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;xLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 27</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>653, 100</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>X, Y, and Z view value sliders</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="timerLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="timerLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 33</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="timerLabel.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>Yes</value>
-  </data>
-  <data name="timerLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="timerLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="timerLabel.Text" xml:space="preserve">
-    <value>Timer tick time:</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.Name" xml:space="preserve">
-    <value>timerLabel</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;timerLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="StartStopButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 33</value>
-  </data>
-  <data name="StartStopButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="StartStopButton.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="StartStopButton.Text" xml:space="preserve">
-    <value>Start</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Name" xml:space="preserve">
-    <value>StartStopButton</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;StartStopButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="ResetButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>334, 33</value>
-  </data>
-  <data name="ResetButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="ResetButton.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="ResetButton.Text" xml:space="preserve">
-    <value>Reset</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Name" xml:space="preserve">
-    <value>ResetButton</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;ResetButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="zLable.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="zLable.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 33</value>
-  </data>
-  <data name="zLable.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="zLable.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;zLable.Name" xml:space="preserve">
-    <value>zLable</value>
-  </data>
-  <data name="&gt;&gt;zLable.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;zLable.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;zLable.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="yLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="yLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>117, 33</value>
-  </data>
-  <data name="yLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="yLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Name" xml:space="preserve">
-    <value>yLabel</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;yLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;yLabel.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="xLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="xLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 33</value>
-  </data>
-  <data name="xLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="xLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Name" xml:space="preserve">
-    <value>xLabel</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;xLabel.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;xLabel.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <metadata name="openFolder.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="openFolder.SelectedPath" xml:space="preserve">
-    <value>K:\Courses\CSSE\tianb\cs3920_cs5920\mac_see\3DModelRotator\ObjectsToLoad</value>
+  <data name="how20ToolStripMenuItem.Text" xml:space="preserve">
+    <value>How 2.0</value>
   </data>
   <metadata name="moveTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>246, 17</value>
+    <value>277, 17</value>
   </metadata>
-  <data name="timerTickSlider.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="timerTickSlider.Location" type="System.Drawing.Point, System.Drawing">
-    <value>559, 76</value>
-  </data>
-  <data name="timerTickSlider.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="timerTickSlider.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;timerTickSlider.Name" xml:space="preserve">
-    <value>timerTickSlider</value>
-  </data>
-  <data name="&gt;&gt;timerTickSlider.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;timerTickSlider.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;timerTickSlider.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="globalAmbientLight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 445</value>
-  </data>
-  <data name="globalAmbientLight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="globalAmbientLight.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLight.Name" xml:space="preserve">
-    <value>globalAmbientLight</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLight.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLight.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLight.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="globalAmbientLightLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="globalAmbientLightLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>579, 429</value>
-  </data>
-  <data name="globalAmbientLightLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 13</value>
-  </data>
-  <data name="globalAmbientLightLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="globalAmbientLightLabel.Text" xml:space="preserve">
-    <value>Global Ambient Light: 0.5</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLightLabel.Name" xml:space="preserve">
-    <value>globalAmbientLightLabel</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLightLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLightLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;globalAmbientLightLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="LightSourceXpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LightSourceXpos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 154</value>
-  </data>
-  <data name="LightSourceXpos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="LightSourceXpos.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;LightSourceXpos.Name" xml:space="preserve">
-    <value>LightSourceXpos</value>
-  </data>
-  <data name="&gt;&gt;LightSourceXpos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightSourceXpos.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightSourceXpos.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="LightSourceYpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LightSourceYpos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 220</value>
-  </data>
-  <data name="LightSourceYpos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="LightSourceYpos.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LightSourceYpos.Name" xml:space="preserve">
-    <value>LightSourceYpos</value>
-  </data>
-  <data name="&gt;&gt;LightSourceYpos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightSourceYpos.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightSourceYpos.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="LightSourceZpos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LightSourceZpos.Location" type="System.Drawing.Point, System.Drawing">
-    <value>578, 288</value>
-  </data>
-  <data name="LightSourceZpos.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 45</value>
-  </data>
-  <data name="LightSourceZpos.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;LightSourceZpos.Name" xml:space="preserve">
-    <value>LightSourceZpos</value>
-  </data>
-  <data name="&gt;&gt;LightSourceZpos.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TrackBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightSourceZpos.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightSourceZpos.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="LightXposLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LightXposLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 134</value>
-  </data>
-  <data name="LightXposLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="LightXposLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="LightXposLabel.Text" xml:space="preserve">
-    <value>Light X pos: 5</value>
-  </data>
-  <data name="&gt;&gt;LightXposLabel.Name" xml:space="preserve">
-    <value>LightXposLabel</value>
-  </data>
-  <data name="&gt;&gt;LightXposLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightXposLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightXposLabel.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="LightYposLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LightYposLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LightYposLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 186</value>
-  </data>
-  <data name="LightYposLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="LightYposLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="LightYposLabel.Text" xml:space="preserve">
-    <value>Light Y pos: 5</value>
-  </data>
-  <data name="&gt;&gt;LightYposLabel.Name" xml:space="preserve">
-    <value>LightYposLabel</value>
-  </data>
-  <data name="&gt;&gt;LightYposLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightYposLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightYposLabel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="LightZposLabel.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="LightZposLabel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="LightZposLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 268</value>
-  </data>
-  <data name="LightZposLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 13</value>
-  </data>
-  <data name="LightZposLabel.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="LightZposLabel.Text" xml:space="preserve">
-    <value>Light Z pos: 5</value>
-  </data>
-  <data name="&gt;&gt;LightZposLabel.Name" xml:space="preserve">
-    <value>LightZposLabel</value>
-  </data>
-  <data name="&gt;&gt;LightZposLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LightZposLabel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;LightZposLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="ColorBox.Items" xml:space="preserve">
     <value>Black</value>
   </data>
@@ -757,7 +226,7 @@
     <value>Yellow</value>
   </data>
   <data name="ColorBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>582, 340</value>
+    <value>12, 44</value>
   </data>
   <data name="ColorBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 21</value>
@@ -775,8 +244,251 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;ColorBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="colorLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colorLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 28</value>
+  </data>
+  <data name="colorLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="colorLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="colorLabel.Text" xml:space="preserve">
+    <value>Spotlight</value>
+  </data>
+  <data name="&gt;&gt;colorLabel.Name" xml:space="preserve">
+    <value>colorLabel</value>
+  </data>
+  <data name="&gt;&gt;colorLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;colorLabel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;colorLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="mouseXLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mouseXLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="mouseXLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="mouseXLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="mouseXLabel.Text" xml:space="preserve">
+    <value>X: ***</value>
+  </data>
+  <data name="&gt;&gt;mouseXLabel.Name" xml:space="preserve">
+    <value>mouseXLabel</value>
+  </data>
+  <data name="&gt;&gt;mouseXLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mouseXLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;mouseXLabel.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="mouseYLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="mouseYLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 29</value>
+  </data>
+  <data name="mouseYLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="mouseYLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="mouseYLabel.Text" xml:space="preserve">
+    <value>Y: ***</value>
+  </data>
+  <data name="&gt;&gt;mouseYLabel.Name" xml:space="preserve">
+    <value>mouseYLabel</value>
+  </data>
+  <data name="&gt;&gt;mouseYLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mouseYLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;mouseYLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="glxLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="glxLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="glxLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="glxLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="glxLabel.Text" xml:space="preserve">
+    <value>GLX: ***</value>
+  </data>
+  <data name="&gt;&gt;glxLabel.Name" xml:space="preserve">
+    <value>glxLabel</value>
+  </data>
+  <data name="&gt;&gt;glxLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glxLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;glxLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="glyLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="glyLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 55</value>
+  </data>
+  <data name="glyLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="glyLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="glyLabel.Text" xml:space="preserve">
+    <value>GLY: ***</value>
+  </data>
+  <data name="&gt;&gt;glyLabel.Name" xml:space="preserve">
+    <value>glyLabel</value>
+  </data>
+  <data name="&gt;&gt;glyLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;glyLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;glyLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Name" xml:space="preserve">
+    <value>xyViewLabel</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;formLoc.Name" xml:space="preserve">
+    <value>formLoc</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;formLoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="devBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>721, 71</value>
+  </data>
+  <data name="devBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 478</value>
+  </data>
+  <data name="devBox.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="devBox.Text" xml:space="preserve">
+    <value>Dev Info</value>
+  </data>
+  <data name="&gt;&gt;devBox.Name" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;devBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;devBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;devBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xyViewLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="xyViewLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 97</value>
+  </data>
+  <data name="xyViewLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="xyViewLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="xyViewLabel.Text" xml:space="preserve">
+    <value>xyView: ***</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Name" xml:space="preserve">
+    <value>xyViewLabel</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;xyViewLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="formLoc.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="formLoc.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="formLoc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 80</value>
+  </data>
+  <data name="formLoc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>48, 13</value>
+  </data>
+  <data name="formLoc.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="formLoc.Text" xml:space="preserve">
+    <value>Form: ***</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Name" xml:space="preserve">
+    <value>formLoc</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formLoc.Parent" xml:space="preserve">
+    <value>devBox</value>
+  </data>
+  <data name="&gt;&gt;formLoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <metadata name="LoadObjectTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -784,7 +496,419 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>784, 561</value>
+    <value>978, 561</value>
+  </data>
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAUAEBAAAAEAIABoBAAAVgAAABgYAAABACAAiAkAAL4EAAAgIAAAAQAgAKgQAABGDgAAMDAAAAEA
+        IACoJQAA7h4AAGRkEAABAAQA+BoAAJZEAAAoAAAAEAAAACAAAAABACAAAAAAAAAEAADDDgAAww4AAAAA
+        AAAAAAAAODg4/zc3N/81NTX/IyMi/xoZFv8aGRb/GhkW/xoZFv8aGRb/GhkW/xkZGP8vLy//NjY2/zY2
+        Nv83Nzf/NjY2/0JCQv8/Pz//Nzc4/xcXGP9QNwD/oHAA/55uAP+ebgD/oG8A/4xhAP8dFgb/LCwt/zY2
+        Nv87Ozv/Pj4+/zY2Nv83Nzf/OTk5/zs7O/8vLzH/MiUJ/82PAP/wpwD/7qYA/++nAP+EXAD/Hh0b/zk5
+        Of84ODj/PDw8/z09Pf81NTX/MTEx/y8wMv80NTj/ODk6/xkaGv9jRQD/zY8A/86QAP+zfQD/KR8H/yco
+        Kv8uLzH/LS4w/zAwMP88PDz/Pz8//xAPDf8zJQb/QjAG/yQbB/8GBg//CgcQ/x0VD/8eFQ//FxAP/wQE
+        EP8SDwn/PSwG/zkqBv8WFA//NjY2/zs7O/8ZGBj/cE4B/+OfAP90UQH/EA1+/x0Xw/8bFcD/GxXA/xwW
+        wf8YE7D/MCIg/9SUAP+KYAD/GxoW/zk6Ov87Ozv/MDAy/yMdD/+xewD/e1YB/xUQnv8lHfT/JBzw/yQc
+        8P8lHPH/Hxjd/zUlKP+6ggD/MSUJ/ywtL/9JSUn/SEhI/zg4OP8oKSv/Py4G/2JEAf8WEZz/JR3y/yQc
+        7/8kHO3/JRzw/x8Y2v8uISf/UjkA/yAhIv85OTn/Nzc3/zY2Nv9FRUX/PDw8/yEgHv8UDgP/GBOd/yIb
+        5P8VEX//FhJk/xwWvv8hGtv/DAkn/xgWEP8zMzP/PT09/z8/P/81NTX/Nzc3/zk5Of82Njb/EhIU/xcS
+        nv8WEZX/X1g//56SYf8iHlL/HhfP/wsKLf8tLSv/PDw8/zk5Of86Ojr/NjY2/zg4OP83Nzf/Nzc3/x0d
+        Hv8XEp7/FBB7/5GGW//Yy5T/LytH/xsVxf8QDzP/NjY0/0FBQf83Nzf/NjY2/zY2Nv83Nzf/Pj4+/zw8
+        O/8cHB3/GBKf/x0WxP8nI0P/PTk8/xcSg/8gGdr/EA8y/zMzMf9AQED/Ojo6/zY2Nv82Njb/NTU1/z09
+        Pf88PDz/Hx8e/xENcf8kHOz/HhfT/xsUwf8kHOv/GBOk/xISIP81NTT/QEBA/zY2Nv85OTn/ODg4/zc3
+        N/83Nzf/NTU1/zIyMf8VFR7/FA+D/yQc7P8lHfP/GROo/xAPJv8tLSv/NjY2/zU1Nf83Nzf/NjY2/zY2
+        Nv84ODj/Ojo6/0lJSf85OTr/MzMy/xUVHf8UEIT/GBOj/xEQJ/86Ojj/ODg4/zk5Of82Njb/RUVF/zg4
+        OP82Njb/NjY2/zg4OP9JSUn/Ojo6/zg4OP8xMTD/EREa/wsKGv8sLCr/PT09/zc3N/84ODj/NjY2/zg4
+        OP82Njb/NjY2/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAoAAAAGAAAADAAAAABACAAAAAAAAAJAADDDgAAww4AAAAAAAAAAAAANjY2/zU1
+        Nf82Njb/NjY2/zU1Nf8pKSn/ISIj/yAhI/8gISP/ICEj/yAhI/8gISP/ICEj/yAhI/8gISP/IiIj/yoq
+        Kv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/ODg4/0RERP83Nzf/NjY2/y0tLf8GBgf/Fg8B/ygc
+        Af8nHAH/JxwB/yccAf8nHAH/JxwB/yccAf8nHAH/DQkA/w8PD/81NTX/NjY2/zY2Nv84ODj/PDw8/zY2
+        Nv82Njb/Ojo6/1FRUf84ODj/PDw8/zQ0NP8PDxH/Qi4A/82PAP/WlgD/1pUA/9aVAP/WlQD/1pUA/9eW
+        AP+9hAD/IxgA/xoaHP82Njb/NjY2/zU1Nf8+Pj7/RUVF/zU1Nf82Njb/NjY2/zU1Nf82Njb/Ozs7/zY2
+        Nv8pKSr/DQsF/5lrAP/spQD/6aMA/+mjAP/powD/6aMA/+qjAP9xTwD/CwsL/zExMf85OTn/Nzc3/zU1
+        Nf9CQkL/SkpK/zU1Nf82Njb/NjY2/zs7O/88PDz/Nzc3/0pKSv85OTn/Ghoc/y8hAP/RkgD/66QA/+qj
+        AP/qowD/7KUA/76FAP8dFAL/ISIj/zc3N/88PDz/Ojo6/zY2Nv82Njb/NTU1/zU1Nf82Njb/MjIy/zAx
+        Mf8wMTH/MDAx/0ZGRv8zMzP/Kioq/wkJCf9uTAD/z5AA/82PAP/NjwD/y44A/1I5AP8MDA7/LS0t/zAw
+        MP8vLy//Ly8v/y8vMP8yMjL/Nzc3/1RUVP86Ojr/EBAR/woIBv8PDAb/DgwG/w0LBf8JCAb/BgYE/wIC
+        Af8KBwD/GxMA/xsTAP8bEwD/GhIA/wcFAP8DAwH/BgYG/wwKBv8ODAb/DwwG/wwKBv8RERH/NDQ0/0FB
+        Qf84ODj/DQ4Q/ykcAP+kcgD/r3oA/6x4AP82JQD/AwMq/wwKUv8MCVH/CwhR/wsIUf8LCFH/CwhR/wwJ
+        Uf8LCUz/AwIP/3NQAP+yfAD/rXgA/0YwAP8MDQ7/NDQ0/zU1Nf82Njb/Kior/w0LB/+MYQD/7qYA/+mi
+        AP9IMgD/Dwx6/yQc8P8kHOz/JBzs/yQc7P8kHOz/JBzs/yQc7f8iGt3/CAYt/5psAP/zqgD/sXsA/xYQ
+        A/8kJCX/ODg4/0BAQP83Nzf/Nzc3/x4fIP8fFgH/vYQA/+iiAP9HMgD/Dwx7/yUc8f8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7v8iGt7/CAYt/5lrAP/fnAD/RC8A/xMUFv80NDT/QUFB/21tbf8+Pj7/NjY2/zQ0
+        NP8TExX/Qi4A/9aVAP9JMwD/Dwx7/yUc8f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7v8iGt7/CAYt/5lr
+        AP+DWwD/DAsJ/y0tLv88PDz/OTk5/z4+Pv83Nzf/NjY2/zY2Nv8uLi//CwoJ/3dTAP9HMgD/Dwx7/yUc
+        8f8kHO3/JBzw/yUc8P8lHPD/JBzu/yQc7v8iGt7/Cggt/21MAP8gFwL/ICEi/zc3N/86Ojr/Nzc3/zU1
+        Nf82Njb/Q0ND/1BQUP82Njb/IiIj/xYQAv8ZEgD/EQ57/yUc8f8kHOz/HBa9/w8Ldv8TDoz/IRnY/yQc
+        7/8iGt7/CAYt/xIMAP8TExL/NDQ0/zY2Nv88PDz/Pz8//zY2Nv82Njb/Ojo6/z4+Pv83Nzf/NjY2/xgY
+        GP8AAAD/Ew57/yUd8/8bFbL/CAcd/zw4JP8rKBz/CwlF/yEa3P8iGuD/BgUt/wYGA/8rKyv/NjY2/zU1
+        Nf9DQ0P/TExM/zU1Nf82Njb/NjY2/zU1Nf87Ozv/Ozs7/zIyMv8NDQr/Eg56/yQc7v8KCFL/T0kw/97O
+        kf/HuYH/JSId/xcRo/8iG+L/BwUt/xwcGv85OTn/QUFB/zY2Nv82Njb/NTU1/zY2Nv82Njb/NjY2/zc3
+        N/82Njb/NjY2/zY2Nv8QEQ7/Eg56/yMb5/8HBTb/hnxU//Hgn//p2qT/Pjoo/xENhf8iG+L/BwYt/yMj
+        If89PT3/UlJS/zc3N/82Njb/NjY2/zY2Nv82Njb/NjY2/z8/P/82Njb/NTU1/zU1Nf8QEA3/Eg56/yUc
+        8f8OC2n/MS4d/8G0hP+Wj3H/ERAX/xoUtP8iG+H/BwYt/yMjIf83Nzf/NDQ0/zk5Of86Ojr/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv9GRkb/QEBA/zU1Nf8QEA3/Eg57/yUd8/8fGM//CghI/xcWFf8ODBv/EQ15/yMb
+        5/8iG+H/BwYu/yMjIf83Nzf/SUlJ/z4+Pv85OTn/NjY2/zY2Nv82Njb/NjY2/zU1Nf9GRkb/QEBA/zU1
+        Nf8REQ7/Dgtk/yQc7f8kHO//Ihrf/xkTr/8cFr//JBzs/yUc8f8cFrn/BQQZ/yUlJP83Nzf/SUlJ/zw8
+        PP81NTX/OTk5/zw8PP82Njb/NjY2/zY2Nv81NTX/NTU1/zY2Nv8jIyL/BgUQ/xQQif8kHOz/JBzv/yUc
+        8f8kHPD/JRzw/x0Wvv8HBSv/FRUT/zMzM/82Njb/NTU1/zY2Nv82Njb/Nzc3/zk5Of82Njb/NjY2/zk5
+        Of82Njb/NTU1/zY2Nv82Njb/IiIh/wUFD/8UEIn/JBzs/yQc7v8kHPD/HRa+/wYFKv8UFBL/MzMz/zY2
+        Nv82Njb/NjY2/zY2Nv81NTX/NjY2/zY2Nv82Njb/NjY2/z4+Pv83Nzf/QUFB/zo6Ov82Njb/NjY2/yIi
+        If8FBQ//FBCJ/yQc7v8dFr7/BgUq/xgYFv8+Pj7/NjY2/zc3N/85OTn/NjY2/zo6Ov9RUVH/Nzc3/zY2
+        Nv82Njb/NjY2/zY2Nv84ODj/aWlp/0lJSf87Ozv/Ojo6/zY2Nv8iIiH/BgYR/xANbf8HBi3/FBUS/zs7
+        O/9QUFD/NjY2/zk5Of88PDz/NjY2/zg4OP9ERET/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/PT09/zg4
+        OP84ODj/Nzc3/zY2Nv82Njb/ICAf/wICA/8RERH/MjIy/zY2Nv81NTX/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv81NTX/NjY2/zY2Nv82Njb/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKAAAACAA
+        AABAAAAAAQAgAAAAAAAAEAAAww4AAMMOAAAAAAAAAAAAADY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv8xMTH/LS0t/y4uLv8uLi7/Li4u/y4uLv8uLi7/Li4u/y4uLv8uLi7/Li4u/y4uLv8uLi7/Li4u/y4u
+        Lv80NDT/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1Nf81NTX/NjY2/zY2
+        Nv82Njb/JCQk/woKCf8EBAX/AQMG/wEDBv8BAwb/AQMG/wEDBv8BAwb/AQMG/wEDBv8BAwb/AQMG/wED
+        Bv8EBQX/BgYG/yUlJf83Nzf/NjY2/zY2Nv82Njb/NjY2/zg4OP82Njb/NjY2/zY2Nv80NDT/VlZW/05O
+        Tv81NTX/NTU1/zc3N/8dHR3/AAAA/yUaAP9oSAD/Z0gA/2dIAP9nSAD/Z0gA/2dIAP9nSAD/Z0gA/2dI
+        AP9nSAD/Z0gA/ycbAP8AAAD/IiIi/zc3N/82Njb/NjY2/zY2Nv85OTn/RERE/zY2Nv82Njb/NjY2/zU1
+        Nf9KSkr/RUVF/zU1Nf8/Pz//ODg4/zExMf8LCw3/HxYA/8GHAP/upgD/66QA/+ukAP/rpAD/66QA/+uk
+        AP/rpAD/66QA/+2mAP/NjwD/IxgA/woLDP8xMTH/NjY2/zY2Nv82Njb/NTU1/0FBQf9LS0v/NTU1/zY2
+        Nv82Njb/NjY2/zU1Nf81NTX/NjY2/z8/P/84ODj/Nzc3/yQkJP8AAQL/XUEA/+SfAP/oogD/6KIA/+ii
+        AP/oogD/6KIA/+iiAP/oogD/5aAA/2JFAP8CAgL/JSUl/zc3N/82Njb/NjY2/zY2Nv81NTX/SkpK/1xc
+        XP81NTX/NjY2/zY2Nv82Njb/NjY2/zo6Ov83Nzf/NTU1/zY2Nv82Njb/NTU1/xUVFf8KBwD/oXAA/+yl
+        AP/oogD/6KIA/+iiAP/oogD/6KIA/+ukAP+0fgD/EQwA/w8QEf80NDT/NjY2/0NDQ/88PDz/NjY2/zY2
+        Nv81NTX/NTU1/zY2Nv82Njb/NjY2/zY2Nv82Njb/Q0ND/zo6Ov81NTX/U1NT/11dXf81NTX/Ly8v/wYG
+        CP86KAD/1ZUA/+ukAP/qowD/6qMA/+qjAP/rpAD/3psA/002AP8DAwX/Kysr/zc3N/82Njb/ODg4/zc3
+        N/82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/MzMz/zAwMP8vLy//MDAw/y8vL/85OTn/PDw8/y8v
+        L/8wMDD/GRkZ/wIBAP97VgD/0JEA/82PAP/NjwD/zY8A/9CRAP+PZAD/BgQA/xQVFf8vLy//MDAw/zAw
+        MP8wMDD/MDAw/zAwMP8wMDD/MzMz/zQ0NP9TU1P/Xl5e/zQ0NP8WFhb/BgYG/wMEBv8CAwb/AgMG/wED
+        Bv8CAwb/BgYG/wYGBv8FBQX/AAAA/w0JAP8bEwD/GxMA/xsTAP8bEwD/GxMA/xALAP8AAAD/BQUF/wYG
+        Bv8FBQb/AgMG/wIDBv8CAwb/AgQG/wUFBv8UFBT/NDQ0/z4+Pv9AQED/NTU1/w4ODv8BAQD/RDAA/2FD
+        AP9fQgD/X0IA/1Y8AP8NCQD/AAAC/wAABP8BAQX/AAAF/wAABf8AAAX/AAAF/wAABf8AAAX/AAAF/wEB
+        Bf8AAAT/AAAB/xoSAP9dQQD/X0IA/19CAP9XPQD/EgwA/wsLDP80NDT/NjY2/zU1Nf82Njb/ISEh/wIC
+        A/9fQgD/5qAA/+qkAP/rpAD/1JQA/yAWAP8IBkD/GhSs/xoUrP8aFKz/GhSs/xoUrP8aFKz/GhSs/xoU
+        rP8aFKz/GhSs/xkTpP8CAiX/QC0A/+WgAP/qpAD/7KUA/5BkAP8HBQD/GRkZ/zY2Nv81NTX/NjY2/zY2
+        Nv81NTX/FRYW/woHAP+ZawD/66QA/+mjAP/SkwD/HxYA/wwJWv8lHfL/JRzx/yUc8f8lHPH/JRzx/yUc
+        8f8lHPH/JRzx/yUc8f8lHfL/Ixvm/wQDNP9ALAD/458A/+ukAP/GigD/IRcA/woKDP8xMTH/NjY2/z8/
+        P/88PDz/NjY2/zc3N/8vLy//CAgK/ykdAP/KjQD/7KUA/9KTAP8fFgD/CwlZ/yQc7v8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7v8iG+L/BAMz/0AsAP/knwD/5aAA/2VGAP8CAgP/JiYm/zc3
+        N/84ODj/dHR0/2hoaP82Njb/NjY2/zc3N/8lJSX/BAQE/1U7AP/fmwD/05MA/x8WAP8LCVn/JBzu/yQc
+        7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzu/yIb4v8EAzP/PywA/+ehAP+gcAD/DAgA/xMU
+        FP80NDT/Nzc3/zY2Nv9MTEz/R0dH/zU1Nf82Njb/NjY2/zY2Nv8aGhr/BQMA/4hfAP/UlAD/HxYA/wsJ
+        Wf8kHO7/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO7/Ihvi/wQDM/9BLgD/yIwA/y8g
+        AP8GBwn/Li4u/zY2Nv9FRUX/OTk5/zU1Nf81NTX/NjY2/zY2Nv80NDT/NjY2/zExMf8LDA3/HhUA/6Z0
+        AP8iGAD/CwlZ/yQc7v8kHO3/JBzt/yQc7v8lHPD/JR3x/yQc8P8kHO3/JBzt/yQc7v8iG+L/BAMz/0At
+        AP9tTAD/AQEC/yIiIv83Nzf/NjY2/zg4OP82Njb/NjY2/zY2Nv82Njb/ODg4/11dXf89PT3/NjY2/ygo
+        KP8DBAT/NSUA/xQOAP8MCln/JBzu/yQc7f8kHO7/Ixvl/xoVrv8WEZP/HBa7/yQc6v8kHO7/JBzu/yIb
+        4v8HBTP/EgwA/xEMAP8QEBH/NDQ0/zY2Nv82Njb/Nzc3/zg4OP82Njb/NjY2/zY2Nv83Nzf/V1dX/zw8
+        PP81NTX/NTU1/xwcHP8BAQH/AAAA/w0KWf8kHO7/JBzv/yAZ1v8MCU//AgIL/wQEAf8CARH/Dwxl/yIa
+        3f8kHO//Ihvi/wgGM/8AAAD/BgYG/ysrK/83Nzf/NjY2/zU1Nf9PT0//ZWVl/zQ0NP82Njb/NjY2/zY2
+        Nv80NDT/NTU1/zs7O/88PDz/MzMz/xMTE/8AAAD/DQpZ/yQc7v8kHOz/EQ1w/wICAf9ZUjn/pZls/1hR
+        OP8FBQX/FRCL/yUc8f8iG+L/CAYz/wAAAP8eHh7/NjY2/zU1Nf82Njb/NjY2/zo6Ov8+Pj7/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/PDw8/zw8PP82Njb/Ly8v/wYGA/8NClj/JBzv/yAZ1P8DAiP/Ozcl/9rL
+        j//w3p3/2sqO/zIvHv8IBUP/Ixvm/yIb4/8HBTL/CwwJ/zIyMv84ODj/RUVF/zg4OP82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv8xMTH/BwcD/w0KWP8lHPH/HRfA/wAA
+        DP90bEv/7t2c/+rZmv/t3qP/UUwz/wEBJP8hGtv/Ixvk/wcFMv8PDwz/NTU1/z09Pf9oaGj/PDw8/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv88PDz/Pj4+/zY2Nv82Njb/NjY2/zExMf8HBwP/DQpY/yQc
+        7/8gGdX/AwIl/zg0Iv/YyIz/9eez/8/Fo/8qJxj/CAZF/yMb5/8iG+P/BwUy/w4PDP81NTX/NjY2/zg4
+        OP82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zo6Ov88PDz/NDQ0/zU1Nf82Njb/MTEx/wcH
+        A/8NClj/JBzu/yQc7f8RDnT/AQEB/1JMNf+elG//OTYn/wAAAf8WEY7/JRzx/yIb4v8HBTL/Dg8M/zU1
+        Nf82Njb/NTU1/zU1Nf9FRUX/Ojo6/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1Nf9UVFT/RkZG/zU1
+        Nf8xMTH/BwcD/w0KWf8kHO7/JBzu/yEa3P8QDGj/AgIN/wICAP8DAhf/Ew+A/yIb4P8kHO//Ixvk/wcF
+        M/8ODwz/NTU1/zU1Nf9PT0//S0tL/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NTU1/1RU
+        VP9GRkb/NTU1/zExMf8HBwP/DAlQ/yQc7P8kHO3/JBzu/yMb6f8bFbX/FxKb/x0Xwf8kHO3/JBzu/yQc
+        8P8fGMv/BAMh/w8PDf81NTX/NTU1/09PT/9LS0v/NTU1/zY2Nv82Njb/PT09/zc3N/82Njb/NjY2/zY2
+        Nv82Njb/NDQ0/zU1Nf82Njb/MzMz/w8PD/8CAQ7/FhGQ/yQc7f8kHO7/JBzt/yQc8P8lHfH/JBzw/yQc
+        7f8kHPD/IBnQ/wkHP/8DAwL/ICAg/zY2Nv82Njb/NTU1/zU1Nf82Njb/NjY2/zY2Nv9CQkL/ODg4/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/Li4u/w0NDP8CAQ7/FhGQ/yQc7f8kHO7/JBzt/yQc
+        7f8kHO3/JBzw/yAZ0P8JBz//AwMC/x8fH/82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1
+        Nf82Njb/NjY2/zY2Nv84ODj/ODg4/zY2Nv82Njb/NjY2/zY2Nv83Nzf/Li4u/w0NDP8CAQ//FhGQ/yQc
+        7f8kHO7/JBzt/yQc8P8gGdD/CQc//wMDAv8fHx//NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NTU1/zU1
+        Nf82Njb/NjY2/zY2Nv82Njb/NTU1/z4+Pv9BQUH/NTU1/zc3N/83Nzf/NjY2/zY2Nv83Nzf/Li4u/w0N
+        DP8CAQ//FhGQ/yQc7f8lHPD/IBnQ/wkHP/8DAwL/IiIh/zg4OP82Njb/NjY2/zY2Nv82Njb/NjY2/zU1
+        Nf9BQUH/Tk5O/zU1Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/ZmZm/2FhYf82Njb/Ojo6/zg4
+        OP83Nzf/Li4u/w0NDP8CAQ//FhGS/x8Yzf8JBz//AwMC/x4eHv9VVVX/Wlpa/zU1Nf81NTX/QkJC/z09
+        Pf82Njb/NTU1/0dHR/9cXFz/NTU1/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv9cXFz/WFhY/zU1
+        Nf9BQUH/PDw8/zY2Nv83Nzf/Li4u/w0NDP8CAhH/BgUp/wMDA/8gICD/NTU1/z09Pf8+Pj7/NjY2/zY2
+        Nv84ODj/Nzc3/zY2Nv82Njb/NTU1/zU1Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv81NTX/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/LS0t/woKCv8AAAD/HR0d/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv8AAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgA
+        AAAwAAAAYAAAAAEAIAAAAAAAACQAAMMOAADDDgAAAAAAAAAAAAA2Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/Nzc3/zc3N/83Nzf/Nzc3/zc3N/83Nzf/Nzc3/zc3N/83Nzf/Nzc3/zc3
+        N/83Nzf/Nzc3/zc3N/83Nzf/Nzc3/zc3N/83Nzf/Nzc3/zc3N/83Nzf/Nzc3/zc3N/82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/LS0t/xsbG/8YGBj/GBgY/xgYGP8YGBj/GBgY/xgY
+        GP8YGBj/GBgY/xgYGP8YGBj/GBgY/xgYGP8YGBj/GBgY/xgYGP8YGBj/GBgY/xgYGP8YGBj/GBgY/xkZ
+        Gf8tLS3/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zQ0NP81NTX/NjY2/zY2Nv82Njb/NjY2/zc3N/8nJyf/BgYG/wAAAP8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8YGBj/Nzc3/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NTU1/1FRUf9ISEj/NTU1/zY2Nv82Njb/NjY2/zc3N/8jIyP/AQEB/wAA
+        AP8HBQD/LiAA/zEiAP8xIgD/MSIA/zEiAP8xIgD/MSIA/zEiAP8xIgD/MSIA/zEiAP8xIgD/MSIA/zEi
+        AP8xIgD/MSIA/zIjAP8iGAD/AAAA/wAAAP8WFhb/Nzc3/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zk5
+        Of9aWlr/ODg4/zY2Nv82Njb/NjY2/zY2Nv82Njb/NDQ0/42Njf9vb2//MzMz/zY2Nv81NTX/NTU1/zY2
+        Nv8zMzP/DQ0N/wAAAP8VDwD/t4AA/+GdAP/fnAD/35wA/9+cAP/fnAD/35wA/9+cAP/fnAD/35wA/9+c
+        AP/fnAD/35wA/9+cAP/fnAD/35wA/96bAP9aPwD/AAAA/wICAv8lJSX/Nzc3/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zU1Nf85OTn/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zk5Of84ODj/NjY2/zU1
+        Nf9ERET/QkJC/zU1Nf82Njb/Kysr/wUFBf8AAAD/Qi4A/92bAP/powD/6KIA/+iiAP/oogD/6KIA/+ii
+        AP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/oogD/7KUA/7uDAP8VDwD/AAAA/xUVFf80NDT/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NTU1/0dHR/9dXV3/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zU1Nf9ERET/QkJC/zU1Nf82Njb/NjY2/xcXF/8AAAD/CAUA/51uAP/tpQD/6KIA/+ii
+        AP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/powD/2ZgA/042AP8AAAD/BwcH/y4u
+        Lv83Nzf/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NDQ0/15eXv+UlJT/Nzc3/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv81NTX/NTU1/zY2Nv82Njb/Nzc3/y4uLv8LCwv/AAAA/zIj
+        AP/JjAD/6qMA/+iiAP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/spAD/kWUA/wMC
+        AP8AAAD/Ghoa/zY2Nv82Njb/NjY2/zo6Ov83Nzf/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv85OTn/Ojo6/zY2Nv82Njb/NjY2/zQ0NP80NDT/NjY2/zc3
+        N/8iIiL/AgIC/wAAAP9vTQD/6aMA/+iiAP/oogD/6KIA/+iiAP/oogD/6KIA/+iiAP/oogD/6KIA/+mj
+        AP/YlwD/NSUA/wAAAP8ICAj/Li4u/zc3N/82Njb/NTU1/1VVVf9BQUH/NTU1/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1Nf9ISEj/T09P/zU1Nf82Njb/NDQ0/1hY
+        WP9qamr/NTU1/zY2Nv82Njb/FhYW/wAAAP8dFAD/vIQA/+qjAP/oogD/6KIA/+iiAP/oogD/6KIA/+ii
+        AP/oogD/6KIA/+iiAP+LYQD/BAIA/wEBAf8kJCT/Nzc3/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv81NTX/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NDQ0/2NjY/97e3v/NTU1/zY2Nv83Nzf/LCws/wUFBf8AAAD/Qi4A/9+cAP/qpAD/6qMA/+qj
+        AP/qowD/6qMA/+qjAP/qowD/7KUA/72EAP8WEAD/AAAA/w8PD/80NDT/Nzc3/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/z4+Pv9CQkL/NjY2/zY2Nv82Njb/MTEx/zAw
+        MP8wMDD/MDAw/zAwMP8wMDD/MDAw/y8vL/8uLi7/MDAw/zAwMP8wMDD/MDAw/xkZGf8AAAH/CAYA/5lr
+        AP/SkgD/z5AA/8+QAP/PkAD/z5AA/8+QAP/PkAD/0ZIA/2FEAP8AAAD/BQUF/yQkJP8xMTH/MDAw/zAw
+        MP8wMDD/MDAw/zAwMP8wMDD/MDAw/zAwMP8wMDD/MDAw/zU1Nf82Njb/MzMz/3Jycv+RkZH/NDQ0/zY2
+        Nv8jIyP/CAgI/wYGBv8GBgb/BgYG/wYGBv8GBgb/BgYG/wYGBv8GBgb/BgYG/wYGBv8GBgb/BgYG/wUF
+        Bf8AAAD/AAAA/xIMAP8aEgD/GRIA/xkSAP8ZEgD/GRIA/xkSAP8ZEgD/GhIA/woHAP8AAAD/AgIC/wYG
+        Bv8GBgb/BgYG/wYGBv8GBgb/BgYG/wYGBv8GBgb/BgYG/wYGBv8GBgb/BgYG/xsbG/82Njb/NjY2/z8/
+        P/9ERET/NjY2/zY2Nv8XFxf/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/w8P
+        D/81NTX/NjY2/zU1Nf81NTX/NjY2/zY2Nv8XFxf/AAAA/wAAAP9YPQD/jWMA/4lgAP+JYAD/iWAA/4lg
+        AP+MYgD/TDUA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAA
+        AP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/zMkAP+LYQD/iWAA/4lgAP+JYAD/imAA/4Nc
+        AP8mGgD/AAAA/w8PD/81NTX/NjY2/zY2Nv82Njb/NjY2/zY2Nv8nJyf/BwcH/wAAAP9NNgD/3JoA/+6m
+        AP/tpQD/7aUA/+2lAP/xqQD/hFwA/wAAAP8DAhT/FRCI/xcSlv8XEpX/FxKV/xcSlf8XEpX/FxKV/xcS
+        lf8XEpX/FxKV/xcSlf8XEpX/FxKV/xcSlf8XEpX/FxKV/xYRk/8GBSj/AAAA/1g9AP/vpwD/7aUA/+2l
+        AP/tpQD/8agA/4lgAP8HBQD/AAAA/x0dHf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/HR0d/wAA
+        AP8BAAD/hV0A/+mjAP/oogD/6KIA/+iiAP/tpQD/gVoA/wAAAP8FBCD/IRrc/yUd8/8lHfL/JR3y/yUd
+        8v8lHfL/JR3y/yUd8v8lHfL/JR3y/yUd8v8lHfL/JR3y/yUd8v8lHfL/JR3y/yQc7v8KCEH/AAAA/1Y8
+        AP/qowD/6KIA/+iiAP/rpAD/vIMA/yUaAP8AAAD/Dg4O/zExMf82Njb/NjY2/zU1Nf81NTX/NjY2/zY2
+        Nv82Njb/MzMz/xEREf8AAAD/FA4A/7V/AP/spQD/6KIA/+iiAP/tpQD/gVoA/wAAAP8FBB//IRrY/yQc
+        7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yMc
+        6v8KCED/AAAA/1Y8AP/qowD/6KIA/+miAP/knwD/UzoA/wAAAP8DAwP/KCgo/zc3N/82Njb/NDQ0/0ZG
+        Rv8+Pj7/NTU1/zY2Nv82Njb/Nzc3/yoqKv8HBwf/AAAA/0gyAP/XlgD/6aMA/+iiAP/tpQD/gVoA/wAA
+        AP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yMc6v8KCED/AAAA/1Y8AP/qowD/6KIA/+qjAP+teAD/DgoA/wAAAP8cHBz/NjY2/zY2
+        Nv81NTX/R0dH/4qKiv97e3v/Pj4+/zU1Nf82Njb/NjY2/zc3N/8cHBz/AQEB/wEBAP+GXgD/6qMA/+ii
+        AP/tpQD/gVoA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yMc6v8KCED/AAAA/1Y8AP/qowD/6qMA/9SUAP8tIAD/AAAA/wgI
+        CP8wMDD/NjY2/zY2Nv81NTX/RERE/4WFhf91dXX/PDw8/zU1Nf82Njb/NjY2/zY2Nv80NDT/FxcX/wAA
+        AP8QCwD/mWsA/+ukAP/tpQD/gVoA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yMc6v8KCED/AAAA/1Y8AP/qpAD/5aAA/2pK
+        AP8DAgD/AgID/yIiIv82Njb/NjY2/zU1Nf82Njb/NDQ0/0JCQv88PDz/NTU1/zY2Nv82Njb/NjY2/zY2
+        Nv83Nzf/Ly8v/wkJCf8AAAD/MSIA/86QAP/upgD/gVoA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yMc6v8KCED/AAAA/1Y8
+        AP/spAD/rHgA/xEMAP8AAAD/ExMT/zU1Nf82Njb/Nzc3/1NTU/84ODj/NjY2/zU1Nf81NTX/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/Nzc3/yUlJf8CAgL/AAAA/19CAP/tpQD/gVoA/wAAAP8FBB//IRrY/yQc
+        7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yMc
+        6v8KCED/AAAA/1c9AP/XlgD/LyEA/wAAAP8ICAj/Ly8v/zY2Nv82Njb/Nzc3/0VFRf83Nzf/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1Nf82Njb/NjY2/zQ0NP8YGBj/AAAA/w4KAP+cbQD/hV0A/wAA
+        AP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7/8kHO//JBzv/yQc7f8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yMc6v8KCED/AAAA/1o/AP+MYgD/AgEA/wICAv8jIyP/NjY2/zY2Nv82Njb/NjY2/zU1
+        Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/Ozs7/0xMTP84ODj/NjY2/zc3N/8uLi7/CgoK/wAA
+        AP84JwD/Y0UA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8kHO//JBzv/yAZ1f8fGM3/IBnR/yQc
+        7P8kHPD/JBzt/yQc7f8kHO3/JBzt/yMc6v8KCED/AAAA/yUaAP8gFgD/AAAA/xAQEP80NDT/NjY2/zY2
+        Nv82Njb/NjY2/zU1Nf80NDT/NjY2/zY2Nv82Njb/NjY2/zY2Nv80NDT/UFBQ/6enp/8/Pz//NjY2/zY2
+        Nv83Nzf/JSUl/wICAv8CAQD/CAYA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzt/yQc7f8gGdD/Ew98/wYE
+        Jf8DAhP/BAMc/xAMaP8eF8T/JBzt/yQc7f8kHO3/JBzt/yMc6v8KCED/AAAA/wAAAP8AAAD/BQUF/ycn
+        J/83Nzf/NjY2/zY2Nv82Njb/NTU1/0BAQP9NTU3/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/OTk5/0FB
+        Qf83Nzf/NjY2/zY2Nv82Njb/NTU1/xsbG/8BAQH/AAAA/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzw/x4Y
+        yP8GBSj/AAAD/wAAAP8AAAD/AAAA/wAAAf8EAxf/FxKX/yQc7v8kHO3/JBzt/yMc6v8KCED/AAAA/wAA
+        AP8AAAD/Gxsb/zc3N/82Njb/NjY2/zY2Nv82Njb/MzMz/2FhYf+dnZ3/Nzc3/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zU1Nf82Njb/NjY2/zc3N/83Nzf/NjY2/zQ0NP8ODg7/AAAA/wAAAP8FBB//IRrY/yQc
+        7v8kHO7/Ihvi/w4LX/8AAAD/AAAA/0tGMf+XjGL/aWFE/xgWEP8AAAD/BQQi/x8Yzf8kHO//JBzt/yMc
+        6v8KCED/AAAA/wAAAP8PDw//MjIy/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zk5Of8+Pj7/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NTU1/0xMTP9MTEz/NTU1/zY2Nv8vLy//FBQU/wAA
+        AP8FBB//IRrY/yQc7v8lHPH/HBW2/wEBCP8AAAD/Tkkz/9jJjv/w353/69qa/66icv8QDwv/AAAA/xYR
+        j/8lHfL/JBzt/yMc6v8KCED/AAAA/wYGBv8oKCj/Nzc3/zY2Nv81NTX/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zg4OP84ODj/NjY2/zY2
+        Nv84ODj/Hx8f/wAAAP8FBB//IRrY/yQc7v8kHO7/EQ1u/wAAAP8XFQ//wLJ9/+7cm//q2Zn/69qZ/+fW
+        l/9XUTn/AAAA/wsJSf8jG+b/JBzt/yMc6v8KCED/AAAA/xQUFP83Nzf/NjY2/zY2Nv9MTEz/PT09/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv83Nzf/Hh4e/wAAAP8FBB//IRrY/yQc7v8kHO3/DAlQ/wAAAP9HQi//6diY/+rZ
+        mf/q2Zn/6tmZ/+/enf9yakv/AAAA/wcFK/8iG+H/JBzu/yMc6v8KCED/AAAA/xQUFP82Njb/NTU1/z8/
+        P/+MjIz/X19f/zQ0NP82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zU1
+        Nf81NTX/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/Hh4e/wAAAP8FBB//IRrY/yQc7v8kHO7/DQpU/wAA
+        AP8xLiD/2MmN/+vamv/q2Zj/7+Gv//bqvv9uZkf/AAAA/wcGL/8iG+H/JBzu/yMc6v8KCED/AAAA/xQU
+        FP82Njb/NjY2/zY2Nv9JSUn/PDw8/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NTU1/0JCQv9KSkr/NTU1/zY2Nv82Njb/NjY2/zY2Nv83Nzf/Hh4e/wAAAP8FBB//IRrY/yQc
+        7v8kHPD/GBOf/wAABP8CAgH/ioBa/+zbmv/v4Kr/+vPY/7ashv8hHhX/AAAA/xIOeP8kHO7/JBzt/yMc
+        6v8KCED/AAAA/xQUFP82Njb/NjY2/zY2Nv81NTX/NjY2/zY2Nv81NTX/NTU1/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/z09Pf9CQkL/NTU1/zY2Nv82Njb/NjY2/zY2Nv83Nzf/Hh4e/wAA
+        AP8FBB//IRrY/yQc7v8kHO//HxjN/wYFKP8AAAD/EA8L/5SJYP/g0Zn/saZ9/yEfFf8AAAD/AgIN/xoV
+        rv8lHPD/JBzt/yMc6v8KCED/AAAA/xQUFP82Njb/NjY2/zY2Nv82Njb/NjY2/zU1Nf9ERET/SkpK/zU1
+        Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv81NTX/NjY2/zMzM/81NTX/NjY2/zY2
+        Nv83Nzf/Hh4e/wAAAP8FBB//IRrY/yQc7v8kHO3/JRzw/xkTpP8DAhD/AAAA/w4NCf8mIxj/FBMN/wAA
+        AP8BAQj/DgtZ/yMb5v8kHO3/JBzt/yMc6v8KCED/AAAA/xQUFP82Njb/NjY2/zY2Nv81NTX/MzMz/zU1
+        Nf89PT3/QEBA/zU1Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/Nzc3/3t7
+        e/9TU1P/NDQ0/zY2Nv83Nzf/Hh4e/wAAAP8FBB//IRrY/yQc7v8kHO3/JBzu/yMb5/8bFbD/BwYv/wEA
+        BP8AAAD/AAAC/wUEH/8XEpj/Ihvj/yQc7v8kHO3/JBzt/yQc6v8KCEH/AAAA/xQUFP82Njb/NjY2/zU1
+        Nf9ERET/goKC/z4+Pv81NTX/NTU1/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/Nzc3/3t7e/9TU1P/NDQ0/zY2Nv83Nzf/Hh4e/wAAAP8FBCD/IRra/yQc7/8kHO3/JBzt/yQc
+        7v8kHO//IRnX/xURjf8SDnn/FA+D/x8Yy/8kHO7/JBzu/yQc7f8kHO3/JBzu/yMb5P8JBzj/AAAA/xQU
+        FP82Njb/NjY2/zU1Nf9ERET/goKC/z4+Pv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zMzM/81NTX/NjY2/zY2Nv83Nzf/Hh4e/wAAAP8CAQz/GBKb/yQc
+        7/8kHO3/JBzt/yQc7f8kHO3/JBzu/yUc8f8lHfL/JR3x/yQc7/8kHO3/JBzt/yQc7f8kHO7/Ixvn/xEN
+        cP8BAQX/AAAA/xgYGP82Njb/NjY2/zY2Nv81NTX/MzMz/zY2Nv82Njb/NjY2/zY2Nv82Njb/Ozs7/1dX
+        V/83Nzf/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/Kioq/wgI
+        CP8AAAD/AwIU/xgTnf8kHO//JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc
+        7v8jG+f/EQ1w/wEBBf8AAAD/EBAQ/zAwMP82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/Nzc3/z4+Pv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/Nzc3/ykpKf8ICAj/AAAA/wMCFP8YE53/JBzv/yQc7f8kHO3/JBzt/yQc7f8kHO3/JBzt/yQc
+        7f8kHO3/JBzu/yMb5/8RDW//AQEF/wAAAP8PDw//MDAw/zc3N/82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zc3N/8pKSn/CAgI/wAAAP8DAhP/GBOd/yQc7/8kHO3/JBzt/yQc
+        7f8kHO3/JBzt/yQc7f8kHO7/Ixvn/xENcP8BAQX/AAAA/w8PD/8wMDD/Nzc3/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zc3
+        N/84ODj/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv83Nzf/KSkp/wgICP8AAAD/AwIT/xgT
+        nf8kHO//JBzt/yQc7f8kHO3/JBzt/yQc7v8jG+f/EQ1w/wEBBf8AAAD/Dw8P/zAwMP83Nzf/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NTU1/0ZGRv9RUVH/NTU1/zY2Nv82Njb/NDQ0/zY2Nv82Njb/NjY2/zY2Nv82Njb/Nzc3/ykp
+        Kf8ICAj/AAAA/wMCE/8YE53/JBzv/yQc7f8kHO3/JBzu/yMb5/8RDXD/AQEE/wAAAP8PDw//Ly8v/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/OTk5/zg4OP82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zc3N/83Nzf/NjY2/zY2Nv83Nzf/UlJS/zU1Nf82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zc3N/8pKSn/CAgI/wAAAP8DAhP/GBOd/yQc7/8kHO7/Ixvn/xENcP8BAAT/AAAA/w8P
+        D/8zMzP/VVVV/zs7O/82Njb/NjY2/zY2Nv83Nzf/Ozs7/zY2Nv82Njb/NjY2/zY2Nv82Njb/lpaW/2Vl
+        Zf8zMzP/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zc3N/9oaGj/mJiY/19f
+        X/81NTX/NjY2/zs7O/84ODj/NjY2/zY2Nv83Nzf/KSkp/wgICP8AAAD/AwIT/xgTnv8jG+f/EQ1w/wEA
+        BP8AAAD/EBAQ/y8vL/9JSUn/kJCQ/1FRUf80NDT/NjY2/zY2Nv8+Pj7/V1dX/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/VFRU/0VFRf81NTX/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv9XV1f/jIyM/1BQUP82Njb/NTU1/1VVVf9BQUH/NTU1/zY2Nv82Njb/Nzc3/ykpKf8ICAj/AAAA/wQD
+        F/8MClD/AQEH/wAAAP8QEBD/MDAw/zc3N/83Nzf/RkZG/zg4OP82Njb/NjY2/zY2Nv82Njb/Nzc3/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NDQ0/zU1Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/Q0ND/zU1Nf82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zc3
+        N/8pKSn/CAgI/wAAAP8AAAD/AAAA/xAQEP8wMDD/Nzc3/zY2Nv82Njb/NTU1/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NTU1/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv83Nzf/Jycn/wUFBf8AAAD/DAwM/zAwMP83Nzf/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2Nv82Njb/NjY2/zY2
+        Nv82Njb/NjY2/zY2Nv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoAAAAZAAAAMgAAAABAAQAAAAAAFAU
+        AADDDgAAww4AABAAAAAQAAAANjY2AAAAAAD///8AJBztAOrZmQDoogAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAREREREREREREREREREREREREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AREREREREREREREREREREREREREREREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERERERER
+        EREREREREREREREREREREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARERERERERERERERERERER
+        ERERERERERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERERERERERERERERERERERERERERER
+        EQAAAAAAAAAAACAAAAAAAAAAAAACIAAAAAAAAAERERVVVVVVVVVVVVVVVVVVVVVVVVUREREAAAAAAAAA
+        AAAAAAAAAAAAAAAAAiAAAAAAAAABEREVVVVVVVVVVVVVVVVVVVVVVVVREREQAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAABEREVVVVVVVVVVVVVVVVVVVVVVVUREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAABEREVVVVVVVVVVVVVVVVVVVVVVREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAARER
+        FVVVVVVVVVVVVVVVVVVVVVURERAAAAAAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAARERFVVVVVVVVV
+        VVVVVVVVVVVREREQAAAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAAERERVVVVVVVVVVVVVVVVVVVV
+        ERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERVVVVVVVVVVVVVVVVVVVREREQAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERVVVVVVVVVVVVVVVVVVERERAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAABEREVVVVVVVVVVVVVVVVVVREREQAAAAACAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAABEREVVVVVVVVVVVVVVVVVERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA
+        AAAAABERFVVVVVVVVVVVVVVVVREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIgAAAAARERFV
+        VVVVVVVVVVVVVVERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAARERFVVVVVVVVVVV
+        VVUREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERVVVVVVVVVVVVVVERERAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERVVVVVVVVVVVVUREREAAAAAAAAAAAAAAA
+        AAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAEREVVVVVVVVVVVVVEREQAAAAAAAAAAAAAAAAAAAAACIAAA
+        AAAAERERERERERERERERERERERERERERERERERERERERERERERERERERERERAAAAAAAAAAAAARERERER
+        ERERERERERERERERERERERERERERERERERERERERERERERERERAAAAAAAAAAAAERERERERERERERERER
+        EREREREREREREREREREREREREREREREREREREREQAAAAAAAAAAABERERERERERERERERERERERERERER
+        EREREREREREREREREREREREREREREAAAAAAAAAAAARERERERERERERERERERERERERERERERERERERER
+        ERERERERERERERERERAAAAAAAAAAAAERERVVVVVVVVVVERERERERERERERERERERERERERERERFVVVVV
+        VVVVEREQAAAAAAAAAAABEREVVVVVVVVVVRERERERERERERERERERERERERERERERVVVVVVVVUREREAAA
+        AAAAAAAAABEREVVVVVVVVVURERMzMzMzMzMzMzMzMzMzMzMzMzEREVVVVVVVVREREQAAAAAAAAAAAAAB
+        EREVVVVVVVVVERETMzMzMzMzMzMzMzMzMzMzMzMxERFVVVVVVVUREREAAAAAAAAAAAAAARERFVVVVVVV
+        VREREzMzMzMzMzMzMzMzMzMzMzMzMRERVVVVVVVREREQAAAAAAAAAAAAAAARERFVVVVVVVURERMzMzMz
+        MzMzMzMzMzMzMzMzMzEREVVVVVVVERERAAAAAAAAAAAAAAAAARERFVVVVVVVERETMzMzMzMzMzMzMzMz
+        MzMzMzMxERFVVVVVVREREQAAAAAAAAAAAAAAAAERERVVVVVVVREREzMzMzMzMzMzMzMzMzMzMzMzMRER
+        VVVVVVERERAAAAAAAgAAAAAAAAAAERERVVVVVVURERMzMzMzMzMzMzMzMzMzMzMzMzEREVVVVVVREREA
+        AAAAAAIAAAAAAAAAAAERERVVVVVVERETMzMzMzMzMzMzMzMzMzMzMzMxERFVVVVVERERAAAAAAIgIgAA
+        AAAAAAABEREVVVVVVREREzMzMzMzMzMzMzMzMzMzMzMzMRERVVVVUREREAAAAAAAAgAAAAAAAAAAABER
+        EVVVVVURERMzMzMzMzMzMzMzMzMzMzMzMzEREVVVVVERERAAAAAAAAIAAAAAAAAAAAABEREVVVVVERET
+        MzMzMzMzMzMzMzMzMzMzMzMxERFVVVUREREAAAAAAAAAAAAAAAAAAAAAABEREVVVVREREzMzMzMzMzMz
+        MzMzMzMzMzMzMRERVVVREREQAAAAAAAAAAAAAAAAAAAAAAARERFVVVURERMzMzMzMzMzMzMzMzMzMzMz
+        MzEREVVVUREREAAAAAAAAAAAAAAAAAAAAAAAARERFVVVERETMzMzMzMzMzMzMzMzMzMzMzMxERFVVRER
+        EQAAAAAgAAAAAAAAAAAAAAAAAAARERFVVREREzMzMzMzMzMzMzMzMzMzMzMzMRERVVERERAAAAAAAAAA
+        AAAAAAAAAAAAAAAAERERVVURERMzMzMzMzMzMzMzMzMzMzMzMzEREVVREREQAAAAAAAAAAAAAAAAAAAA
+        AAAAAAERERVVERETMzMzMzMzMzMzMzMzMzMzMzMxERFVERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAERER
+        VREREzMzMzMzMzMzMzMzMzMzMzMzMRERVREREAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREVURERMzMzMz
+        MzMzMzMzMzMzMzMzMzEREVERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREVERETMzMzMzMzMzMzMzMz
+        MzMzMzMxEREREREAAAAAAAAAAAAAAAAAAAAAACIAAAAAABEREREREzMzMzMzMzMREREzMzMzMzMzMRER
+        ERERAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAARERERERMzMzMzMzMRERERETMzMzMzMzEREREREAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAARERERETMzMzMzMRERERERERMzMzMzMxEREREQAAAAAAAAACIAAAAAAA
+        AAAAAAAAAAAAAAAREREREzMzMzMxERERERERERMzMzMzMREREREAAAAAAAAAAiAAAAAAAAAAAAAAAAAA
+        AAAAARERERMzMzMzMRERERERERERMzMzMzEREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERERET
+        MzMzMxERERREQRERETMzMzMxERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEREREzMzMzERERFE
+        RERBERETMzMzMREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAARERMzMzMxEREURERERBEREzMz
+        MzERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERETMzMzMRERREREREQRERMzMzMxEREAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREzMzMxEREUREREREQRERMzMzMRERAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAARERMzMzMRERREREREREERETMzMzEREQAAAAAgAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAERETMzMzEREURERERERBEREzMzMxEREAAAACAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ABEREzMzMxERFEREREREQRERMzMzMRERAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARERMzMzMR
+        ERREREREJEERETMzMzEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERETMzMzERERREREQiRB
+        EREzMzMxEREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREzMzMzEREURERCJEERETMzMzMRER
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAARERMzMzMxEREUREIkQREREzMzMzEREQAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAERETMzMzMREREURERBERERMzMzMxEREAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAABEREzMzMzMREREUREEREREzMzMzMRERAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAARERMzMzMzMRERERERERERMzMzMzEREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAERET
+        MzMzMzEREREREREREzMzMzMxEREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREzMzMzMzMRER
+        EREREzMzMzMzMRERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAARERMzMzMzMzMRERERETMzMzMz
+        MzEREQAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAiAAAAAAERETMzMzMzMzMxERETMzMzMzMzMxEREAAAAA
+        AiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREzMzMzMzMzMzMzMzMzMzMzMzMRERAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAARERMzMzMzMzMzMzMzMzMzMzMzMxEREQAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAERERMzMzMzMzMzMzMzMzMzMzMzEREREAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA
+        ABERERMzMzMzMzMzMzMzMzMzMzMREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMz
+        MzMzMzMzMzMzMzMxERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzMzMzMzMz
+        MzMzEREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzMzMzMzMzMzMREREQAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzMzMzMzMzMxERERAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzMzMzMzMzEREREAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAABERERMzMzMzMzMzMzMREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAABERERMzMzMzMzMzMxERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        ABERERMzMzMzMzMzEREREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAABERERMzMz
+        MzMzMREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzMxERERAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERMzMzMzEREREAAAAAAAAAAAAA
+        AAAAACIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAABERERMzMzMREREQAAIAAAAAAAAAAAAAAAAiAAAA
+        AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAABERERMzMxERERAAAgIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAIgIgAAAAAAAAAAABERERMzEREREAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAA
+        AAAgAAAAAAABERERMREREQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA
+        ABERERERERAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREREREA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREREQAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABERERAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABEREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 6, 6, 6</value>
@@ -793,7 +917,7 @@
     <value>800, 600</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>SUCC</value>
+    <value>Space Shooter</value>
   </data>
   <data name="&gt;&gt;fileToolStripMenuItem.Name" xml:space="preserve">
     <value>fileToolStripMenuItem</value>
@@ -813,16 +937,28 @@
   <data name="&gt;&gt;abortToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;openFolder.Name" xml:space="preserve">
-    <value>openFolder</value>
+  <data name="&gt;&gt;helpToolStripMenuItem.Name" xml:space="preserve">
+    <value>helpToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;openFolder.Type" xml:space="preserve">
-    <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;helpToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;how20ToolStripMenuItem.Name" xml:space="preserve">
+    <value>how20ToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;how20ToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;moveTimer.Name" xml:space="preserve">
     <value>moveTimer</value>
   </data>
   <data name="&gt;&gt;moveTimer.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LoadObjectTimer.Name" xml:space="preserve">
+    <value>LoadObjectTimer</value>
+  </data>
+  <data name="&gt;&gt;LoadObjectTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
