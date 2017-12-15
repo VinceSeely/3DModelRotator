@@ -200,7 +200,7 @@ namespace AlienSpaceShooter
             moveFigures = true;
          }
 
-        // figures.CheckCollisionsKillIfDetected(projectiles);
+         figures.CheckCollisionsKillIfDetected(projectiles);
       }
 
       private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)

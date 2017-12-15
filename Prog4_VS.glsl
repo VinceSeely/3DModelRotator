@@ -37,16 +37,16 @@
 	  vec3 ambient = vec3(GlobalAmbient) * VertexColor;
 	  float sDotN = max( dot(s,norm), 0.0 );
      float sDotSpotDir = max( dot(-s, spotLightDir), 0 );   
-	  vec3 diffuse = LightColor * VertexColor * sDotN;
+	  
      float cosSpotAngle = cos(radians(spotCutOffAngle));
      
      float spotEffect = 0;
      if (sDotSpotDir >= cosSpotAngle)              
          spotEffect = pow( sDotSpotDir, spotExponent );
-
+     vec3 diffuse = LightColor * VertexColor * sDotN * spotEffect ;
 	  vec3 spec = vec3(0.0);
 	  if( Shininess > 0 && sDotSpotDir > 0.0 )
-		  spec = LightColor * VertexColor *
+		  spec = spotEffect * LightColor * VertexColor *
 				 pow( max( dot(r,v), 0.0 ), Shininess );
 	  return ambient + diffuse + spec;
 	}

@@ -169,12 +169,12 @@ namespace AlienSpaceShooter
          var currentMin = min + translateAmount;
          for (int i = 0; i < 3; i++)
          {
-            if (otherCurrentMax[i] > currentMax[i] || otherCurrentMin[i] < currentMax[i])
+            if (otherCurrentMax[i] < currentMin[i] || otherCurrentMin[i] > currentMax[i])
             {
-               return true;
+               return false;
             }
          }
-         return false;
+         return true;
       }
 
       public void Reset()
