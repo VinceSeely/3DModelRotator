@@ -14,9 +14,11 @@ namespace AlienSpaceShooter
       private const int defaultSliderVal = 5;
       private Axes axis;
       private FigureList figures;
+      private FigureList projectiles;
       private const int intervalTiming = 10;
       private ShaderLoader _shader;
       private Vector3 lightSource;
+      private Vector3 lightDir;
 
       // LookAt Coordinates Group
       private float xCoord;
@@ -30,6 +32,7 @@ namespace AlienSpaceShooter
       private bool mouseIsLocked;
       private bool moveFigures;
       private int numberOfmoves;
+      private VertexDataList bullet;
 
       public bool timerIsOn { get; private set; }
 
@@ -57,7 +60,7 @@ namespace AlienSpaceShooter
          VertexDataList rock = new VertexDataList();
          rock.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\small_cave.wrl"));
          var rockFigure = new Figure(rock, 300);
-         figures.Add(rockFigure, new AlienShipMovement());
+         figures.Add(rockFigure, new MoveAstroid());
       }
 
       private void drawShape()
@@ -69,6 +72,11 @@ namespace AlienSpaceShooter
          lightSource = Ship.Instance.Position;
          var lightSourceLocaiton = GL.GetUniformLocation(_shader.ProgramHandle, "LightPosition");
          GL.Uniform3(lightSourceLocaiton, lightSource);
+
+         //light direction
+         lightDir = Ship.Instance.Direction;
+         var lightSourceDirection = GL.GetUniformLocation(_shader.ProgramHandle, "SpotDirection");
+         GL.Uniform3(lightSourceDirection, lightDir);
 
          //global shiny
          var shininessLoc = GL.GetUniformLocation(_shader.ProgramHandle, "Shininess");
@@ -86,9 +94,10 @@ namespace AlienSpaceShooter
 
          //ambient
          var ambientLoc = GL.GetUniformLocation(_shader.ProgramHandle, "GlobalAmbient");
-         GL.Uniform1(ambientLoc, (0.3f));
+         GL.Uniform1(ambientLoc, (0.1f));
 
          figures?.Show(Ship.Instance.LookAt());
+         projectiles?.Show(Ship.Instance.LookAt());
 
          axis.Show(Ship.Instance.LookAt());
          glControl1.SwapBuffers();
@@ -139,9 +148,10 @@ namespace AlienSpaceShooter
       {
          _LoadShaders();
          _SetUpViewingField();
-
+         //bullet = new VertexDataList();
+         //bullet.LoadDataFromVRML(Path.Combine(Directory.GetCurrentDirectory(), "ObjectsToLoad\\this.wrl"));
          glControl1.SwapBuffers();
-
+         projectiles = new FigureList();
          figures = new FigureList();
          mouseIsLocked = true;
          mouse_hor = glControl1.Size.Width / 2;
@@ -181,6 +191,7 @@ namespace AlienSpaceShooter
          {
             moveFigures = false;
             figures.Move();
+            projectiles.Move();
 
             drawShape();
          }
@@ -189,7 +200,7 @@ namespace AlienSpaceShooter
             moveFigures = true;
          }
 
-         figures.CheckCollisionsKillIfDetected(figures);
+        // figures.CheckCollisionsKillIfDetected(projectiles);
       }
 
       private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -391,7 +402,7 @@ namespace AlienSpaceShooter
          var bulletFigure = new Figure(bullet, 1000);
 
          // Set projectile movemement to move in the direction the ship is facing
-         figures.Add(bulletFigure, new PlayerShot(bulletFigure, Ship.Instance.Direction, 1.0, Ship.Instance.Position));
+         projectiles.Add(bulletFigure, new PlayerShot(bulletFigure, Ship.Instance.Direction, 1.0, Ship.Instance.Position));
       }
    }
 }

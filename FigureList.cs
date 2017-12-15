@@ -48,27 +48,30 @@ namespace AlienSpaceShooter
 
       public void CheckCollisionsKillIfDetected (FigureList list)
       {
-         var indexsToBeRemoved = new HashSet<int>(); 
+         var indexsToBeRemoved = new HashSet<int>();
+         var figlistindexsToBeRemoved = new HashSet<int>();
          for( int i = figlist.Count - 1; i > 0; i--)
          {
-            for( int j = 0; j < i; j++ )
+            for( int j = 0; j < list.figlist.Count; j++ )
             {
-               var collisionFigure = figlist[j].fig;
+               var collisionFigure = list.figlist[j].fig;
                var collision = figlist[i].fig.detectCollision(collisionFigure.Max + collisionFigure.TranlateAmount, collisionFigure.Min + collisionFigure.TranlateAmount);
                if (collision && i != j)
                {
+                  figlistindexsToBeRemoved.Add(j);
                   indexsToBeRemoved.Add(i);
-                  indexsToBeRemoved.Add(j);
                }
             }
          }
-         var remove = indexsToBeRemoved.ToArray();
-         Array.Sort(remove);
-         remove.Reverse();
+
          foreach (var index in indexsToBeRemoved)
          {
             figlist.RemoveAt(index);
          }
+         //foreach (var index in figlistindexsToBeRemoved)
+         //{
+         //   list.figlist.RemoveAt(index);
+         //}
       }
 
       public void Add(Figure fig, MovePattern movement)

@@ -2,7 +2,7 @@
 
 namespace AlienSpaceShooter.MovePatterns
 {
-   public class RotateAndMoveFIgure : MovePattern
+   public class MoveAstroid : MovePattern
    {
       private Random rand = new Random();
 
