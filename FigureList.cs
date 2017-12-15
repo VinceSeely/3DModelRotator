@@ -78,5 +78,15 @@ namespace AlienSpaceShooter
       {
          figlist.Add(new FigureMovementPair { fig = fig, movement = movement });
       }
+
+      internal bool CheckCollisions(Vector3 min, Vector3 max)
+      {
+         foreach(var figure in figlist)
+         {
+            if (figure.fig.detectCollision(max, min))
+               return true;
+         }
+         return false;
+      }
    }
 }

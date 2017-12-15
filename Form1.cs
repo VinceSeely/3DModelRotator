@@ -199,7 +199,16 @@ namespace AlienSpaceShooter
          {
             moveFigures = true;
          }
+         if(figures.CheckCollisions(Ship.Instance.BoundingBoxMax + Ship.Instance.Position, Ship.Instance.BoundingBoxMin + Ship.Instance.Position))
+         {
+            moveTimer.Stop();
+            LoadObjectTimer.Stop();
+            Cursor.Show();
+            MessageBox.Show("you have lost");
+            
 
+            
+         }
          figures.CheckCollisionsKillIfDetected(projectiles);
       }
 

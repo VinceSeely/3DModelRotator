@@ -16,7 +16,7 @@
 
    uniform vec3 SpotDirection;
    uniform float spotExponent = 2f;
-   uniform float spotCutOffAngle = 3f;
+   uniform float spotCutOffAngle = 20;
 
 	uniform mat4 NormalMatrix;
 	uniform mat4 ProjectionMatrix;
