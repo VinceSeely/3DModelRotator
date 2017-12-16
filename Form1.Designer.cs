@@ -42,16 +42,25 @@ namespace AlienSpaceShooter
          this.moveTimer = new System.Windows.Forms.Timer(this.components);
          this.ColorBox = new System.Windows.Forms.ComboBox();
          this.colorLabel = new System.Windows.Forms.Label();
-         this.mouseXLabel = new System.Windows.Forms.Label();
-         this.mouseYLabel = new System.Windows.Forms.Label();
-         this.glxLabel = new System.Windows.Forms.Label();
-         this.glyLabel = new System.Windows.Forms.Label();
          this.devBox = new System.Windows.Forms.GroupBox();
-         this.xyViewLabel = new System.Windows.Forms.Label();
-         this.formLoc = new System.Windows.Forms.Label();
+         this.score_Label = new System.Windows.Forms.Label();
+         this.label1 = new System.Windows.Forms.Label();
          this.LoadObjectTimer = new System.Windows.Forms.Timer(this.components);
+         this.start_button = new System.Windows.Forms.Button();
+         this.groupBox1 = new System.Windows.Forms.GroupBox();
+         this.label2 = new System.Windows.Forms.Label();
+         this.label3 = new System.Windows.Forms.Label();
+         this.label4 = new System.Windows.Forms.Label();
+         this.label5 = new System.Windows.Forms.Label();
+         this.label6 = new System.Windows.Forms.Label();
+         this.label7 = new System.Windows.Forms.Label();
+         this.label8 = new System.Windows.Forms.Label();
+         this.label9 = new System.Windows.Forms.Label();
+         this.label10 = new System.Windows.Forms.Label();
+         this.label11 = new System.Windows.Forms.Label();
          this.menuStrip1.SuspendLayout();
          this.devBox.SuspendLayout();
+         this.groupBox1.SuspendLayout();
          this.SuspendLayout();
          // 
          // glControl1
@@ -107,7 +116,7 @@ namespace AlienSpaceShooter
          // 
          // moveTimer
          // 
-         this.moveTimer.Interval = 10;
+         this.moveTimer.Interval = 1000;
          this.moveTimer.Tick += new System.EventHandler(this.moveTimer_Tick);
          // 
          // ColorBox
@@ -133,56 +142,107 @@ namespace AlienSpaceShooter
          this.colorLabel.Name = "colorLabel";
          this.colorLabel.UseMnemonic = false;
          // 
-         // mouseXLabel
-         // 
-         resources.ApplyResources(this.mouseXLabel, "mouseXLabel");
-         this.mouseXLabel.Name = "mouseXLabel";
-         // 
-         // mouseYLabel
-         // 
-         resources.ApplyResources(this.mouseYLabel, "mouseYLabel");
-         this.mouseYLabel.Name = "mouseYLabel";
-         // 
-         // glxLabel
-         // 
-         resources.ApplyResources(this.glxLabel, "glxLabel");
-         this.glxLabel.Name = "glxLabel";
-         // 
-         // glyLabel
-         // 
-         resources.ApplyResources(this.glyLabel, "glyLabel");
-         this.glyLabel.Name = "glyLabel";
-         // 
          // devBox
          // 
-         this.devBox.Controls.Add(this.xyViewLabel);
-         this.devBox.Controls.Add(this.formLoc);
-         this.devBox.Controls.Add(this.mouseXLabel);
-         this.devBox.Controls.Add(this.glyLabel);
-         this.devBox.Controls.Add(this.mouseYLabel);
-         this.devBox.Controls.Add(this.glxLabel);
+         this.devBox.Controls.Add(this.score_Label);
+         this.devBox.Controls.Add(this.label1);
          resources.ApplyResources(this.devBox, "devBox");
          this.devBox.Name = "devBox";
          this.devBox.TabStop = false;
          // 
-         // xyViewLabel
+         // score_Label
          // 
-         resources.ApplyResources(this.xyViewLabel, "xyViewLabel");
-         this.xyViewLabel.Name = "xyViewLabel";
+         resources.ApplyResources(this.score_Label, "score_Label");
+         this.score_Label.Name = "score_Label";
          // 
-         // formLoc
+         // label1
          // 
-         resources.ApplyResources(this.formLoc, "formLoc");
-         this.formLoc.Name = "formLoc";
+         resources.ApplyResources(this.label1, "label1");
+         this.label1.Name = "label1";
          // 
          // LoadObjectTimer
          // 
          this.LoadObjectTimer.Tick += new System.EventHandler(this.LoadObjectTimer_Tick);
          // 
+         // start_button
+         // 
+         resources.ApplyResources(this.start_button, "start_button");
+         this.start_button.Name = "start_button";
+         this.start_button.UseVisualStyleBackColor = true;
+         this.start_button.Click += new System.EventHandler(this.start_button_Click);
+         // 
+         // groupBox1
+         // 
+         this.groupBox1.Controls.Add(this.label11);
+         this.groupBox1.Controls.Add(this.label10);
+         this.groupBox1.Controls.Add(this.label9);
+         this.groupBox1.Controls.Add(this.label8);
+         this.groupBox1.Controls.Add(this.label7);
+         this.groupBox1.Controls.Add(this.label6);
+         this.groupBox1.Controls.Add(this.label5);
+         this.groupBox1.Controls.Add(this.label4);
+         this.groupBox1.Controls.Add(this.label3);
+         this.groupBox1.Controls.Add(this.label2);
+         resources.ApplyResources(this.groupBox1, "groupBox1");
+         this.groupBox1.Name = "groupBox1";
+         this.groupBox1.TabStop = false;
+         // 
+         // label2
+         // 
+         resources.ApplyResources(this.label2, "label2");
+         this.label2.Name = "label2";
+         // 
+         // label3
+         // 
+         resources.ApplyResources(this.label3, "label3");
+         this.label3.Name = "label3";
+         // 
+         // label4
+         // 
+         resources.ApplyResources(this.label4, "label4");
+         this.label4.Name = "label4";
+         // 
+         // label5
+         // 
+         resources.ApplyResources(this.label5, "label5");
+         this.label5.Name = "label5";
+         // 
+         // label6
+         // 
+         resources.ApplyResources(this.label6, "label6");
+         this.label6.Name = "label6";
+         // 
+         // label7
+         // 
+         resources.ApplyResources(this.label7, "label7");
+         this.label7.Name = "label7";
+         // 
+         // label8
+         // 
+         resources.ApplyResources(this.label8, "label8");
+         this.label8.Name = "label8";
+         // 
+         // label9
+         // 
+         resources.ApplyResources(this.label9, "label9");
+         this.label9.Name = "label9";
+         // 
+         // label10
+         // 
+         resources.ApplyResources(this.label10, "label10");
+         this.label10.Name = "label10";
+         // 
+         // label11
+         // 
+         resources.ApplyResources(this.label11, "label11");
+         this.label11.Name = "label11";
+         // 
          // Form1
          // 
          resources.ApplyResources(this, "$this");
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+         this.Controls.Add(this.groupBox1);
+         this.Controls.Add(this.start_button);
          this.Controls.Add(this.devBox);
          this.Controls.Add(this.colorLabel);
          this.Controls.Add(this.ColorBox);
@@ -201,6 +261,8 @@ namespace AlienSpaceShooter
          this.menuStrip1.PerformLayout();
          this.devBox.ResumeLayout(false);
          this.devBox.PerformLayout();
+         this.groupBox1.ResumeLayout(false);
+         this.groupBox1.PerformLayout();
          this.ResumeLayout(false);
          this.PerformLayout();
 
@@ -218,14 +280,22 @@ namespace AlienSpaceShooter
         private Label colorLabel;
       private ToolStripMenuItem helpToolStripMenuItem;
       private ToolStripMenuItem how20ToolStripMenuItem;
-      private Label mouseXLabel;
-      private Label mouseYLabel;
-      private Label glxLabel;
-      private Label glyLabel;
       private GroupBox devBox;
-      private Label formLoc;
-      private Label xyViewLabel;
       private Timer LoadObjectTimer;
+      private Label score_Label;
+      private Label label1;
+      private Button start_button;
+      private GroupBox groupBox1;
+      private Label label11;
+      private Label label10;
+      private Label label9;
+      private Label label8;
+      private Label label7;
+      private Label label6;
+      private Label label5;
+      private Label label4;
+      private Label label3;
+      private Label label2;
    }
 }
 

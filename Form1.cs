@@ -34,11 +34,21 @@ namespace AlienSpaceShooter
       private int numberOfmoves;
       private VertexDataList bullet;
 
+      // Score tracking
+      protected static int score;
+      public const int ALIENKILLSCORE = 100;
+      private const int ASTROKILLSCORE = 50;
+
       public bool timerIsOn { get; private set; }
 
       public Form1()
       {
          InitializeComponent();
+      }
+
+      public static void update_Score()
+      {
+         score += ALIENKILLSCORE;
       }
 
       private void Form1_SizeChanged(object sender, EventArgs e)
@@ -65,6 +75,7 @@ namespace AlienSpaceShooter
 
       private void drawShape()
       {
+         
          GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
         // Matrix4 lookat = Ship.Instance.LookAt();//Matrix4.LookAt(xCoord, yCoord, 0.0f, 0f, 0f, 0f, 0f, 1.0f, 0f);
 
@@ -101,6 +112,8 @@ namespace AlienSpaceShooter
 
          axis.Show(Ship.Instance.LookAt());
          glControl1.SwapBuffers();
+
+         score_Label.Text = score.ToString();
       }
 
       private void _SetColor(int lightColorLoc)
@@ -204,12 +217,13 @@ namespace AlienSpaceShooter
             moveTimer.Stop();
             LoadObjectTimer.Stop();
             Cursor.Show();
-            MessageBox.Show("you have lost");
+            MessageBox.Show("You have lost! \n Press Start to continue!");
             
 
             
          }
          figures.CheckCollisionsKillIfDetected(projectiles);
+         //score += ALIENKILLSCORE;
       }
 
       private void ColorBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -286,21 +300,20 @@ namespace AlienSpaceShooter
 
                   Ship.Instance.ChangeDirection(newX, newY);
 
-                  try
-                  {
-                     glxLabel.Text = "GLX: " + e.X;
-                     glyLabel.Text = "GLY: " + e.Y;
-                     xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
-                  }
-                  catch (InvalidOperationException v)
-                  {
+                  //try
+                  //{
+                  //   glxLabel.Text = "GLX: " + e.X;
+                  //   glyLabel.Text = "GLY: " + e.Y;
+                  //   xyViewLabel.Text = "{X: " + xCoord + ", Y: " + yCoord + "}";
+                  //}
+                  //catch (InvalidOperationException v)
+                  //{
 
-                  }
+                  //}
 
 
                }
             }
-            //drawShape();
          });
       }
 
@@ -319,15 +332,15 @@ namespace AlienSpaceShooter
 
       private void Form1_MouseMove(object sender, MouseEventArgs e)
       {
-         mouseXLabel.Text = "Form X: " + e.X;
-         mouseYLabel.Text = "Form Y: " + e.Y;
+         //mouseXLabel.Text = "Form X: " + e.X;
+         //mouseYLabel.Text = "Form Y: " + e.Y;
       }
 
       private void Form1_Move(object sender, EventArgs e)
       {
          try
          {
-            formLoc.Text = "Form: " + Form1.ActiveForm.Location;
+            //formLoc.Text = "Form: " + Form1.ActiveForm.Location;
          }
          catch (NullReferenceException p)
          {
@@ -339,7 +352,7 @@ namespace AlienSpaceShooter
       private void LoadObjectTimer_Tick(object sender, EventArgs e)
       {
          loadShip();
-         //loadRock();
+         loadRock();
          drawShape();
       }
 
@@ -412,6 +425,11 @@ namespace AlienSpaceShooter
 
          // Set projectile movemement to move in the direction the ship is facing
          projectiles.Add(bulletFigure, new PlayerShot(bulletFigure, Ship.Instance.Direction, 1.0, Ship.Instance.Position));
+      }
+
+      private void start_button_Click(object sender, EventArgs e)
+      {
+         Application.Restart();
       }
    }
 }

@@ -50,6 +50,7 @@ namespace AlienSpaceShooter
       {
          var indexsToBeRemoved = new HashSet<int>();
          var figlistindexsToBeRemoved = new HashSet<int>();
+
          for( int i = figlist.Count - 1; i > 0; i--)
          {
             for( int j = 0; j < list.figlist.Count; j++ )
@@ -67,11 +68,8 @@ namespace AlienSpaceShooter
          foreach (var index in indexsToBeRemoved)
          {
             figlist.RemoveAt(index);
+            Form1.update_Score();
          }
-         //foreach (var index in figlistindexsToBeRemoved)
-         //{
-         //   list.figlist.RemoveAt(index);
-         //}
       }
 
       public void Add(Figure fig, MovePattern movement)
